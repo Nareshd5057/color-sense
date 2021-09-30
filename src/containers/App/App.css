@@ -1,0 +1,160 @@
+.App .App-logo {
+	 animation: App-logo-spin infinite 20s linear;
+	 height: 80px;
+}
+ .App .App-header {
+	 background-color: #222;
+	 height: 150px;
+	 padding: 20px;
+	 color: white;
+}
+ .App .App-title {
+	 font-size: 1.5em;
+}
+ .App .App-intro {
+	 font-size: large;
+}
+ @keyframes App-logo-spin {
+	 from {
+		 transform: rotate(0deg);
+	}
+	 to {
+		 transform: rotate(360deg);
+	}
+}
+ .App .item_grid {
+	 width: 250px;
+	 background-color: red;
+	 list-style: none;
+}
+ .App .item_grid span {
+	 font-size: 12px;
+}
+ .App .item_grid span:nth-child(1) {
+	 display: inline-block;
+	 position: absolute;
+	 bottom: 5px;
+	 right: 5px;
+	 text-align: right;
+	 padding: 0 5px;
+	 color: #fff;
+	 background: #000 ;
+	 border-radius: 5px;
+}
+ .App .item_grid span:nth-child(2) {
+	 display: inline-block;
+	 position: absolute;
+	 top: 5px;
+	 left: 5px;
+	 text-align: right;
+	 padding: 0 5px;
+	 color: #fff;
+	 background: #000;
+	 border-radius: 5px;
+}
+ .App .grid {
+	 margin: 0 auto;
+	 margin-top: 10px;
+}
+ .App .searchHeader {
+	 height: 100px;
+	 width: 100%;
+	 background-color: #d9d9d9;
+}
+ .App .colorSearch {
+	 display: flex;
+	 position: relative;
+	 -webkit-box-sizing: border-box;
+	 box-sizing: border-box;
+	 -ms-flex-align: center;
+	 align-items: center;
+	 height: 64px;
+	 border-radius: 8px;
+	 background: #fff;
+	 -webkit-box-shadow: 0px 8px 20px #00000042;
+	 box-shadow: 0px 8px 20px #00000042;
+	 width: 100%;
+	 max-width: 628px;
+	 margin: 0 auto;
+	 border-radius: 10px;
+	 position: relative;
+	 top: -35px;
+	     margin-bottom: 25px;
+}
+ .App .colorSearch input {
+	 height: 100%;
+	 width: 100%;
+	 border: 0 !important;
+	 outline: none !important;
+	 border-radius: 10px;
+	 padding: 0 50px;
+}
+ .App .colorSearch svg {
+	 width: 16px;
+	 height: 16px;
+	 color: #9e9ea7;
+	 fill: currentColor;
+	 z-index: 1111111;
+	 position: absolute;
+	 left: 15px;
+}
+ .App .logoText {
+	 font-weight: 700;
+	 color: #222;
+	 font-size: 25px;
+}
+ .App .logoText span:nth-child(1) {
+	 color: #f00;
+}
+ .App .logoText span:nth-child(2) {
+	 color: #ffa500;
+}
+ .App .logoText span:nth-child(3) {
+	 color: #cdcd0d;
+}
+ .App .logoText span:nth-child(4) {
+	 color: #008000;
+}
+ .App .logoText span:nth-child(5) {
+	 color: #00f;
+}
+ .App .logoText span:nth-child(6) {
+	 color: #b44dff;
+}
+ .App .logoText span:nth-child(7) {
+	 color: #ee82ee;
+}
+ .App .logoText span:nth-child(8) {
+	 color: #2bcf7c;
+}
+ .App .logoText span:nth-child(9) {
+	 color: #915c6c;
+}
+ .App .logoText span:nth-child(10) {
+	 color: #8f7aea;
+}
+.grid img {
+	display: block;
+	position: relative !important;
+	margin: 0 auto;
+	width: 40%;
+} 
+.noDataSection {
+	display: block;
+	position: relative !important;
+	margin: 0 auto;
+	width: 100%;
+
+}
+.f30 {
+	font-size: 30px;
+}
+.noDataSection p.logoText {
+	font-weight: 700;
+    color: #0c8cb9;
+	font-size: 35px;
+	font-style: italic;
+}
+.navbar {
+	padding: 0 80px;
+}

@@ -19,10 +19,6 @@ export default class Header extends Component {
 						<span>s</span>
 						<span>e</span>
 					</NavbarBrand>
-					<Form inline>
-						<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-						<Button variant="outline-primary">Search</Button>
-					</Form>
 				</Navbar>
 				<div className="searchHeader"></div>
 			</React.Fragment>

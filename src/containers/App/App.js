@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
 import logo from './logo.svg'
-import './App.scss'
+import './App.css'
 import jsonData from '../../color_data.json'
 import MainLayout from '../../component/MainLayout/MainLayout'
 import { Provider } from 'mobx-react'

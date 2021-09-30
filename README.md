@@ -3,165 +3,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## Table of Contents
-
-- [Updating to New Releases](#updating-to-new-releases)
-- [Sending Feedback](#sending-feedback)
-- [Folder Structure](#folder-structure)
-- [Available Scripts](#available-scripts)
-  - [npm start](#npm-start)
-  - [npm test](#npm-test)
-  - [npm run build](#npm-run-build)
-  - [npm run eject](#npm-run-eject)
-- [Supported Browsers](#supported-browsers)
-- [Supported Language Features and Polyfills](#supported-language-features-and-polyfills)
-- [Syntax Highlighting in the Editor](#syntax-highlighting-in-the-editor)
-- [Displaying Lint Output in the Editor](#displaying-lint-output-in-the-editor)
-- [Debugging in the Editor](#debugging-in-the-editor)
-- [Formatting Code Automatically](#formatting-code-automatically)
-- [Changing the Page `<title>`](#changing-the-page-title)
-- [Installing a Dependency](#installing-a-dependency)
-- [Importing a Component](#importing-a-component)
-- [Code Splitting](#code-splitting)
-- [Adding a Stylesheet](#adding-a-stylesheet)
-- [Post-Processing CSS](#post-processing-css)
-- [Adding a CSS Preprocessor (Sass, Less etc.)](#adding-a-css-preprocessor-sass-less-etc)
-- [Adding Images, Fonts, and Files](#adding-images-fonts-and-files)
-- [Using the `public` Folder](#using-the-public-folder)
-  - [Changing the HTML](#changing-the-html)
-  - [Adding Assets Outside of the Module System](#adding-assets-outside-of-the-module-system)
-  - [When to Use the `public` Folder](#when-to-use-the-public-folder)
-- [Using Global Variables](#using-global-variables)
-- [Adding Bootstrap](#adding-bootstrap)
-  - [Using a Custom Theme](#using-a-custom-theme)
-- [Adding Flow](#adding-flow)
-- [Adding a Router](#adding-a-router)
-- [Adding Custom Environment Variables](#adding-custom-environment-variables)
-  - [Referencing Environment Variables in the HTML](#referencing-environment-variables-in-the-html)
-  - [Adding Temporary Environment Variables In Your Shell](#adding-temporary-environment-variables-in-your-shell)
-  - [Adding Development Environment Variables In `.env`](#adding-development-environment-variables-in-env)
-- [Can I Use Decorators?](#can-i-use-decorators)
-- [Fetching Data with AJAX Requests](#fetching-data-with-ajax-requests)
-- [Integrating with an API Backend](#integrating-with-an-api-backend)
-  - [Node](#node)
-  - [Ruby on Rails](#ruby-on-rails)
-- [Proxying API Requests in Development](#proxying-api-requests-in-development)
-  - ["Invalid Host Header" Errors After Configuring Proxy](#invalid-host-header-errors-after-configuring-proxy)
-  - [Configuring the Proxy Manually](#configuring-the-proxy-manually)
-  - [Configuring a WebSocket Proxy](#configuring-a-websocket-proxy)
-- [Using HTTPS in Development](#using-https-in-development)
-- [Generating Dynamic `<meta>` Tags on the Server](#generating-dynamic-meta-tags-on-the-server)
-- [Pre-Rendering into Static HTML Files](#pre-rendering-into-static-html-files)
-- [Injecting Data from the Server into the Page](#injecting-data-from-the-server-into-the-page)
-- [Running Tests](#running-tests)
-  - [Filename Conventions](#filename-conventions)
-  - [Command Line Interface](#command-line-interface)
-  - [Version Control Integration](#version-control-integration)
-  - [Writing Tests](#writing-tests)
-  - [Testing Components](#testing-components)
-  - [Using Third Party Assertion Libraries](#using-third-party-assertion-libraries)
-  - [Initializing Test Environment](#initializing-test-environment)
-  - [Focusing and Excluding Tests](#focusing-and-excluding-tests)
-  - [Coverage Reporting](#coverage-reporting)
-  - [Continuous Integration](#continuous-integration)
-  - [Disabling jsdom](#disabling-jsdom)
-  - [Snapshot Testing](#snapshot-testing)
-  - [Editor Integration](#editor-integration)
-- [Debugging Tests](#debugging-tests)
-  - [Debugging Tests in Chrome](#debugging-tests-in-chrome)
-  - [Debugging Tests in Visual Studio Code](#debugging-tests-in-visual-studio-code)
-- [Developing Components in Isolation](#developing-components-in-isolation)
-  - [Getting Started with Storybook](#getting-started-with-storybook)
-  - [Getting Started with Styleguidist](#getting-started-with-styleguidist)
-- [Publishing Components to npm](#publishing-components-to-npm)
-- [Making a Progressive Web App](#making-a-progressive-web-app)
-  - [Opting Out of Caching](#opting-out-of-caching)
-  - [Offline-First Considerations](#offline-first-considerations)
-  - [Progressive Web App Metadata](#progressive-web-app-metadata)
-- [Analyzing the Bundle Size](#analyzing-the-bundle-size)
-- [Deployment](#deployment)
-  - [Static Server](#static-server)
-  - [Other Solutions](#other-solutions)
-  - [Serving Apps with Client-Side Routing](#serving-apps-with-client-side-routing)
-  - [Building for Relative Paths](#building-for-relative-paths)
-  - [Azure](#azure)
-  - [Firebase](#firebase)
-  - [GitHub Pages](#github-pages)
-  - [Heroku](#heroku)
-  - [Netlify](#netlify)
-  - [Now](#now)
-  - [S3 and CloudFront](#s3-and-cloudfront)
-  - [Surge](#surge)
-- [Advanced Configuration](#advanced-configuration)
-- [Troubleshooting](#troubleshooting)
-  - [`npm start` doesn’t detect changes](#npm-start-doesnt-detect-changes)
-  - [`npm test` hangs on macOS Sierra](#npm-test-hangs-on-macos-sierra)
-  - [`npm run build` exits too early](#npm-run-build-exits-too-early)
-  - [`npm run build` fails on Heroku](#npm-run-build-fails-on-heroku)
-  - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
-  - [Moment.js locales are missing](#momentjs-locales-are-missing)
-- [Alternatives to Ejecting](#alternatives-to-ejecting)
-- [Something Missing?](#something-missing)
-
-## Updating to New Releases
-
-Create React App is divided into two packages:
-
-* `create-react-app` is a global command-line utility that you use to create new projects.
-* `react-scripts` is a development dependency in the generated projects (including this one).
-
-You almost never need to update `create-react-app` itself: it delegates all the setup to `react-scripts`.
-
-When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
-
-To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
-
-In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
-
-We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
-
-## Sending Feedback
-
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
-
-## Folder Structure
-
-After creation, your project should look like this:
-
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
-```
-
-For the project to build, **these files must exist with exact filenames**:
-
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
-
-You can delete or rename the other files.
-
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
-
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
-
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
-
-## Available Scripts
 
 In the project directory, you can run:
 
@@ -186,2249 +27,4332 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-See the section about [deployment](#deployment) for more information.
+Please refer the below color data.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Supported Browsers
-
-By default, the generated project uses the latest version of React.
-
-You can refer [to the React documentation](https://reactjs.org/docs/react-dom.html#browser-support) for more information about supported browsers.
-
-## Supported Language Features and Polyfills
-
-This project supports a superset of the latest JavaScript standard.<br>
-In addition to [ES6](https://github.com/lukehoban/es6features) syntax features, it also supports:
-
-* [Exponentiation Operator](https://github.com/rwaldron/exponentiation-operator) (ES2016).
-* [Async/await](https://github.com/tc39/ecmascript-asyncawait) (ES2017).
-* [Object Rest/Spread Properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (stage 3 proposal).
-* [Dynamic import()](https://github.com/tc39/proposal-dynamic-import) (stage 3 proposal)
-* [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (part of stage 3 proposal).
-* [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) and [Flow](https://flowtype.org/) syntax.
-
-Learn more about [different proposal stages](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-).
-
-While we recommend using experimental proposals with some caution, Facebook heavily uses these features in the product code, so we intend to provide [codemods](https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb) if any of these proposals change in the future.
-
-Note that **the project only includes a few ES6 [polyfills](https://en.wikipedia.org/wiki/Polyfill)**:
-
-* [`Object.assign()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) via [`object-assign`](https://github.com/sindresorhus/object-assign).
-* [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) via [`promise`](https://github.com/then/promise).
-* [`fetch()`](https://developer.mozilla.org/en/docs/Web/API/Fetch_API) via [`whatwg-fetch`](https://github.com/github/fetch).
-
-If you use any other ES6+ features that need **runtime support** (such as `Array.from()` or `Symbol`), make sure you are including the appropriate polyfills manually, or that the browsers you are targeting already support them.
-
-Also note that using some newer syntax features like `for...of` or `[...nonArrayValue]` causes Babel to emit code that depends on ES6 runtime features and might not work without a polyfill. When in doubt, use [Babel REPL](https://babeljs.io/repl/) to see what any specific syntax compiles down to.
-
-## Syntax Highlighting in the Editor
-
-To configure the syntax highlighting in your favorite text editor, head to the [relevant Babel documentation page](https://babeljs.io/docs/editors) and follow the instructions. Some of the most popular editors are covered.
-
-## Displaying Lint Output in the Editor
-
->Note: this feature is available with `react-scripts@0.2.0` and higher.<br>
->It also only works with npm 3 or higher.
-
-Some editors, including Sublime Text, Atom, and Visual Studio Code, provide plugins for ESLint.
-
-They are not required for linting. You should see the linter output right in your terminal as well as the browser console. However, if you prefer the lint results to appear right in your editor, there are some extra steps you can do.
-
-You would need to install an ESLint plugin for your editor first. Then, add a file called `.eslintrc` to the project root:
-
-```js
 {
-  "extends": "react-app"
-}
-```
-
-Now your editor should report the linting warnings.
-
-Note that even if you edit your `.eslintrc` file further, these changes will **only affect the editor integration**. They won’t affect the terminal and in-browser lint output. This is because Create React App intentionally provides a minimal set of rules that find common mistakes.
-
-If you want to enforce a coding style for your project, consider using [Prettier](https://github.com/jlongster/prettier) instead of ESLint style rules.
-
-## Debugging in the Editor
-
-**This feature is currently only supported by [Visual Studio Code](https://code.visualstudio.com) and [WebStorm](https://www.jetbrains.com/webstorm/).**
-
-Visual Studio Code and WebStorm support debugging out of the box with Create React App. This enables you as a developer to write and debug your React code without leaving the editor, and most importantly it enables you to have a continuous development workflow, where context switching is minimal, as you don’t have to switch between tools.
-
-### Visual Studio Code
-
-You would need to have the latest version of [VS Code](https://code.visualstudio.com) and VS Code [Chrome Debugger Extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) installed.
-
-Then add the block below to your `launch.json` file and put it inside the `.vscode` folder in your app’s root directory.
-
-```json
-{
-  "version": "0.2.0",
-  "configurations": [{
-    "name": "Chrome",
-    "type": "chrome",
-    "request": "launch",
-    "url": "http://localhost:3000",
-    "webRoot": "${workspaceRoot}/src",
-    "sourceMapPathOverrides": {
-      "webpack:///src/*": "${webRoot}/*"
-    }
-  }]
-}
-```
->Note: the URL may be different if you've made adjustments via the [HOST or PORT environment variables](#advanced-configuration).
-
-Start your app by running `npm start`, and start debugging in VS Code by pressing `F5` or by clicking the green debug icon. You can now write code, set breakpoints, make changes to the code, and debug your newly modified code—all from your editor.
-
-Having problems with VS Code Debugging? Please see their [troubleshooting guide](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#troubleshooting).
-
-### WebStorm
-
-You would need to have [WebStorm](https://www.jetbrains.com/webstorm/) and [JetBrains IDE Support](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji) Chrome extension installed.
-
-In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and select `JavaScript Debug`. Paste `http://localhost:3000` into the URL field and save the configuration.
-
->Note: the URL may be different if you've made adjustments via the [HOST or PORT environment variables](#advanced-configuration).
-
-Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
-
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
-
-## Formatting Code Automatically
-
-Prettier is an opinionated code formatter with support for JavaScript, CSS and JSON. With Prettier you can format the code you write automatically to ensure a code style within your project. See the [Prettier's GitHub page](https://github.com/prettier/prettier) for more information, and look at this [page to see it in action](https://prettier.github.io/prettier/).
-
-To format our code whenever we make a commit in git, we need to install the following dependencies:
-
-```sh
-npm install --save husky lint-staged prettier
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add husky lint-staged prettier
-```
-
-* `husky` makes it easy to use githooks as if they are npm scripts.
-* `lint-staged` allows us to run scripts on staged files in git. See this [blog post about lint-staged to learn more about it](https://medium.com/@okonetchnikov/make-linting-great-again-f3890e1ad6b8).
-* `prettier` is the JavaScript formatter we will run before commits.
-
-Now we can make sure every file is formatted correctly by adding a few lines to the `package.json` in the project root.
-
-Add the following line to `scripts` section:
-
-```diff
-  "scripts": {
-+   "precommit": "lint-staged",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-```
-
-Next we add a 'lint-staged' field to the `package.json`, for example:
-
-```diff
-  "dependencies": {
-    // ...
+  "air_force_blue_raf": {
+    "name": "Air Force Blue (Raf)",
+    "hex": "#5d8aa8",
+    "rgb": [93, 138, 168]
   },
-+ "lint-staged": {
-+   "src/**/*.{js,jsx,json,css}": [
-+     "prettier --single-quote --write",
-+     "git add"
-+   ]
-+ },
-  "scripts": {
-```
-
-Now, whenever you make a commit, Prettier will format the changed files automatically. You can also run `./node_modules/.bin/prettier --single-quote --write "src/**/*.{js,jsx,json,css}"` to format your entire project for the first time.
-
-Next you might want to integrate Prettier in your favorite editor. Read the section on [Editor Integration](https://prettier.io/docs/en/editors.html) on the Prettier GitHub page.
-
-## Changing the Page `<title>`
-
-You can find the source HTML file in the `public` folder of the generated project. You may edit the `<title>` tag in it to change the title from “React App” to anything else.
-
-Note that normally you wouldn’t edit files in the `public` folder very often. For example, [adding a stylesheet](#adding-a-stylesheet) is done without touching the HTML.
-
-If you need to dynamically update the page title based on the content, you can use the browser [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) API. For more complex scenarios when you want to change the title from React components, you can use [React Helmet](https://github.com/nfl/react-helmet), a third party library.
-
-If you use a custom server for your app in production and want to modify the title before it gets sent to the browser, you can follow advice in [this section](#generating-dynamic-meta-tags-on-the-server). Alternatively, you can pre-build each page as a static HTML file which then loads the JavaScript bundle, which is covered [here](#pre-rendering-into-static-html-files).
-
-## Installing a Dependency
-
-The generated project includes React and ReactDOM as dependencies. It also includes a set of scripts used by Create React App as a development dependency. You may install other dependencies (for example, React Router) with `npm`:
-
-```sh
-npm install --save react-router
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add react-router
-```
-
-This works for any library, not just `react-router`.
-
-## Importing a Component
-
-This project setup supports ES6 modules thanks to Babel.<br>
-While you can still use `require()` and `module.exports`, we encourage you to use [`import` and `export`](http://exploringjs.com/es6/ch_modules.html) instead.
-
-For example:
-
-### `Button.js`
-
-```js
-import React, { Component } from 'react';
-
-class Button extends Component {
-  render() {
-    // ...
+  "air_force_blue_usaf": {
+    "name": "Air Force Blue (Usaf)",
+    "hex": "#00308f",
+    "rgb": [0, 48, 143]
+  },
+  "air_superiority_blue": {
+    "name": "Air Superiority Blue",
+    "hex": "#72a0c1",
+    "rgb": [114, 160, 193]
+  },
+  "alabama_crimson": {
+    "name": "Alabama Crimson",
+    "hex": "#a32638",
+    "rgb": [163, 38, 56]
+  },
+  "alice_blue": {
+    "name": "Alice Blue",
+    "hex": "#f0f8ff",
+    "rgb": [240, 248, 255]
+  },
+  "alizarin_crimson": {
+    "name": "Alizarin Crimson",
+    "hex": "#e32636",
+    "rgb": [227, 38, 54]
+  },
+  "alloy_orange": {
+    "name": "Alloy Orange",
+    "hex": "#c46210",
+    "rgb": [196, 98, 16]
+  },
+  "almond": {
+    "name": "Almond",
+    "hex": "#efdecd",
+    "rgb": [239, 222, 205]
+  },
+  "amaranth": {
+    "name": "Amaranth",
+    "hex": "#e52b50",
+    "rgb": [229, 43, 80]
+  },
+  "amber": {
+    "name": "Amber",
+    "hex": "#ffbf00",
+    "rgb": [255, 191, 0]
+  },
+  "amber_sae_ece": {
+    "name": "Amber (Sae/Ece)",
+    "hex": "#ff7e00",
+    "rgb": [255, 126, 0]
+  },
+  "american_rose": {
+    "name": "American Rose",
+    "hex": "#ff033e",
+    "rgb": [255, 3, 62]
+  },
+  "amethyst": {
+    "name": "Amethyst",
+    "hex": "#96c",
+    "rgb": [153, 102, 204]
+  },
+  "android_green": {
+    "name": "Android Green",
+    "hex": "#a4c639",
+    "rgb": [164, 198, 57]
+  },
+  "anti_flash_white": {
+    "name": "Anti-Flash White",
+    "hex": "#f2f3f4",
+    "rgb": [242, 243, 244]
+  },
+  "antique_brass": {
+    "name": "Antique Brass",
+    "hex": "#cd9575",
+    "rgb": [205, 149, 117]
+  },
+  "antique_fuchsia": {
+    "name": "Antique Fuchsia",
+    "hex": "#915c83",
+    "rgb": [145, 92, 131]
+  },
+  "antique_ruby": {
+    "name": "Antique Ruby",
+    "hex": "#841b2d",
+    "rgb": [132, 27, 45]
+  },
+  "antique_white": {
+    "name": "Antique White",
+    "hex": "#faebd7",
+    "rgb": [250, 235, 215]
+  },
+  "ao_english": {
+    "name": "Ao (English)",
+    "hex": "#008000",
+    "rgb": [0, 128, 0]
+  },
+  "apple_green": {
+    "name": "Apple Green",
+    "hex": "#8db600",
+    "rgb": [141, 182, 0]
+  },
+  "apricot": {
+    "name": "Apricot",
+    "hex": "#fbceb1",
+    "rgb": [251, 206, 177]
+  },
+  "aqua": {
+    "name": "Aqua",
+    "hex": "#0ff",
+    "rgb": [0, 255, 255]
+  },
+  "aquamarine": {
+    "name": "Aquamarine",
+    "hex": "#7fffd4",
+    "rgb": [127, 255, 212]
+  },
+  "army_green": {
+    "name": "Army Green",
+    "hex": "#4b5320",
+    "rgb": [75, 83, 32]
+  },
+  "arsenic": {
+    "name": "Arsenic",
+    "hex": "#3b444b",
+    "rgb": [59, 68, 75]
+  },
+  "arylide_yellow": {
+    "name": "Arylide Yellow",
+    "hex": "#e9d66b",
+    "rgb": [233, 214, 107]
+  },
+  "ash_grey": {
+    "name": "Ash Grey",
+    "hex": "#b2beb5",
+    "rgb": [178, 190, 181]
+  },
+  "asparagus": {
+    "name": "Asparagus",
+    "hex": "#87a96b",
+    "rgb": [135, 169, 107]
+  },
+  "atomic_tangerine": {
+    "name": "Atomic Tangerine",
+    "hex": "#f96",
+    "rgb": [255, 153, 102]
+  },
+  "auburn": {
+    "name": "Auburn",
+    "hex": "#a52a2a",
+    "rgb": [165, 42, 42]
+  },
+  "aureolin": {
+    "name": "Aureolin",
+    "hex": "#fdee00",
+    "rgb": [253, 238, 0]
+  },
+  "aurometalsaurus": {
+    "name": "Aurometalsaurus",
+    "hex": "#6e7f80",
+    "rgb": [110, 127, 128]
+  },
+  "avocado": {
+    "name": "Avocado",
+    "hex": "#568203",
+    "rgb": [86, 130, 3]
+  },
+  "azure": {
+    "name": "Azure",
+    "hex": "#007fff",
+    "rgb": [0, 127, 255]
+  },
+  "azure_mist_web": {
+    "name": "Azure Mist/Web",
+    "hex": "#f0ffff",
+    "rgb": [240, 255, 255]
+  },
+  "baby_blue": {
+    "name": "Baby Blue",
+    "hex": "#89cff0",
+    "rgb": [137, 207, 240]
+  },
+  "baby_blue_eyes": {
+    "name": "Baby Blue Eyes",
+    "hex": "#a1caf1",
+    "rgb": [161, 202, 241]
+  },
+  "baby_pink": {
+    "name": "Baby Pink",
+    "hex": "#f4c2c2",
+    "rgb": [244, 194, 194]
+  },
+  "ball_blue": {
+    "name": "Ball Blue",
+    "hex": "#21abcd",
+    "rgb": [33, 171, 205]
+  },
+  "banana_mania": {
+    "name": "Banana Mania",
+    "hex": "#fae7b5",
+    "rgb": [250, 231, 181]
+  },
+  "banana_yellow": {
+    "name": "Banana Yellow",
+    "hex": "#ffe135",
+    "rgb": [255, 225, 53]
+  },
+  "barn_red": {
+    "name": "Barn Red",
+    "hex": "#7c0a02",
+    "rgb": [124, 10, 2]
+  },
+  "battleship_grey": {
+    "name": "Battleship Grey",
+    "hex": "#848482",
+    "rgb": [132, 132, 130]
+  },
+  "bazaar": {
+    "name": "Bazaar",
+    "hex": "#98777b",
+    "rgb": [152, 119, 123]
+  },
+  "beau_blue": {
+    "name": "Beau Blue",
+    "hex": "#bcd4e6",
+    "rgb": [188, 212, 230]
+  },
+  "beaver": {
+    "name": "Beaver",
+    "hex": "#9f8170",
+    "rgb": [159, 129, 112]
+  },
+  "beige": {
+    "name": "Beige",
+    "hex": "#f5f5dc",
+    "rgb": [245, 245, 220]
+  },
+  "big_dip_o_ruby": {
+    "name": "Big Dip O’Ruby",
+    "hex": "#9c2542",
+    "rgb": [156, 37, 66]
+  },
+  "bisque": {
+    "name": "Bisque",
+    "hex": "#ffe4c4",
+    "rgb": [255, 228, 196]
+  },
+  "bistre": {
+    "name": "Bistre",
+    "hex": "#3d2b1f",
+    "rgb": [61, 43, 31]
+  },
+  "bittersweet": {
+    "name": "Bittersweet",
+    "hex": "#fe6f5e",
+    "rgb": [254, 111, 94]
+  },
+  "bittersweet_shimmer": {
+    "name": "Bittersweet Shimmer",
+    "hex": "#bf4f51",
+    "rgb": [191, 79, 81]
+  },
+  "black": {
+    "name": "Black",
+    "hex": "#000",
+    "rgb": [0, 0, 0]
+  },
+  "black_bean": {
+    "name": "Black Bean",
+    "hex": "#3d0c02",
+    "rgb": [61, 12, 2]
+  },
+  "black_leather_jacket": {
+    "name": "Black Leather Jacket",
+    "hex": "#253529",
+    "rgb": [37, 53, 41]
+  },
+  "black_olive": {
+    "name": "Black Olive",
+    "hex": "#3b3c36",
+    "rgb": [59, 60, 54]
+  },
+  "blanched_almond": {
+    "name": "Blanched Almond",
+    "hex": "#ffebcd",
+    "rgb": [255, 235, 205]
+  },
+  "blast_off_bronze": {
+    "name": "Blast-Off Bronze",
+    "hex": "#a57164",
+    "rgb": [165, 113, 100]
+  },
+  "bleu_de_france": {
+    "name": "Bleu De France",
+    "hex": "#318ce7",
+    "rgb": [49, 140, 231]
+  },
+  "blizzard_blue": {
+    "name": "Blizzard Blue",
+    "hex": "#ace5ee",
+    "rgb": [172, 229, 238]
+  },
+  "blond": {
+    "name": "Blond",
+    "hex": "#faf0be",
+    "rgb": [250, 240, 190]
+  },
+  "blue": {
+    "name": "Blue",
+    "hex": "#00f",
+    "rgb": [0, 0, 255]
+  },
+  "blue_bell": {
+    "name": "Blue Bell",
+    "hex": "#a2a2d0",
+    "rgb": [162, 162, 208]
+  },
+  "blue_crayola": {
+    "name": "Blue (Crayola)",
+    "hex": "#1f75fe",
+    "rgb": [31, 117, 254]
+  },
+  "blue_gray": {
+    "name": "Blue Gray",
+    "hex": "#69c",
+    "rgb": [102, 153, 204]
+  },
+  "blue_green": {
+    "name": "Blue-Green",
+    "hex": "#0d98ba",
+    "rgb": [13, 152, 186]
+  },
+  "blue_munsell": {
+    "name": "Blue (Munsell)",
+    "hex": "#0093af",
+    "rgb": [0, 147, 175]
+  },
+  "blue_ncs": {
+    "name": "Blue (Ncs)",
+    "hex": "#0087bd",
+    "rgb": [0, 135, 189]
+  },
+  "blue_pigment": {
+    "name": "Blue (Pigment)",
+    "hex": "#339",
+    "rgb": [51, 51, 153]
+  },
+  "blue_ryb": {
+    "name": "Blue (Ryb)",
+    "hex": "#0247fe",
+    "rgb": [2, 71, 254]
+  },
+  "blue_sapphire": {
+    "name": "Blue Sapphire",
+    "hex": "#126180",
+    "rgb": [18, 97, 128]
+  },
+  "blue_violet": {
+    "name": "Blue-Violet",
+    "hex": "#8a2be2",
+    "rgb": [138, 43, 226]
+  },
+  "blush": {
+    "name": "Blush",
+    "hex": "#de5d83",
+    "rgb": [222, 93, 131]
+  },
+  "bole": {
+    "name": "Bole",
+    "hex": "#79443b",
+    "rgb": [121, 68, 59]
+  },
+  "bondi_blue": {
+    "name": "Bondi Blue",
+    "hex": "#0095b6",
+    "rgb": [0, 149, 182]
+  },
+  "bone": {
+    "name": "Bone",
+    "hex": "#e3dac9",
+    "rgb": [227, 218, 201]
+  },
+  "boston_university_red": {
+    "name": "Boston University Red",
+    "hex": "#c00",
+    "rgb": [204, 0, 0]
+  },
+  "bottle_green": {
+    "name": "Bottle Green",
+    "hex": "#006a4e",
+    "rgb": [0, 106, 78]
+  },
+  "boysenberry": {
+    "name": "Boysenberry",
+    "hex": "#873260",
+    "rgb": [135, 50, 96]
+  },
+  "brandeis_blue": {
+    "name": "Brandeis Blue",
+    "hex": "#0070ff",
+    "rgb": [0, 112, 255]
+  },
+  "brass": {
+    "name": "Brass",
+    "hex": "#b5a642",
+    "rgb": [181, 166, 66]
+  },
+  "brick_red": {
+    "name": "Brick Red",
+    "hex": "#cb4154",
+    "rgb": [203, 65, 84]
+  },
+  "bright_cerulean": {
+    "name": "Bright Cerulean",
+    "hex": "#1dacd6",
+    "rgb": [29, 172, 214]
+  },
+  "bright_green": {
+    "name": "Bright Green",
+    "hex": "#6f0",
+    "rgb": [102, 255, 0]
+  },
+  "bright_lavender": {
+    "name": "Bright Lavender",
+    "hex": "#bf94e4",
+    "rgb": [191, 148, 228]
+  },
+  "bright_maroon": {
+    "name": "Bright Maroon",
+    "hex": "#c32148",
+    "rgb": [195, 33, 72]
+  },
+  "bright_pink": {
+    "name": "Bright Pink",
+    "hex": "#ff007f",
+    "rgb": [255, 0, 127]
+  },
+  "bright_turquoise": {
+    "name": "Bright Turquoise",
+    "hex": "#08e8de",
+    "rgb": [8, 232, 222]
+  },
+  "bright_ube": {
+    "name": "Bright Ube",
+    "hex": "#d19fe8",
+    "rgb": [209, 159, 232]
+  },
+  "brilliant_lavender": {
+    "name": "Brilliant Lavender",
+    "hex": "#f4bbff",
+    "rgb": [244, 187, 255]
+  },
+  "brilliant_rose": {
+    "name": "Brilliant Rose",
+    "hex": "#ff55a3",
+    "rgb": [255, 85, 163]
+  },
+  "brink_pink": {
+    "name": "Brink Pink",
+    "hex": "#fb607f",
+    "rgb": [251, 96, 127]
+  },
+  "british_racing_green": {
+    "name": "British Racing Green",
+    "hex": "#004225",
+    "rgb": [0, 66, 37]
+  },
+  "bronze": {
+    "name": "Bronze",
+    "hex": "#cd7f32",
+    "rgb": [205, 127, 50]
+  },
+  "brown_traditional": {
+    "name": "Brown (Traditional)",
+    "hex": "#964b00",
+    "rgb": [150, 75, 0]
+  },
+  "brown_web": {
+    "name": "Brown (Web)",
+    "hex": "#a52a2a",
+    "rgb": [165, 42, 42]
+  },
+  "bubble_gum": {
+    "name": "Bubble Gum",
+    "hex": "#ffc1cc",
+    "rgb": [255, 193, 204]
+  },
+  "bubbles": {
+    "name": "Bubbles",
+    "hex": "#e7feff",
+    "rgb": [231, 254, 255]
+  },
+  "buff": {
+    "name": "Buff",
+    "hex": "#f0dc82",
+    "rgb": [240, 220, 130]
+  },
+  "bulgarian_rose": {
+    "name": "Bulgarian Rose",
+    "hex": "#480607",
+    "rgb": [72, 6, 7]
+  },
+  "burgundy": {
+    "name": "Burgundy",
+    "hex": "#800020",
+    "rgb": [128, 0, 32]
+  },
+  "burlywood": {
+    "name": "Burlywood",
+    "hex": "#deb887",
+    "rgb": [222, 184, 135]
+  },
+  "burnt_orange": {
+    "name": "Burnt Orange",
+    "hex": "#c50",
+    "rgb": [204, 85, 0]
+  },
+  "burnt_sienna": {
+    "name": "Burnt Sienna",
+    "hex": "#e97451",
+    "rgb": [233, 116, 81]
+  },
+  "burnt_umber": {
+    "name": "Burnt Umber",
+    "hex": "#8a3324",
+    "rgb": [138, 51, 36]
+  },
+  "byzantine": {
+    "name": "Byzantine",
+    "hex": "#bd33a4",
+    "rgb": [189, 51, 164]
+  },
+  "byzantium": {
+    "name": "Byzantium",
+    "hex": "#702963",
+    "rgb": [112, 41, 99]
+  },
+  "cadet": {
+    "name": "Cadet",
+    "hex": "#536872",
+    "rgb": [83, 104, 114]
+  },
+  "cadet_blue": {
+    "name": "Cadet Blue",
+    "hex": "#5f9ea0",
+    "rgb": [95, 158, 160]
+  },
+  "cadet_grey": {
+    "name": "Cadet Grey",
+    "hex": "#91a3b0",
+    "rgb": [145, 163, 176]
+  },
+  "cadmium_green": {
+    "name": "Cadmium Green",
+    "hex": "#006b3c",
+    "rgb": [0, 107, 60]
+  },
+  "cadmium_orange": {
+    "name": "Cadmium Orange",
+    "hex": "#ed872d",
+    "rgb": [237, 135, 45]
+  },
+  "cadmium_red": {
+    "name": "Cadmium Red",
+    "hex": "#e30022",
+    "rgb": [227, 0, 34]
+  },
+  "cadmium_yellow": {
+    "name": "Cadmium Yellow",
+    "hex": "#fff600",
+    "rgb": [255, 246, 0]
+  },
+  "caf_au_lait": {
+    "name": "Café Au Lait",
+    "hex": "#a67b5b",
+    "rgb": [166, 123, 91]
+  },
+  "caf_noir": {
+    "name": "Café Noir",
+    "hex": "#4b3621",
+    "rgb": [75, 54, 33]
+  },
+  "cal_poly_green": {
+    "name": "Cal Poly Green",
+    "hex": "#1e4d2b",
+    "rgb": [30, 77, 43]
+  },
+  "cambridge_blue": {
+    "name": "Cambridge Blue",
+    "hex": "#a3c1ad",
+    "rgb": [163, 193, 173]
+  },
+  "camel": {
+    "name": "Camel",
+    "hex": "#c19a6b",
+    "rgb": [193, 154, 107]
+  },
+  "cameo_pink": {
+    "name": "Cameo Pink",
+    "hex": "#efbbcc",
+    "rgb": [239, 187, 204]
+  },
+  "camouflage_green": {
+    "name": "Camouflage Green",
+    "hex": "#78866b",
+    "rgb": [120, 134, 107]
+  },
+  "canary_yellow": {
+    "name": "Canary Yellow",
+    "hex": "#ffef00",
+    "rgb": [255, 239, 0]
+  },
+  "candy_apple_red": {
+    "name": "Candy Apple Red",
+    "hex": "#ff0800",
+    "rgb": [255, 8, 0]
+  },
+  "candy_pink": {
+    "name": "Candy Pink",
+    "hex": "#e4717a",
+    "rgb": [228, 113, 122]
+  },
+  "capri": {
+    "name": "Capri",
+    "hex": "#00bfff",
+    "rgb": [0, 191, 255]
+  },
+  "caput_mortuum": {
+    "name": "Caput Mortuum",
+    "hex": "#592720",
+    "rgb": [89, 39, 32]
+  },
+  "cardinal": {
+    "name": "Cardinal",
+    "hex": "#c41e3a",
+    "rgb": [196, 30, 58]
+  },
+  "caribbean_green": {
+    "name": "Caribbean Green",
+    "hex": "#0c9",
+    "rgb": [0, 204, 153]
+  },
+  "carmine": {
+    "name": "Carmine",
+    "hex": "#960018",
+    "rgb": [150, 0, 24]
+  },
+  "carmine_m_p": {
+    "name": "Carmine (M&P)",
+    "hex": "#d70040",
+    "rgb": [215, 0, 64]
+  },
+  "carmine_pink": {
+    "name": "Carmine Pink",
+    "hex": "#eb4c42",
+    "rgb": [235, 76, 66]
+  },
+  "carmine_red": {
+    "name": "Carmine Red",
+    "hex": "#ff0038",
+    "rgb": [255, 0, 56]
+  },
+  "carnation_pink": {
+    "name": "Carnation Pink",
+    "hex": "#ffa6c9",
+    "rgb": [255, 166, 201]
+  },
+  "carnelian": {
+    "name": "Carnelian",
+    "hex": "#b31b1b",
+    "rgb": [179, 27, 27]
+  },
+  "carolina_blue": {
+    "name": "Carolina Blue",
+    "hex": "#99badd",
+    "rgb": [153, 186, 221]
+  },
+  "carrot_orange": {
+    "name": "Carrot Orange",
+    "hex": "#ed9121",
+    "rgb": [237, 145, 33]
+  },
+  "catalina_blue": {
+    "name": "Catalina Blue",
+    "hex": "#062a78",
+    "rgb": [6, 42, 120]
+  },
+  "ceil": {
+    "name": "Ceil",
+    "hex": "#92a1cf",
+    "rgb": [146, 161, 207]
+  },
+  "celadon": {
+    "name": "Celadon",
+    "hex": "#ace1af",
+    "rgb": [172, 225, 175]
+  },
+  "celadon_blue": {
+    "name": "Celadon Blue",
+    "hex": "#007ba7",
+    "rgb": [0, 123, 167]
+  },
+  "celadon_green": {
+    "name": "Celadon Green",
+    "hex": "#2f847c",
+    "rgb": [47, 132, 124]
+  },
+  "celeste_colour": {
+    "name": "Celeste (Colour)",
+    "hex": "#b2ffff",
+    "rgb": [178, 255, 255]
+  },
+  "celestial_blue": {
+    "name": "Celestial Blue",
+    "hex": "#4997d0",
+    "rgb": [73, 151, 208]
+  },
+  "cerise": {
+    "name": "Cerise",
+    "hex": "#de3163",
+    "rgb": [222, 49, 99]
+  },
+  "cerise_pink": {
+    "name": "Cerise Pink",
+    "hex": "#ec3b83",
+    "rgb": [236, 59, 131]
+  },
+  "cerulean": {
+    "name": "Cerulean",
+    "hex": "#007ba7",
+    "rgb": [0, 123, 167]
+  },
+  "cerulean_blue": {
+    "name": "Cerulean Blue",
+    "hex": "#2a52be",
+    "rgb": [42, 82, 190]
+  },
+  "cerulean_frost": {
+    "name": "Cerulean Frost",
+    "hex": "#6d9bc3",
+    "rgb": [109, 155, 195]
+  },
+  "cg_blue": {
+    "name": "Cg Blue",
+    "hex": "#007aa5",
+    "rgb": [0, 122, 165]
+  },
+  "cg_red": {
+    "name": "Cg Red",
+    "hex": "#e03c31",
+    "rgb": [224, 60, 49]
+  },
+  "chamoisee": {
+    "name": "Chamoisee",
+    "hex": "#a0785a",
+    "rgb": [160, 120, 90]
+  },
+  "champagne": {
+    "name": "Champagne",
+    "hex": "#fad6a5",
+    "rgb": [250, 214, 165]
+  },
+  "charcoal": {
+    "name": "Charcoal",
+    "hex": "#36454f",
+    "rgb": [54, 69, 79]
+  },
+  "charm_pink": {
+    "name": "Charm Pink",
+    "hex": "#e68fac",
+    "rgb": [230, 143, 172]
+  },
+  "chartreuse_traditional": {
+    "name": "Chartreuse (Traditional)",
+    "hex": "#dfff00",
+    "rgb": [223, 255, 0]
+  },
+  "chartreuse_web": {
+    "name": "Chartreuse (Web)",
+    "hex": "#7fff00",
+    "rgb": [127, 255, 0]
+  },
+  "cherry": {
+    "name": "Cherry",
+    "hex": "#de3163",
+    "rgb": [222, 49, 99]
+  },
+  "cherry_blossom_pink": {
+    "name": "Cherry Blossom Pink",
+    "hex": "#ffb7c5",
+    "rgb": [255, 183, 197]
+  },
+  "chestnut": {
+    "name": "Chestnut",
+    "hex": "#cd5c5c",
+    "rgb": [205, 92, 92]
+  },
+  "china_pink": {
+    "name": "China Pink",
+    "hex": "#de6fa1",
+    "rgb": [222, 111, 161]
+  },
+  "china_rose": {
+    "name": "China Rose",
+    "hex": "#a8516e",
+    "rgb": [168, 81, 110]
+  },
+  "chinese_red": {
+    "name": "Chinese Red",
+    "hex": "#aa381e",
+    "rgb": [170, 56, 30]
+  },
+  "chocolate_traditional": {
+    "name": "Chocolate (Traditional)",
+    "hex": "#7b3f00",
+    "rgb": [123, 63, 0]
+  },
+  "chocolate_web": {
+    "name": "Chocolate (Web)",
+    "hex": "#d2691e",
+    "rgb": [210, 105, 30]
+  },
+  "chrome_yellow": {
+    "name": "Chrome Yellow",
+    "hex": "#ffa700",
+    "rgb": [255, 167, 0]
+  },
+  "cinereous": {
+    "name": "Cinereous",
+    "hex": "#98817b",
+    "rgb": [152, 129, 123]
+  },
+  "cinnabar": {
+    "name": "Cinnabar",
+    "hex": "#e34234",
+    "rgb": [227, 66, 52]
+  },
+  "cinnamon": {
+    "name": "Cinnamon",
+    "hex": "#d2691e",
+    "rgb": [210, 105, 30]
+  },
+  "citrine": {
+    "name": "Citrine",
+    "hex": "#e4d00a",
+    "rgb": [228, 208, 10]
+  },
+  "classic_rose": {
+    "name": "Classic Rose",
+    "hex": "#fbcce7",
+    "rgb": [251, 204, 231]
+  },
+  "cobalt": {
+    "name": "Cobalt",
+    "hex": "#0047ab",
+    "rgb": [0, 71, 171]
+  },
+  "cocoa_brown": {
+    "name": "Cocoa Brown",
+    "hex": "#d2691e",
+    "rgb": [210, 105, 30]
+  },
+  "coffee": {
+    "name": "Coffee",
+    "hex": "#6f4e37",
+    "rgb": [111, 78, 55]
+  },
+  "columbia_blue": {
+    "name": "Columbia Blue",
+    "hex": "#9bddff",
+    "rgb": [155, 221, 255]
+  },
+  "congo_pink": {
+    "name": "Congo Pink",
+    "hex": "#f88379",
+    "rgb": [248, 131, 121]
+  },
+  "cool_black": {
+    "name": "Cool Black",
+    "hex": "#002e63",
+    "rgb": [0, 46, 99]
+  },
+  "cool_grey": {
+    "name": "Cool Grey",
+    "hex": "#8c92ac",
+    "rgb": [140, 146, 172]
+  },
+  "copper": {
+    "name": "Copper",
+    "hex": "#b87333",
+    "rgb": [184, 115, 51]
+  },
+  "copper_crayola": {
+    "name": "Copper (Crayola)",
+    "hex": "#da8a67",
+    "rgb": [218, 138, 103]
+  },
+  "copper_penny": {
+    "name": "Copper Penny",
+    "hex": "#ad6f69",
+    "rgb": [173, 111, 105]
+  },
+  "copper_red": {
+    "name": "Copper Red",
+    "hex": "#cb6d51",
+    "rgb": [203, 109, 81]
+  },
+  "copper_rose": {
+    "name": "Copper Rose",
+    "hex": "#966",
+    "rgb": [153, 102, 102]
+  },
+  "coquelicot": {
+    "name": "Coquelicot",
+    "hex": "#ff3800",
+    "rgb": [255, 56, 0]
+  },
+  "coral": {
+    "name": "Coral",
+    "hex": "#ff7f50",
+    "rgb": [255, 127, 80]
+  },
+  "coral_pink": {
+    "name": "Coral Pink",
+    "hex": "#f88379",
+    "rgb": [248, 131, 121]
+  },
+  "coral_red": {
+    "name": "Coral Red",
+    "hex": "#ff4040",
+    "rgb": [255, 64, 64]
+  },
+  "cordovan": {
+    "name": "Cordovan",
+    "hex": "#893f45",
+    "rgb": [137, 63, 69]
+  },
+  "corn": {
+    "name": "Corn",
+    "hex": "#fbec5d",
+    "rgb": [251, 236, 93]
+  },
+  "cornell_red": {
+    "name": "Cornell Red",
+    "hex": "#b31b1b",
+    "rgb": [179, 27, 27]
+  },
+  "cornflower_blue": {
+    "name": "Cornflower Blue",
+    "hex": "#6495ed",
+    "rgb": [100, 149, 237]
+  },
+  "cornsilk": {
+    "name": "Cornsilk",
+    "hex": "#fff8dc",
+    "rgb": [255, 248, 220]
+  },
+  "cosmic_latte": {
+    "name": "Cosmic Latte",
+    "hex": "#fff8e7",
+    "rgb": [255, 248, 231]
+  },
+  "cotton_candy": {
+    "name": "Cotton Candy",
+    "hex": "#ffbcd9",
+    "rgb": [255, 188, 217]
+  },
+  "cream": {
+    "name": "Cream",
+    "hex": "#fffdd0",
+    "rgb": [255, 253, 208]
+  },
+  "crimson": {
+    "name": "Crimson",
+    "hex": "#dc143c",
+    "rgb": [220, 20, 60]
+  },
+  "crimson_glory": {
+    "name": "Crimson Glory",
+    "hex": "#be0032",
+    "rgb": [190, 0, 50]
+  },
+  "cyan": {
+    "name": "Cyan",
+    "hex": "#0ff",
+    "rgb": [0, 255, 255]
+  },
+  "cyan_process": {
+    "name": "Cyan (Process)",
+    "hex": "#00b7eb",
+    "rgb": [0, 183, 235]
+  },
+  "daffodil": {
+    "name": "Daffodil",
+    "hex": "#ffff31",
+    "rgb": [255, 255, 49]
+  },
+  "dandelion": {
+    "name": "Dandelion",
+    "hex": "#f0e130",
+    "rgb": [240, 225, 48]
+  },
+  "dark_blue": {
+    "name": "Dark Blue",
+    "hex": "#00008b",
+    "rgb": [0, 0, 139]
+  },
+  "dark_brown": {
+    "name": "Dark Brown",
+    "hex": "#654321",
+    "rgb": [101, 67, 33]
+  },
+  "dark_byzantium": {
+    "name": "Dark Byzantium",
+    "hex": "#5d3954",
+    "rgb": [93, 57, 84]
+  },
+  "dark_candy_apple_red": {
+    "name": "Dark Candy Apple Red",
+    "hex": "#a40000",
+    "rgb": [164, 0, 0]
+  },
+  "dark_cerulean": {
+    "name": "Dark Cerulean",
+    "hex": "#08457e",
+    "rgb": [8, 69, 126]
+  },
+  "dark_chestnut": {
+    "name": "Dark Chestnut",
+    "hex": "#986960",
+    "rgb": [152, 105, 96]
+  },
+  "dark_coral": {
+    "name": "Dark Coral",
+    "hex": "#cd5b45",
+    "rgb": [205, 91, 69]
+  },
+  "dark_cyan": {
+    "name": "Dark Cyan",
+    "hex": "#008b8b",
+    "rgb": [0, 139, 139]
+  },
+  "dark_electric_blue": {
+    "name": "Dark Electric Blue",
+    "hex": "#536878",
+    "rgb": [83, 104, 120]
+  },
+  "dark_goldenrod": {
+    "name": "Dark Goldenrod",
+    "hex": "#b8860b",
+    "rgb": [184, 134, 11]
+  },
+  "dark_gray": {
+    "name": "Dark Gray",
+    "hex": "#a9a9a9",
+    "rgb": [169, 169, 169]
+  },
+  "dark_green": {
+    "name": "Dark Green",
+    "hex": "#013220",
+    "rgb": [1, 50, 32]
+  },
+  "dark_imperial_blue": {
+    "name": "Dark Imperial Blue",
+    "hex": "#00416a",
+    "rgb": [0, 65, 106]
+  },
+  "dark_jungle_green": {
+    "name": "Dark Jungle Green",
+    "hex": "#1a2421",
+    "rgb": [26, 36, 33]
+  },
+  "dark_khaki": {
+    "name": "Dark Khaki",
+    "hex": "#bdb76b",
+    "rgb": [189, 183, 107]
+  },
+  "dark_lava": {
+    "name": "Dark Lava",
+    "hex": "#483c32",
+    "rgb": [72, 60, 50]
+  },
+  "dark_lavender": {
+    "name": "Dark Lavender",
+    "hex": "#734f96",
+    "rgb": [115, 79, 150]
+  },
+  "dark_magenta": {
+    "name": "Dark Magenta",
+    "hex": "#8b008b",
+    "rgb": [139, 0, 139]
+  },
+  "dark_midnight_blue": {
+    "name": "Dark Midnight Blue",
+    "hex": "#036",
+    "rgb": [0, 51, 102]
+  },
+  "dark_olive_green": {
+    "name": "Dark Olive Green",
+    "hex": "#556b2f",
+    "rgb": [85, 107, 47]
+  },
+  "dark_orange": {
+    "name": "Dark Orange",
+    "hex": "#ff8c00",
+    "rgb": [255, 140, 0]
+  },
+  "dark_orchid": {
+    "name": "Dark Orchid",
+    "hex": "#9932cc",
+    "rgb": [153, 50, 204]
+  },
+  "dark_pastel_blue": {
+    "name": "Dark Pastel Blue",
+    "hex": "#779ecb",
+    "rgb": [119, 158, 203]
+  },
+  "dark_pastel_green": {
+    "name": "Dark Pastel Green",
+    "hex": "#03c03c",
+    "rgb": [3, 192, 60]
+  },
+  "dark_pastel_purple": {
+    "name": "Dark Pastel Purple",
+    "hex": "#966fd6",
+    "rgb": [150, 111, 214]
+  },
+  "dark_pastel_red": {
+    "name": "Dark Pastel Red",
+    "hex": "#c23b22",
+    "rgb": [194, 59, 34]
+  },
+  "dark_pink": {
+    "name": "Dark Pink",
+    "hex": "#e75480",
+    "rgb": [231, 84, 128]
+  },
+  "dark_powder_blue": {
+    "name": "Dark Powder Blue",
+    "hex": "#039",
+    "rgb": [0, 51, 153]
+  },
+  "dark_raspberry": {
+    "name": "Dark Raspberry",
+    "hex": "#872657",
+    "rgb": [135, 38, 87]
+  },
+  "dark_red": {
+    "name": "Dark Red",
+    "hex": "#8b0000",
+    "rgb": [139, 0, 0]
+  },
+  "dark_salmon": {
+    "name": "Dark Salmon",
+    "hex": "#e9967a",
+    "rgb": [233, 150, 122]
+  },
+  "dark_scarlet": {
+    "name": "Dark Scarlet",
+    "hex": "#560319",
+    "rgb": [86, 3, 25]
+  },
+  "dark_sea_green": {
+    "name": "Dark Sea Green",
+    "hex": "#8fbc8f",
+    "rgb": [143, 188, 143]
+  },
+  "dark_sienna": {
+    "name": "Dark Sienna",
+    "hex": "#3c1414",
+    "rgb": [60, 20, 20]
+  },
+  "dark_slate_blue": {
+    "name": "Dark Slate Blue",
+    "hex": "#483d8b",
+    "rgb": [72, 61, 139]
+  },
+  "dark_slate_gray": {
+    "name": "Dark Slate Gray",
+    "hex": "#2f4f4f",
+    "rgb": [47, 79, 79]
+  },
+  "dark_spring_green": {
+    "name": "Dark Spring Green",
+    "hex": "#177245",
+    "rgb": [23, 114, 69]
+  },
+  "dark_tan": {
+    "name": "Dark Tan",
+    "hex": "#918151",
+    "rgb": [145, 129, 81]
+  },
+  "dark_tangerine": {
+    "name": "Dark Tangerine",
+    "hex": "#ffa812",
+    "rgb": [255, 168, 18]
+  },
+  "dark_taupe": {
+    "name": "Dark Taupe",
+    "hex": "#483c32",
+    "rgb": [72, 60, 50]
+  },
+  "dark_terra_cotta": {
+    "name": "Dark Terra Cotta",
+    "hex": "#cc4e5c",
+    "rgb": [204, 78, 92]
+  },
+  "dark_turquoise": {
+    "name": "Dark Turquoise",
+    "hex": "#00ced1",
+    "rgb": [0, 206, 209]
+  },
+  "dark_violet": {
+    "name": "Dark Violet",
+    "hex": "#9400d3",
+    "rgb": [148, 0, 211]
+  },
+  "dark_yellow": {
+    "name": "Dark Yellow",
+    "hex": "#9b870c",
+    "rgb": [155, 135, 12]
+  },
+  "dartmouth_green": {
+    "name": "Dartmouth Green",
+    "hex": "#00703c",
+    "rgb": [0, 112, 60]
+  },
+  "davy_s_grey": {
+    "name": "Davy'S Grey",
+    "hex": "#555",
+    "rgb": [85, 85, 85]
+  },
+  "debian_red": {
+    "name": "Debian Red",
+    "hex": "#d70a53",
+    "rgb": [215, 10, 83]
+  },
+  "deep_carmine": {
+    "name": "Deep Carmine",
+    "hex": "#a9203e",
+    "rgb": [169, 32, 62]
+  },
+  "deep_carmine_pink": {
+    "name": "Deep Carmine Pink",
+    "hex": "#ef3038",
+    "rgb": [239, 48, 56]
+  },
+  "deep_carrot_orange": {
+    "name": "Deep Carrot Orange",
+    "hex": "#e9692c",
+    "rgb": [233, 105, 44]
+  },
+  "deep_cerise": {
+    "name": "Deep Cerise",
+    "hex": "#da3287",
+    "rgb": [218, 50, 135]
+  },
+  "deep_champagne": {
+    "name": "Deep Champagne",
+    "hex": "#fad6a5",
+    "rgb": [250, 214, 165]
+  },
+  "deep_chestnut": {
+    "name": "Deep Chestnut",
+    "hex": "#b94e48",
+    "rgb": [185, 78, 72]
+  },
+  "deep_coffee": {
+    "name": "Deep Coffee",
+    "hex": "#704241",
+    "rgb": [112, 66, 65]
+  },
+  "deep_fuchsia": {
+    "name": "Deep Fuchsia",
+    "hex": "#c154c1",
+    "rgb": [193, 84, 193]
+  },
+  "deep_jungle_green": {
+    "name": "Deep Jungle Green",
+    "hex": "#004b49",
+    "rgb": [0, 75, 73]
+  },
+  "deep_lilac": {
+    "name": "Deep Lilac",
+    "hex": "#95b",
+    "rgb": [153, 85, 187]
+  },
+  "deep_magenta": {
+    "name": "Deep Magenta",
+    "hex": "#c0c",
+    "rgb": [204, 0, 204]
+  },
+  "deep_peach": {
+    "name": "Deep Peach",
+    "hex": "#ffcba4",
+    "rgb": [255, 203, 164]
+  },
+  "deep_pink": {
+    "name": "Deep Pink",
+    "hex": "#ff1493",
+    "rgb": [255, 20, 147]
+  },
+  "deep_ruby": {
+    "name": "Deep Ruby",
+    "hex": "#843f5b",
+    "rgb": [132, 63, 91]
+  },
+  "deep_saffron": {
+    "name": "Deep Saffron",
+    "hex": "#f93",
+    "rgb": [255, 153, 51]
+  },
+  "deep_sky_blue": {
+    "name": "Deep Sky Blue",
+    "hex": "#00bfff",
+    "rgb": [0, 191, 255]
+  },
+  "deep_tuscan_red": {
+    "name": "Deep Tuscan Red",
+    "hex": "#66424d",
+    "rgb": [102, 66, 77]
+  },
+  "denim": {
+    "name": "Denim",
+    "hex": "#1560bd",
+    "rgb": [21, 96, 189]
+  },
+  "desert": {
+    "name": "Desert",
+    "hex": "#c19a6b",
+    "rgb": [193, 154, 107]
+  },
+  "desert_sand": {
+    "name": "Desert Sand",
+    "hex": "#edc9af",
+    "rgb": [237, 201, 175]
+  },
+  "dim_gray": {
+    "name": "Dim Gray",
+    "hex": "#696969",
+    "rgb": [105, 105, 105]
+  },
+  "dodger_blue": {
+    "name": "Dodger Blue",
+    "hex": "#1e90ff",
+    "rgb": [30, 144, 255]
+  },
+  "dogwood_rose": {
+    "name": "Dogwood Rose",
+    "hex": "#d71868",
+    "rgb": [215, 24, 104]
+  },
+  "dollar_bill": {
+    "name": "Dollar Bill",
+    "hex": "#85bb65",
+    "rgb": [133, 187, 101]
+  },
+  "drab": {
+    "name": "Drab",
+    "hex": "#967117",
+    "rgb": [150, 113, 23]
+  },
+  "duke_blue": {
+    "name": "Duke Blue",
+    "hex": "#00009c",
+    "rgb": [0, 0, 156]
+  },
+  "earth_yellow": {
+    "name": "Earth Yellow",
+    "hex": "#e1a95f",
+    "rgb": [225, 169, 95]
+  },
+  "ebony": {
+    "name": "Ebony",
+    "hex": "#555d50",
+    "rgb": [85, 93, 80]
+  },
+  "ecru": {
+    "name": "Ecru",
+    "hex": "#c2b280",
+    "rgb": [194, 178, 128]
+  },
+  "eggplant": {
+    "name": "Eggplant",
+    "hex": "#614051",
+    "rgb": [97, 64, 81]
+  },
+  "eggshell": {
+    "name": "Eggshell",
+    "hex": "#f0ead6",
+    "rgb": [240, 234, 214]
+  },
+  "egyptian_blue": {
+    "name": "Egyptian Blue",
+    "hex": "#1034a6",
+    "rgb": [16, 52, 166]
+  },
+  "electric_blue": {
+    "name": "Electric Blue",
+    "hex": "#7df9ff",
+    "rgb": [125, 249, 255]
+  },
+  "electric_crimson": {
+    "name": "Electric Crimson",
+    "hex": "#ff003f",
+    "rgb": [255, 0, 63]
+  },
+  "electric_cyan": {
+    "name": "Electric Cyan",
+    "hex": "#0ff",
+    "rgb": [0, 255, 255]
+  },
+  "electric_green": {
+    "name": "Electric Green",
+    "hex": "#0f0",
+    "rgb": [0, 255, 0]
+  },
+  "electric_indigo": {
+    "name": "Electric Indigo",
+    "hex": "#6f00ff",
+    "rgb": [111, 0, 255]
+  },
+  "electric_lavender": {
+    "name": "Electric Lavender",
+    "hex": "#f4bbff",
+    "rgb": [244, 187, 255]
+  },
+  "electric_lime": {
+    "name": "Electric Lime",
+    "hex": "#cf0",
+    "rgb": [204, 255, 0]
+  },
+  "electric_purple": {
+    "name": "Electric Purple",
+    "hex": "#bf00ff",
+    "rgb": [191, 0, 255]
+  },
+  "electric_ultramarine": {
+    "name": "Electric Ultramarine",
+    "hex": "#3f00ff",
+    "rgb": [63, 0, 255]
+  },
+  "electric_violet": {
+    "name": "Electric Violet",
+    "hex": "#8f00ff",
+    "rgb": [143, 0, 255]
+  },
+  "electric_yellow": {
+    "name": "Electric Yellow",
+    "hex": "#ff0",
+    "rgb": [255, 255, 0]
+  },
+  "emerald": {
+    "name": "Emerald",
+    "hex": "#50c878",
+    "rgb": [80, 200, 120]
+  },
+  "english_lavender": {
+    "name": "English Lavender",
+    "hex": "#b48395",
+    "rgb": [180, 131, 149]
+  },
+  "eton_blue": {
+    "name": "Eton Blue",
+    "hex": "#96c8a2",
+    "rgb": [150, 200, 162]
+  },
+  "fallow": {
+    "name": "Fallow",
+    "hex": "#c19a6b",
+    "rgb": [193, 154, 107]
+  },
+  "falu_red": {
+    "name": "Falu Red",
+    "hex": "#801818",
+    "rgb": [128, 24, 24]
+  },
+  "fandango": {
+    "name": "Fandango",
+    "hex": "#b53389",
+    "rgb": [181, 51, 137]
+  },
+  "fashion_fuchsia": {
+    "name": "Fashion Fuchsia",
+    "hex": "#f400a1",
+    "rgb": [244, 0, 161]
+  },
+  "fawn": {
+    "name": "Fawn",
+    "hex": "#e5aa70",
+    "rgb": [229, 170, 112]
+  },
+  "feldgrau": {
+    "name": "Feldgrau",
+    "hex": "#4d5d53",
+    "rgb": [77, 93, 83]
+  },
+  "fern_green": {
+    "name": "Fern Green",
+    "hex": "#4f7942",
+    "rgb": [79, 121, 66]
+  },
+  "ferrari_red": {
+    "name": "Ferrari Red",
+    "hex": "#ff2800",
+    "rgb": [255, 40, 0]
+  },
+  "field_drab": {
+    "name": "Field Drab",
+    "hex": "#6c541e",
+    "rgb": [108, 84, 30]
+  },
+  "fire_engine_red": {
+    "name": "Fire Engine Red",
+    "hex": "#ce2029",
+    "rgb": [206, 32, 41]
+  },
+  "firebrick": {
+    "name": "Firebrick",
+    "hex": "#b22222",
+    "rgb": [178, 34, 34]
+  },
+  "flame": {
+    "name": "Flame",
+    "hex": "#e25822",
+    "rgb": [226, 88, 34]
+  },
+  "flamingo_pink": {
+    "name": "Flamingo Pink",
+    "hex": "#fc8eac",
+    "rgb": [252, 142, 172]
+  },
+  "flavescent": {
+    "name": "Flavescent",
+    "hex": "#f7e98e",
+    "rgb": [247, 233, 142]
+  },
+  "flax": {
+    "name": "Flax",
+    "hex": "#eedc82",
+    "rgb": [238, 220, 130]
+  },
+  "floral_white": {
+    "name": "Floral White",
+    "hex": "#fffaf0",
+    "rgb": [255, 250, 240]
+  },
+  "fluorescent_orange": {
+    "name": "Fluorescent Orange",
+    "hex": "#ffbf00",
+    "rgb": [255, 191, 0]
+  },
+  "fluorescent_pink": {
+    "name": "Fluorescent Pink",
+    "hex": "#ff1493",
+    "rgb": [255, 20, 147]
+  },
+  "fluorescent_yellow": {
+    "name": "Fluorescent Yellow",
+    "hex": "#cf0",
+    "rgb": [204, 255, 0]
+  },
+  "folly": {
+    "name": "Folly",
+    "hex": "#ff004f",
+    "rgb": [255, 0, 79]
+  },
+  "forest_green_traditional": {
+    "name": "Forest Green (Traditional)",
+    "hex": "#014421",
+    "rgb": [1, 68, 33]
+  },
+  "forest_green_web": {
+    "name": "Forest Green (Web)",
+    "hex": "#228b22",
+    "rgb": [34, 139, 34]
+  },
+  "french_beige": {
+    "name": "French Beige",
+    "hex": "#a67b5b",
+    "rgb": [166, 123, 91]
+  },
+  "french_blue": {
+    "name": "French Blue",
+    "hex": "#0072bb",
+    "rgb": [0, 114, 187]
+  },
+  "french_lilac": {
+    "name": "French Lilac",
+    "hex": "#86608e",
+    "rgb": [134, 96, 142]
+  },
+  "french_lime": {
+    "name": "French Lime",
+    "hex": "#cf0",
+    "rgb": [204, 255, 0]
+  },
+  "french_raspberry": {
+    "name": "French Raspberry",
+    "hex": "#c72c48",
+    "rgb": [199, 44, 72]
+  },
+  "french_rose": {
+    "name": "French Rose",
+    "hex": "#f64a8a",
+    "rgb": [246, 74, 138]
+  },
+  "fuchsia": {
+    "name": "Fuchsia",
+    "hex": "#f0f",
+    "rgb": [255, 0, 255]
+  },
+  "fuchsia_crayola": {
+    "name": "Fuchsia (Crayola)",
+    "hex": "#c154c1",
+    "rgb": [193, 84, 193]
+  },
+  "fuchsia_pink": {
+    "name": "Fuchsia Pink",
+    "hex": "#f7f",
+    "rgb": [255, 119, 255]
+  },
+  "fuchsia_rose": {
+    "name": "Fuchsia Rose",
+    "hex": "#c74375",
+    "rgb": [199, 67, 117]
+  },
+  "fulvous": {
+    "name": "Fulvous",
+    "hex": "#e48400",
+    "rgb": [228, 132, 0]
+  },
+  "fuzzy_wuzzy": {
+    "name": "Fuzzy Wuzzy",
+    "hex": "#c66",
+    "rgb": [204, 102, 102]
+  },
+  "gainsboro": {
+    "name": "Gainsboro",
+    "hex": "#dcdcdc",
+    "rgb": [220, 220, 220]
+  },
+  "gamboge": {
+    "name": "Gamboge",
+    "hex": "#e49b0f",
+    "rgb": [228, 155, 15]
+  },
+  "ghost_white": {
+    "name": "Ghost White",
+    "hex": "#f8f8ff",
+    "rgb": [248, 248, 255]
+  },
+  "ginger": {
+    "name": "Ginger",
+    "hex": "#b06500",
+    "rgb": [176, 101, 0]
+  },
+  "glaucous": {
+    "name": "Glaucous",
+    "hex": "#6082b6",
+    "rgb": [96, 130, 182]
+  },
+  "glitter": {
+    "name": "Glitter",
+    "hex": "#e6e8fa",
+    "rgb": [230, 232, 250]
+  },
+  "gold_metallic": {
+    "name": "Gold (Metallic)",
+    "hex": "#d4af37",
+    "rgb": [212, 175, 55]
+  },
+  "gold_web_golden": {
+    "name": "Gold (Web) (Golden)",
+    "hex": "#ffd700",
+    "rgb": [255, 215, 0]
+  },
+  "golden_brown": {
+    "name": "Golden Brown",
+    "hex": "#996515",
+    "rgb": [153, 101, 21]
+  },
+  "golden_poppy": {
+    "name": "Golden Poppy",
+    "hex": "#fcc200",
+    "rgb": [252, 194, 0]
+  },
+  "golden_yellow": {
+    "name": "Golden Yellow",
+    "hex": "#ffdf00",
+    "rgb": [255, 223, 0]
+  },
+  "goldenrod": {
+    "name": "Goldenrod",
+    "hex": "#daa520",
+    "rgb": [218, 165, 32]
+  },
+  "granny_smith_apple": {
+    "name": "Granny Smith Apple",
+    "hex": "#a8e4a0",
+    "rgb": [168, 228, 160]
+  },
+  "gray": {
+    "name": "Gray",
+    "hex": "#808080",
+    "rgb": [128, 128, 128]
+  },
+  "gray_asparagus": {
+    "name": "Gray-Asparagus",
+    "hex": "#465945",
+    "rgb": [70, 89, 69]
+  },
+  "gray_html_css_gray": {
+    "name": "Gray (Html/Css Gray)",
+    "hex": "#808080",
+    "rgb": [128, 128, 128]
+  },
+  "gray_x11_gray": {
+    "name": "Gray (X11 Gray)",
+    "hex": "#bebebe",
+    "rgb": [190, 190, 190]
+  },
+  "green_color_wheel_x11_green": {
+    "name": "Green (Color Wheel) (X11 Green)",
+    "hex": "#0f0",
+    "rgb": [0, 255, 0]
+  },
+  "green_crayola": {
+    "name": "Green (Crayola)",
+    "hex": "#1cac78",
+    "rgb": [28, 172, 120]
+  },
+  "green_html_css_green": {
+    "name": "Green (Html/Css Green)",
+    "hex": "#008000",
+    "rgb": [0, 128, 0]
+  },
+  "green_munsell": {
+    "name": "Green (Munsell)",
+    "hex": "#00a877",
+    "rgb": [0, 168, 119]
+  },
+  "green_ncs": {
+    "name": "Green (Ncs)",
+    "hex": "#009f6b",
+    "rgb": [0, 159, 107]
+  },
+  "green_pigment": {
+    "name": "Green (Pigment)",
+    "hex": "#00a550",
+    "rgb": [0, 165, 80]
+  },
+  "green_ryb": {
+    "name": "Green (Ryb)",
+    "hex": "#66b032",
+    "rgb": [102, 176, 50]
+  },
+  "green_yellow": {
+    "name": "Green-Yellow",
+    "hex": "#adff2f",
+    "rgb": [173, 255, 47]
+  },
+  "grullo": {
+    "name": "Grullo",
+    "hex": "#a99a86",
+    "rgb": [169, 154, 134]
+  },
+  "guppie_green": {
+    "name": "Guppie Green",
+    "hex": "#00ff7f",
+    "rgb": [0, 255, 127]
+  },
+  "halay_be": {
+    "name": "Halayà úBe",
+    "hex": "#663854",
+    "rgb": [102, 56, 84]
+  },
+  "han_blue": {
+    "name": "Han Blue",
+    "hex": "#446ccf",
+    "rgb": [68, 108, 207]
+  },
+  "han_purple": {
+    "name": "Han Purple",
+    "hex": "#5218fa",
+    "rgb": [82, 24, 250]
+  },
+  "hansa_yellow": {
+    "name": "Hansa Yellow",
+    "hex": "#e9d66b",
+    "rgb": [233, 214, 107]
+  },
+  "harlequin": {
+    "name": "Harlequin",
+    "hex": "#3fff00",
+    "rgb": [63, 255, 0]
+  },
+  "harvard_crimson": {
+    "name": "Harvard Crimson",
+    "hex": "#c90016",
+    "rgb": [201, 0, 22]
+  },
+  "harvest_gold": {
+    "name": "Harvest Gold",
+    "hex": "#da9100",
+    "rgb": [218, 145, 0]
+  },
+  "heart_gold": {
+    "name": "Heart Gold",
+    "hex": "#808000",
+    "rgb": [128, 128, 0]
+  },
+  "heliotrope": {
+    "name": "Heliotrope",
+    "hex": "#df73ff",
+    "rgb": [223, 115, 255]
+  },
+  "hollywood_cerise": {
+    "name": "Hollywood Cerise",
+    "hex": "#f400a1",
+    "rgb": [244, 0, 161]
+  },
+  "honeydew": {
+    "name": "Honeydew",
+    "hex": "#f0fff0",
+    "rgb": [240, 255, 240]
+  },
+  "honolulu_blue": {
+    "name": "Honolulu Blue",
+    "hex": "#007fbf",
+    "rgb": [0, 127, 191]
+  },
+  "hooker_s_green": {
+    "name": "Hooker'S Green",
+    "hex": "#49796b",
+    "rgb": [73, 121, 107]
+  },
+  "hot_magenta": {
+    "name": "Hot Magenta",
+    "hex": "#ff1dce",
+    "rgb": [255, 29, 206]
+  },
+  "hot_pink": {
+    "name": "Hot Pink",
+    "hex": "#ff69b4",
+    "rgb": [255, 105, 180]
+  },
+  "hunter_green": {
+    "name": "Hunter Green",
+    "hex": "#355e3b",
+    "rgb": [53, 94, 59]
+  },
+  "iceberg": {
+    "name": "Iceberg",
+    "hex": "#71a6d2",
+    "rgb": [113, 166, 210]
+  },
+  "icterine": {
+    "name": "Icterine",
+    "hex": "#fcf75e",
+    "rgb": [252, 247, 94]
+  },
+  "imperial_blue": {
+    "name": "Imperial Blue",
+    "hex": "#002395",
+    "rgb": [0, 35, 149]
+  },
+  "inchworm": {
+    "name": "Inchworm",
+    "hex": "#b2ec5d",
+    "rgb": [178, 236, 93]
+  },
+  "india_green": {
+    "name": "India Green",
+    "hex": "#138808",
+    "rgb": [19, 136, 8]
+  },
+  "indian_red": {
+    "name": "Indian Red",
+    "hex": "#cd5c5c",
+    "rgb": [205, 92, 92]
+  },
+  "indian_yellow": {
+    "name": "Indian Yellow",
+    "hex": "#e3a857",
+    "rgb": [227, 168, 87]
+  },
+  "indigo": {
+    "name": "Indigo",
+    "hex": "#6f00ff",
+    "rgb": [111, 0, 255]
+  },
+  "indigo_dye": {
+    "name": "Indigo (Dye)",
+    "hex": "#00416a",
+    "rgb": [0, 65, 106]
+  },
+  "indigo_web": {
+    "name": "Indigo (Web)",
+    "hex": "#4b0082",
+    "rgb": [75, 0, 130]
+  },
+  "international_klein_blue": {
+    "name": "International Klein Blue",
+    "hex": "#002fa7",
+    "rgb": [0, 47, 167]
+  },
+  "international_orange_aerospace": {
+    "name": "International Orange (Aerospace)",
+    "hex": "#ff4f00",
+    "rgb": [255, 79, 0]
+  },
+  "international_orange_engineering": {
+    "name": "International Orange (Engineering)",
+    "hex": "#ba160c",
+    "rgb": [186, 22, 12]
+  },
+  "international_orange_golden_gate_bridge": {
+    "name": "International Orange (Golden Gate Bridge)",
+    "hex": "#c0362c",
+    "rgb": [192, 54, 44]
+  },
+  "iris": {
+    "name": "Iris",
+    "hex": "#5a4fcf",
+    "rgb": [90, 79, 207]
+  },
+  "isabelline": {
+    "name": "Isabelline",
+    "hex": "#f4f0ec",
+    "rgb": [244, 240, 236]
+  },
+  "islamic_green": {
+    "name": "Islamic Green",
+    "hex": "#009000",
+    "rgb": [0, 144, 0]
+  },
+  "ivory": {
+    "name": "Ivory",
+    "hex": "#fffff0",
+    "rgb": [255, 255, 240]
+  },
+  "jade": {
+    "name": "Jade",
+    "hex": "#00a86b",
+    "rgb": [0, 168, 107]
+  },
+  "jasmine": {
+    "name": "Jasmine",
+    "hex": "#f8de7e",
+    "rgb": [248, 222, 126]
+  },
+  "jasper": {
+    "name": "Jasper",
+    "hex": "#d73b3e",
+    "rgb": [215, 59, 62]
+  },
+  "jazzberry_jam": {
+    "name": "Jazzberry Jam",
+    "hex": "#a50b5e",
+    "rgb": [165, 11, 94]
+  },
+  "jet": {
+    "name": "Jet",
+    "hex": "#343434",
+    "rgb": [52, 52, 52]
+  },
+  "jonquil": {
+    "name": "Jonquil",
+    "hex": "#fada5e",
+    "rgb": [250, 218, 94]
+  },
+  "june_bud": {
+    "name": "June Bud",
+    "hex": "#bdda57",
+    "rgb": [189, 218, 87]
+  },
+  "jungle_green": {
+    "name": "Jungle Green",
+    "hex": "#29ab87",
+    "rgb": [41, 171, 135]
+  },
+  "kelly_green": {
+    "name": "Kelly Green",
+    "hex": "#4cbb17",
+    "rgb": [76, 187, 23]
+  },
+  "kenyan_copper": {
+    "name": "Kenyan Copper",
+    "hex": "#7c1c05",
+    "rgb": [124, 28, 5]
+  },
+  "khaki_html_css_khaki": {
+    "name": "Khaki (Html/Css) (Khaki)",
+    "hex": "#c3b091",
+    "rgb": [195, 176, 145]
+  },
+  "khaki_x11_light_khaki": {
+    "name": "Khaki (X11) (Light Khaki)",
+    "hex": "#f0e68c",
+    "rgb": [240, 230, 140]
+  },
+  "ku_crimson": {
+    "name": "Ku Crimson",
+    "hex": "#e8000d",
+    "rgb": [232, 0, 13]
+  },
+  "la_salle_green": {
+    "name": "La Salle Green",
+    "hex": "#087830",
+    "rgb": [8, 120, 48]
+  },
+  "languid_lavender": {
+    "name": "Languid Lavender",
+    "hex": "#d6cadd",
+    "rgb": [214, 202, 221]
+  },
+  "lapis_lazuli": {
+    "name": "Lapis Lazuli",
+    "hex": "#26619c",
+    "rgb": [38, 97, 156]
+  },
+  "laser_lemon": {
+    "name": "Laser Lemon",
+    "hex": "#fefe22",
+    "rgb": [254, 254, 34]
+  },
+  "laurel_green": {
+    "name": "Laurel Green",
+    "hex": "#a9ba9d",
+    "rgb": [169, 186, 157]
+  },
+  "lava": {
+    "name": "Lava",
+    "hex": "#cf1020",
+    "rgb": [207, 16, 32]
+  },
+  "lavender_blue": {
+    "name": "Lavender Blue",
+    "hex": "#ccf",
+    "rgb": [204, 204, 255]
+  },
+  "lavender_blush": {
+    "name": "Lavender Blush",
+    "hex": "#fff0f5",
+    "rgb": [255, 240, 245]
+  },
+  "lavender_floral": {
+    "name": "Lavender (Floral)",
+    "hex": "#b57edc",
+    "rgb": [181, 126, 220]
+  },
+  "lavender_gray": {
+    "name": "Lavender Gray",
+    "hex": "#c4c3d0",
+    "rgb": [196, 195, 208]
+  },
+  "lavender_indigo": {
+    "name": "Lavender Indigo",
+    "hex": "#9457eb",
+    "rgb": [148, 87, 235]
+  },
+  "lavender_magenta": {
+    "name": "Lavender Magenta",
+    "hex": "#ee82ee",
+    "rgb": [238, 130, 238]
+  },
+  "lavender_mist": {
+    "name": "Lavender Mist",
+    "hex": "#e6e6fa",
+    "rgb": [230, 230, 250]
+  },
+  "lavender_pink": {
+    "name": "Lavender Pink",
+    "hex": "#fbaed2",
+    "rgb": [251, 174, 210]
+  },
+  "lavender_purple": {
+    "name": "Lavender Purple",
+    "hex": "#967bb6",
+    "rgb": [150, 123, 182]
+  },
+  "lavender_rose": {
+    "name": "Lavender Rose",
+    "hex": "#fba0e3",
+    "rgb": [251, 160, 227]
+  },
+  "lavender_web": {
+    "name": "Lavender (Web)",
+    "hex": "#e6e6fa",
+    "rgb": [230, 230, 250]
+  },
+  "lawn_green": {
+    "name": "Lawn Green",
+    "hex": "#7cfc00",
+    "rgb": [124, 252, 0]
+  },
+  "lemon": {
+    "name": "Lemon",
+    "hex": "#fff700",
+    "rgb": [255, 247, 0]
+  },
+  "lemon_chiffon": {
+    "name": "Lemon Chiffon",
+    "hex": "#fffacd",
+    "rgb": [255, 250, 205]
+  },
+  "lemon_lime": {
+    "name": "Lemon Lime",
+    "hex": "#e3ff00",
+    "rgb": [227, 255, 0]
+  },
+  "licorice": {
+    "name": "Licorice",
+    "hex": "#1a1110",
+    "rgb": [26, 17, 16]
+  },
+  "light_apricot": {
+    "name": "Light Apricot",
+    "hex": "#fdd5b1",
+    "rgb": [253, 213, 177]
+  },
+  "light_blue": {
+    "name": "Light Blue",
+    "hex": "#add8e6",
+    "rgb": [173, 216, 230]
+  },
+  "light_brown": {
+    "name": "Light Brown",
+    "hex": "#b5651d",
+    "rgb": [181, 101, 29]
+  },
+  "light_carmine_pink": {
+    "name": "Light Carmine Pink",
+    "hex": "#e66771",
+    "rgb": [230, 103, 113]
+  },
+  "light_coral": {
+    "name": "Light Coral",
+    "hex": "#f08080",
+    "rgb": [240, 128, 128]
+  },
+  "light_cornflower_blue": {
+    "name": "Light Cornflower Blue",
+    "hex": "#93ccea",
+    "rgb": [147, 204, 234]
+  },
+  "light_crimson": {
+    "name": "Light Crimson",
+    "hex": "#f56991",
+    "rgb": [245, 105, 145]
+  },
+  "light_cyan": {
+    "name": "Light Cyan",
+    "hex": "#e0ffff",
+    "rgb": [224, 255, 255]
+  },
+  "light_fuchsia_pink": {
+    "name": "Light Fuchsia Pink",
+    "hex": "#f984ef",
+    "rgb": [249, 132, 239]
+  },
+  "light_goldenrod_yellow": {
+    "name": "Light Goldenrod Yellow",
+    "hex": "#fafad2",
+    "rgb": [250, 250, 210]
+  },
+  "light_gray": {
+    "name": "Light Gray",
+    "hex": "#d3d3d3",
+    "rgb": [211, 211, 211]
+  },
+  "light_green": {
+    "name": "Light Green",
+    "hex": "#90ee90",
+    "rgb": [144, 238, 144]
+  },
+  "light_khaki": {
+    "name": "Light Khaki",
+    "hex": "#f0e68c",
+    "rgb": [240, 230, 140]
+  },
+  "light_pastel_purple": {
+    "name": "Light Pastel Purple",
+    "hex": "#b19cd9",
+    "rgb": [177, 156, 217]
+  },
+  "light_pink": {
+    "name": "Light Pink",
+    "hex": "#ffb6c1",
+    "rgb": [255, 182, 193]
+  },
+  "light_red_ochre": {
+    "name": "Light Red Ochre",
+    "hex": "#e97451",
+    "rgb": [233, 116, 81]
+  },
+  "light_salmon": {
+    "name": "Light Salmon",
+    "hex": "#ffa07a",
+    "rgb": [255, 160, 122]
+  },
+  "light_salmon_pink": {
+    "name": "Light Salmon Pink",
+    "hex": "#f99",
+    "rgb": [255, 153, 153]
+  },
+  "light_sea_green": {
+    "name": "Light Sea Green",
+    "hex": "#20b2aa",
+    "rgb": [32, 178, 170]
+  },
+  "light_sky_blue": {
+    "name": "Light Sky Blue",
+    "hex": "#87cefa",
+    "rgb": [135, 206, 250]
+  },
+  "light_slate_gray": {
+    "name": "Light Slate Gray",
+    "hex": "#789",
+    "rgb": [119, 136, 153]
+  },
+  "light_taupe": {
+    "name": "Light Taupe",
+    "hex": "#b38b6d",
+    "rgb": [179, 139, 109]
+  },
+  "light_thulian_pink": {
+    "name": "Light Thulian Pink",
+    "hex": "#e68fac",
+    "rgb": [230, 143, 172]
+  },
+  "light_yellow": {
+    "name": "Light Yellow",
+    "hex": "#ffffe0",
+    "rgb": [255, 255, 224]
+  },
+  "lilac": {
+    "name": "Lilac",
+    "hex": "#c8a2c8",
+    "rgb": [200, 162, 200]
+  },
+  "lime_color_wheel": {
+    "name": "Lime (Color Wheel)",
+    "hex": "#bfff00",
+    "rgb": [191, 255, 0]
+  },
+  "lime_green": {
+    "name": "Lime Green",
+    "hex": "#32cd32",
+    "rgb": [50, 205, 50]
+  },
+  "lime_web_x11_green": {
+    "name": "Lime (Web) (X11 Green)",
+    "hex": "#0f0",
+    "rgb": [0, 255, 0]
+  },
+  "limerick": {
+    "name": "Limerick",
+    "hex": "#9dc209",
+    "rgb": [157, 194, 9]
+  },
+  "lincoln_green": {
+    "name": "Lincoln Green",
+    "hex": "#195905",
+    "rgb": [25, 89, 5]
+  },
+  "linen": {
+    "name": "Linen",
+    "hex": "#faf0e6",
+    "rgb": [250, 240, 230]
+  },
+  "lion": {
+    "name": "Lion",
+    "hex": "#c19a6b",
+    "rgb": [193, 154, 107]
+  },
+  "little_boy_blue": {
+    "name": "Little Boy Blue",
+    "hex": "#6ca0dc",
+    "rgb": [108, 160, 220]
+  },
+  "liver": {
+    "name": "Liver",
+    "hex": "#534b4f",
+    "rgb": [83, 75, 79]
+  },
+  "lust": {
+    "name": "Lust",
+    "hex": "#e62020",
+    "rgb": [230, 32, 32]
+  },
+  "magenta": {
+    "name": "Magenta",
+    "hex": "#f0f",
+    "rgb": [255, 0, 255]
+  },
+  "magenta_dye": {
+    "name": "Magenta (Dye)",
+    "hex": "#ca1f7b",
+    "rgb": [202, 31, 123]
+  },
+  "magenta_process": {
+    "name": "Magenta (Process)",
+    "hex": "#ff0090",
+    "rgb": [255, 0, 144]
+  },
+  "magic_mint": {
+    "name": "Magic Mint",
+    "hex": "#aaf0d1",
+    "rgb": [170, 240, 209]
+  },
+  "magnolia": {
+    "name": "Magnolia",
+    "hex": "#f8f4ff",
+    "rgb": [248, 244, 255]
+  },
+  "mahogany": {
+    "name": "Mahogany",
+    "hex": "#c04000",
+    "rgb": [192, 64, 0]
+  },
+  "maize": {
+    "name": "Maize",
+    "hex": "#fbec5d",
+    "rgb": [251, 236, 93]
+  },
+  "majorelle_blue": {
+    "name": "Majorelle Blue",
+    "hex": "#6050dc",
+    "rgb": [96, 80, 220]
+  },
+  "malachite": {
+    "name": "Malachite",
+    "hex": "#0bda51",
+    "rgb": [11, 218, 81]
+  },
+  "manatee": {
+    "name": "Manatee",
+    "hex": "#979aaa",
+    "rgb": [151, 154, 170]
+  },
+  "mango_tango": {
+    "name": "Mango Tango",
+    "hex": "#ff8243",
+    "rgb": [255, 130, 67]
+  },
+  "mantis": {
+    "name": "Mantis",
+    "hex": "#74c365",
+    "rgb": [116, 195, 101]
+  },
+  "mardi_gras": {
+    "name": "Mardi Gras",
+    "hex": "#880085",
+    "rgb": [136, 0, 133]
+  },
+  "maroon_crayola": {
+    "name": "Maroon (Crayola)",
+    "hex": "#c32148",
+    "rgb": [195, 33, 72]
+  },
+  "maroon_html_css": {
+    "name": "Maroon (Html/Css)",
+    "hex": "#800000",
+    "rgb": [128, 0, 0]
+  },
+  "maroon_x11": {
+    "name": "Maroon (X11)",
+    "hex": "#b03060",
+    "rgb": [176, 48, 96]
+  },
+  "mauve": {
+    "name": "Mauve",
+    "hex": "#e0b0ff",
+    "rgb": [224, 176, 255]
+  },
+  "mauve_taupe": {
+    "name": "Mauve Taupe",
+    "hex": "#915f6d",
+    "rgb": [145, 95, 109]
+  },
+  "mauvelous": {
+    "name": "Mauvelous",
+    "hex": "#ef98aa",
+    "rgb": [239, 152, 170]
+  },
+  "maya_blue": {
+    "name": "Maya Blue",
+    "hex": "#73c2fb",
+    "rgb": [115, 194, 251]
+  },
+  "meat_brown": {
+    "name": "Meat Brown",
+    "hex": "#e5b73b",
+    "rgb": [229, 183, 59]
+  },
+  "medium_aquamarine": {
+    "name": "Medium Aquamarine",
+    "hex": "#6da",
+    "rgb": [102, 221, 170]
+  },
+  "medium_blue": {
+    "name": "Medium Blue",
+    "hex": "#0000cd",
+    "rgb": [0, 0, 205]
+  },
+  "medium_candy_apple_red": {
+    "name": "Medium Candy Apple Red",
+    "hex": "#e2062c",
+    "rgb": [226, 6, 44]
+  },
+  "medium_carmine": {
+    "name": "Medium Carmine",
+    "hex": "#af4035",
+    "rgb": [175, 64, 53]
+  },
+  "medium_champagne": {
+    "name": "Medium Champagne",
+    "hex": "#f3e5ab",
+    "rgb": [243, 229, 171]
+  },
+  "medium_electric_blue": {
+    "name": "Medium Electric Blue",
+    "hex": "#035096",
+    "rgb": [3, 80, 150]
+  },
+  "medium_jungle_green": {
+    "name": "Medium Jungle Green",
+    "hex": "#1c352d",
+    "rgb": [28, 53, 45]
+  },
+  "medium_lavender_magenta": {
+    "name": "Medium Lavender Magenta",
+    "hex": "#dda0dd",
+    "rgb": [221, 160, 221]
+  },
+  "medium_orchid": {
+    "name": "Medium Orchid",
+    "hex": "#ba55d3",
+    "rgb": [186, 85, 211]
+  },
+  "medium_persian_blue": {
+    "name": "Medium Persian Blue",
+    "hex": "#0067a5",
+    "rgb": [0, 103, 165]
+  },
+  "medium_purple": {
+    "name": "Medium Purple",
+    "hex": "#9370db",
+    "rgb": [147, 112, 219]
+  },
+  "medium_red_violet": {
+    "name": "Medium Red-Violet",
+    "hex": "#bb3385",
+    "rgb": [187, 51, 133]
+  },
+  "medium_ruby": {
+    "name": "Medium Ruby",
+    "hex": "#aa4069",
+    "rgb": [170, 64, 105]
+  },
+  "medium_sea_green": {
+    "name": "Medium Sea Green",
+    "hex": "#3cb371",
+    "rgb": [60, 179, 113]
+  },
+  "medium_slate_blue": {
+    "name": "Medium Slate Blue",
+    "hex": "#7b68ee",
+    "rgb": [123, 104, 238]
+  },
+  "medium_spring_bud": {
+    "name": "Medium Spring Bud",
+    "hex": "#c9dc87",
+    "rgb": [201, 220, 135]
+  },
+  "medium_spring_green": {
+    "name": "Medium Spring Green",
+    "hex": "#00fa9a",
+    "rgb": [0, 250, 154]
+  },
+  "medium_taupe": {
+    "name": "Medium Taupe",
+    "hex": "#674c47",
+    "rgb": [103, 76, 71]
+  },
+  "medium_turquoise": {
+    "name": "Medium Turquoise",
+    "hex": "#48d1cc",
+    "rgb": [72, 209, 204]
+  },
+  "medium_tuscan_red": {
+    "name": "Medium Tuscan Red",
+    "hex": "#79443b",
+    "rgb": [121, 68, 59]
+  },
+  "medium_vermilion": {
+    "name": "Medium Vermilion",
+    "hex": "#d9603b",
+    "rgb": [217, 96, 59]
+  },
+  "medium_violet_red": {
+    "name": "Medium Violet-Red",
+    "hex": "#c71585",
+    "rgb": [199, 21, 133]
+  },
+  "mellow_apricot": {
+    "name": "Mellow Apricot",
+    "hex": "#f8b878",
+    "rgb": [248, 184, 120]
+  },
+  "mellow_yellow": {
+    "name": "Mellow Yellow",
+    "hex": "#f8de7e",
+    "rgb": [248, 222, 126]
+  },
+  "melon": {
+    "name": "Melon",
+    "hex": "#fdbcb4",
+    "rgb": [253, 188, 180]
+  },
+  "midnight_blue": {
+    "name": "Midnight Blue",
+    "hex": "#191970",
+    "rgb": [25, 25, 112]
+  },
+  "midnight_green_eagle_green": {
+    "name": "Midnight Green (Eagle Green)",
+    "hex": "#004953",
+    "rgb": [0, 73, 83]
+  },
+  "mikado_yellow": {
+    "name": "Mikado Yellow",
+    "hex": "#ffc40c",
+    "rgb": [255, 196, 12]
+  },
+  "mint": {
+    "name": "Mint",
+    "hex": "#3eb489",
+    "rgb": [62, 180, 137]
+  },
+  "mint_cream": {
+    "name": "Mint Cream",
+    "hex": "#f5fffa",
+    "rgb": [245, 255, 250]
+  },
+  "mint_green": {
+    "name": "Mint Green",
+    "hex": "#98ff98",
+    "rgb": [152, 255, 152]
+  },
+  "misty_rose": {
+    "name": "Misty Rose",
+    "hex": "#ffe4e1",
+    "rgb": [255, 228, 225]
+  },
+  "moccasin": {
+    "name": "Moccasin",
+    "hex": "#faebd7",
+    "rgb": [250, 235, 215]
+  },
+  "mode_beige": {
+    "name": "Mode Beige",
+    "hex": "#967117",
+    "rgb": [150, 113, 23]
+  },
+  "moonstone_blue": {
+    "name": "Moonstone Blue",
+    "hex": "#73a9c2",
+    "rgb": [115, 169, 194]
+  },
+  "mordant_red_19": {
+    "name": "Mordant Red 19",
+    "hex": "#ae0c00",
+    "rgb": [174, 12, 0]
+  },
+  "moss_green": {
+    "name": "Moss Green",
+    "hex": "#addfad",
+    "rgb": [173, 223, 173]
+  },
+  "mountain_meadow": {
+    "name": "Mountain Meadow",
+    "hex": "#30ba8f",
+    "rgb": [48, 186, 143]
+  },
+  "mountbatten_pink": {
+    "name": "Mountbatten Pink",
+    "hex": "#997a8d",
+    "rgb": [153, 122, 141]
+  },
+  "msu_green": {
+    "name": "Msu Green",
+    "hex": "#18453b",
+    "rgb": [24, 69, 59]
+  },
+  "mulberry": {
+    "name": "Mulberry",
+    "hex": "#c54b8c",
+    "rgb": [197, 75, 140]
+  },
+  "mustard": {
+    "name": "Mustard",
+    "hex": "#ffdb58",
+    "rgb": [255, 219, 88]
+  },
+  "myrtle": {
+    "name": "Myrtle",
+    "hex": "#21421e",
+    "rgb": [33, 66, 30]
+  },
+  "nadeshiko_pink": {
+    "name": "Nadeshiko Pink",
+    "hex": "#f6adc6",
+    "rgb": [246, 173, 198]
+  },
+  "napier_green": {
+    "name": "Napier Green",
+    "hex": "#2a8000",
+    "rgb": [42, 128, 0]
+  },
+  "naples_yellow": {
+    "name": "Naples Yellow",
+    "hex": "#fada5e",
+    "rgb": [250, 218, 94]
+  },
+  "navajo_white": {
+    "name": "Navajo White",
+    "hex": "#ffdead",
+    "rgb": [255, 222, 173]
+  },
+  "navy_blue": {
+    "name": "Navy Blue",
+    "hex": "#000080",
+    "rgb": [0, 0, 128]
+  },
+  "neon_carrot": {
+    "name": "Neon Carrot",
+    "hex": "#ffa343",
+    "rgb": [255, 163, 67]
+  },
+  "neon_fuchsia": {
+    "name": "Neon Fuchsia",
+    "hex": "#fe4164",
+    "rgb": [254, 65, 100]
+  },
+  "neon_green": {
+    "name": "Neon Green",
+    "hex": "#39ff14",
+    "rgb": [57, 255, 20]
+  },
+  "new_york_pink": {
+    "name": "New York Pink",
+    "hex": "#d7837f",
+    "rgb": [215, 131, 127]
+  },
+  "non_photo_blue": {
+    "name": "Non-Photo Blue",
+    "hex": "#a4dded",
+    "rgb": [164, 221, 237]
+  },
+  "north_texas_green": {
+    "name": "North Texas Green",
+    "hex": "#059033",
+    "rgb": [5, 144, 51]
+  },
+  "ocean_boat_blue": {
+    "name": "Ocean Boat Blue",
+    "hex": "#0077be",
+    "rgb": [0, 119, 190]
+  },
+  "ochre": {
+    "name": "Ochre",
+    "hex": "#c72",
+    "rgb": [204, 119, 34]
+  },
+  "office_green": {
+    "name": "Office Green",
+    "hex": "#008000",
+    "rgb": [0, 128, 0]
+  },
+  "old_gold": {
+    "name": "Old Gold",
+    "hex": "#cfb53b",
+    "rgb": [207, 181, 59]
+  },
+  "old_lace": {
+    "name": "Old Lace",
+    "hex": "#fdf5e6",
+    "rgb": [253, 245, 230]
+  },
+  "old_lavender": {
+    "name": "Old Lavender",
+    "hex": "#796878",
+    "rgb": [121, 104, 120]
+  },
+  "old_mauve": {
+    "name": "Old Mauve",
+    "hex": "#673147",
+    "rgb": [103, 49, 71]
+  },
+  "old_rose": {
+    "name": "Old Rose",
+    "hex": "#c08081",
+    "rgb": [192, 128, 129]
+  },
+  "olive": {
+    "name": "Olive",
+    "hex": "#808000",
+    "rgb": [128, 128, 0]
+  },
+  "olive_drab_7": {
+    "name": "Olive Drab #7",
+    "hex": "#3c341f",
+    "rgb": [60, 52, 31]
+  },
+  "olive_drab_web_olive_drab_3": {
+    "name": "Olive Drab (Web) (Olive Drab #3)",
+    "hex": "#6b8e23",
+    "rgb": [107, 142, 35]
+  },
+  "olivine": {
+    "name": "Olivine",
+    "hex": "#9ab973",
+    "rgb": [154, 185, 115]
+  },
+  "onyx": {
+    "name": "Onyx",
+    "hex": "#353839",
+    "rgb": [53, 56, 57]
+  },
+  "opera_mauve": {
+    "name": "Opera Mauve",
+    "hex": "#b784a7",
+    "rgb": [183, 132, 167]
+  },
+  "orange_color_wheel": {
+    "name": "Orange (Color Wheel)",
+    "hex": "#ff7f00",
+    "rgb": [255, 127, 0]
+  },
+  "orange_peel": {
+    "name": "Orange Peel",
+    "hex": "#ff9f00",
+    "rgb": [255, 159, 0]
+  },
+  "orange_red": {
+    "name": "Orange-Red",
+    "hex": "#ff4500",
+    "rgb": [255, 69, 0]
+  },
+  "orange_ryb": {
+    "name": "Orange (Ryb)",
+    "hex": "#fb9902",
+    "rgb": [251, 153, 2]
+  },
+  "orange_web_color": {
+    "name": "Orange (Web Color)",
+    "hex": "#ffa500",
+    "rgb": [255, 165, 0]
+  },
+  "orchid": {
+    "name": "Orchid",
+    "hex": "#da70d6",
+    "rgb": [218, 112, 214]
+  },
+  "otter_brown": {
+    "name": "Otter Brown",
+    "hex": "#654321",
+    "rgb": [101, 67, 33]
+  },
+  "ou_crimson_red": {
+    "name": "Ou Crimson Red",
+    "hex": "#900",
+    "rgb": [153, 0, 0]
+  },
+  "outer_space": {
+    "name": "Outer Space",
+    "hex": "#414a4c",
+    "rgb": [65, 74, 76]
+  },
+  "outrageous_orange": {
+    "name": "Outrageous Orange",
+    "hex": "#ff6e4a",
+    "rgb": [255, 110, 74]
+  },
+  "oxford_blue": {
+    "name": "Oxford Blue",
+    "hex": "#002147",
+    "rgb": [0, 33, 71]
+  },
+  "pakistan_green": {
+    "name": "Pakistan Green",
+    "hex": "#060",
+    "rgb": [0, 102, 0]
+  },
+  "palatinate_blue": {
+    "name": "Palatinate Blue",
+    "hex": "#273be2",
+    "rgb": [39, 59, 226]
+  },
+  "palatinate_purple": {
+    "name": "Palatinate Purple",
+    "hex": "#682860",
+    "rgb": [104, 40, 96]
+  },
+  "pale_aqua": {
+    "name": "Pale Aqua",
+    "hex": "#bcd4e6",
+    "rgb": [188, 212, 230]
+  },
+  "pale_blue": {
+    "name": "Pale Blue",
+    "hex": "#afeeee",
+    "rgb": [175, 238, 238]
+  },
+  "pale_brown": {
+    "name": "Pale Brown",
+    "hex": "#987654",
+    "rgb": [152, 118, 84]
+  },
+  "pale_carmine": {
+    "name": "Pale Carmine",
+    "hex": "#af4035",
+    "rgb": [175, 64, 53]
+  },
+  "pale_cerulean": {
+    "name": "Pale Cerulean",
+    "hex": "#9bc4e2",
+    "rgb": [155, 196, 226]
+  },
+  "pale_chestnut": {
+    "name": "Pale Chestnut",
+    "hex": "#ddadaf",
+    "rgb": [221, 173, 175]
+  },
+  "pale_copper": {
+    "name": "Pale Copper",
+    "hex": "#da8a67",
+    "rgb": [218, 138, 103]
+  },
+  "pale_cornflower_blue": {
+    "name": "Pale Cornflower Blue",
+    "hex": "#abcdef",
+    "rgb": [171, 205, 239]
+  },
+  "pale_gold": {
+    "name": "Pale Gold",
+    "hex": "#e6be8a",
+    "rgb": [230, 190, 138]
+  },
+  "pale_goldenrod": {
+    "name": "Pale Goldenrod",
+    "hex": "#eee8aa",
+    "rgb": [238, 232, 170]
+  },
+  "pale_green": {
+    "name": "Pale Green",
+    "hex": "#98fb98",
+    "rgb": [152, 251, 152]
+  },
+  "pale_lavender": {
+    "name": "Pale Lavender",
+    "hex": "#dcd0ff",
+    "rgb": [220, 208, 255]
+  },
+  "pale_magenta": {
+    "name": "Pale Magenta",
+    "hex": "#f984e5",
+    "rgb": [249, 132, 229]
+  },
+  "pale_pink": {
+    "name": "Pale Pink",
+    "hex": "#fadadd",
+    "rgb": [250, 218, 221]
+  },
+  "pale_plum": {
+    "name": "Pale Plum",
+    "hex": "#dda0dd",
+    "rgb": [221, 160, 221]
+  },
+  "pale_red_violet": {
+    "name": "Pale Red-Violet",
+    "hex": "#db7093",
+    "rgb": [219, 112, 147]
+  },
+  "pale_robin_egg_blue": {
+    "name": "Pale Robin Egg Blue",
+    "hex": "#96ded1",
+    "rgb": [150, 222, 209]
+  },
+  "pale_silver": {
+    "name": "Pale Silver",
+    "hex": "#c9c0bb",
+    "rgb": [201, 192, 187]
+  },
+  "pale_spring_bud": {
+    "name": "Pale Spring Bud",
+    "hex": "#ecebbd",
+    "rgb": [236, 235, 189]
+  },
+  "pale_taupe": {
+    "name": "Pale Taupe",
+    "hex": "#bc987e",
+    "rgb": [188, 152, 126]
+  },
+  "pale_violet_red": {
+    "name": "Pale Violet-Red",
+    "hex": "#db7093",
+    "rgb": [219, 112, 147]
+  },
+  "pansy_purple": {
+    "name": "Pansy Purple",
+    "hex": "#78184a",
+    "rgb": [120, 24, 74]
+  },
+  "papaya_whip": {
+    "name": "Papaya Whip",
+    "hex": "#ffefd5",
+    "rgb": [255, 239, 213]
+  },
+  "paris_green": {
+    "name": "Paris Green",
+    "hex": "#50c878",
+    "rgb": [80, 200, 120]
+  },
+  "pastel_blue": {
+    "name": "Pastel Blue",
+    "hex": "#aec6cf",
+    "rgb": [174, 198, 207]
+  },
+  "pastel_brown": {
+    "name": "Pastel Brown",
+    "hex": "#836953",
+    "rgb": [131, 105, 83]
+  },
+  "pastel_gray": {
+    "name": "Pastel Gray",
+    "hex": "#cfcfc4",
+    "rgb": [207, 207, 196]
+  },
+  "pastel_green": {
+    "name": "Pastel Green",
+    "hex": "#7d7",
+    "rgb": [119, 221, 119]
+  },
+  "pastel_magenta": {
+    "name": "Pastel Magenta",
+    "hex": "#f49ac2",
+    "rgb": [244, 154, 194]
+  },
+  "pastel_orange": {
+    "name": "Pastel Orange",
+    "hex": "#ffb347",
+    "rgb": [255, 179, 71]
+  },
+  "pastel_pink": {
+    "name": "Pastel Pink",
+    "hex": "#dea5a4",
+    "rgb": [222, 165, 164]
+  },
+  "pastel_purple": {
+    "name": "Pastel Purple",
+    "hex": "#b39eb5",
+    "rgb": [179, 158, 181]
+  },
+  "pastel_red": {
+    "name": "Pastel Red",
+    "hex": "#ff6961",
+    "rgb": [255, 105, 97]
+  },
+  "pastel_violet": {
+    "name": "Pastel Violet",
+    "hex": "#cb99c9",
+    "rgb": [203, 153, 201]
+  },
+  "pastel_yellow": {
+    "name": "Pastel Yellow",
+    "hex": "#fdfd96",
+    "rgb": [253, 253, 150]
+  },
+  "patriarch": {
+    "name": "Patriarch",
+    "hex": "#800080",
+    "rgb": [128, 0, 128]
+  },
+  "payne_s_grey": {
+    "name": "Payne'S Grey",
+    "hex": "#536878",
+    "rgb": [83, 104, 120]
+  },
+  "peach": {
+    "name": "Peach",
+    "hex": "#ffe5b4",
+    "rgb": [255, 229, 180]
+  },
+  "peach_crayola": {
+    "name": "Peach (Crayola)",
+    "hex": "#ffcba4",
+    "rgb": [255, 203, 164]
+  },
+  "peach_orange": {
+    "name": "Peach-Orange",
+    "hex": "#fc9",
+    "rgb": [255, 204, 153]
+  },
+  "peach_puff": {
+    "name": "Peach Puff",
+    "hex": "#ffdab9",
+    "rgb": [255, 218, 185]
+  },
+  "peach_yellow": {
+    "name": "Peach-Yellow",
+    "hex": "#fadfad",
+    "rgb": [250, 223, 173]
+  },
+  "pear": {
+    "name": "Pear",
+    "hex": "#d1e231",
+    "rgb": [209, 226, 49]
+  },
+  "pearl": {
+    "name": "Pearl",
+    "hex": "#eae0c8",
+    "rgb": [234, 224, 200]
+  },
+  "pearl_aqua": {
+    "name": "Pearl Aqua",
+    "hex": "#88d8c0",
+    "rgb": [136, 216, 192]
+  },
+  "pearly_purple": {
+    "name": "Pearly Purple",
+    "hex": "#b768a2",
+    "rgb": [183, 104, 162]
+  },
+  "peridot": {
+    "name": "Peridot",
+    "hex": "#e6e200",
+    "rgb": [230, 226, 0]
+  },
+  "periwinkle": {
+    "name": "Periwinkle",
+    "hex": "#ccf",
+    "rgb": [204, 204, 255]
+  },
+  "persian_blue": {
+    "name": "Persian Blue",
+    "hex": "#1c39bb",
+    "rgb": [28, 57, 187]
+  },
+  "persian_green": {
+    "name": "Persian Green",
+    "hex": "#00a693",
+    "rgb": [0, 166, 147]
+  },
+  "persian_indigo": {
+    "name": "Persian Indigo",
+    "hex": "#32127a",
+    "rgb": [50, 18, 122]
+  },
+  "persian_orange": {
+    "name": "Persian Orange",
+    "hex": "#d99058",
+    "rgb": [217, 144, 88]
+  },
+  "persian_pink": {
+    "name": "Persian Pink",
+    "hex": "#f77fbe",
+    "rgb": [247, 127, 190]
+  },
+  "persian_plum": {
+    "name": "Persian Plum",
+    "hex": "#701c1c",
+    "rgb": [112, 28, 28]
+  },
+  "persian_red": {
+    "name": "Persian Red",
+    "hex": "#c33",
+    "rgb": [204, 51, 51]
+  },
+  "persian_rose": {
+    "name": "Persian Rose",
+    "hex": "#fe28a2",
+    "rgb": [254, 40, 162]
+  },
+  "persimmon": {
+    "name": "Persimmon",
+    "hex": "#ec5800",
+    "rgb": [236, 88, 0]
+  },
+  "peru": {
+    "name": "Peru",
+    "hex": "#cd853f",
+    "rgb": [205, 133, 63]
+  },
+  "phlox": {
+    "name": "Phlox",
+    "hex": "#df00ff",
+    "rgb": [223, 0, 255]
+  },
+  "phthalo_blue": {
+    "name": "Phthalo Blue",
+    "hex": "#000f89",
+    "rgb": [0, 15, 137]
+  },
+  "phthalo_green": {
+    "name": "Phthalo Green",
+    "hex": "#123524",
+    "rgb": [18, 53, 36]
+  },
+  "piggy_pink": {
+    "name": "Piggy Pink",
+    "hex": "#fddde6",
+    "rgb": [253, 221, 230]
+  },
+  "pine_green": {
+    "name": "Pine Green",
+    "hex": "#01796f",
+    "rgb": [1, 121, 111]
+  },
+  "pink": {
+    "name": "Pink",
+    "hex": "#ffc0cb",
+    "rgb": [255, 192, 203]
+  },
+  "pink_lace": {
+    "name": "Pink Lace",
+    "hex": "#ffddf4",
+    "rgb": [255, 221, 244]
+  },
+  "pink_orange": {
+    "name": "Pink-Orange",
+    "hex": "#f96",
+    "rgb": [255, 153, 102]
+  },
+  "pink_pearl": {
+    "name": "Pink Pearl",
+    "hex": "#e7accf",
+    "rgb": [231, 172, 207]
+  },
+  "pink_sherbet": {
+    "name": "Pink Sherbet",
+    "hex": "#f78fa7",
+    "rgb": [247, 143, 167]
+  },
+  "pistachio": {
+    "name": "Pistachio",
+    "hex": "#93c572",
+    "rgb": [147, 197, 114]
+  },
+  "platinum": {
+    "name": "Platinum",
+    "hex": "#e5e4e2",
+    "rgb": [229, 228, 226]
+  },
+  "plum_traditional": {
+    "name": "Plum (Traditional)",
+    "hex": "#8e4585",
+    "rgb": [142, 69, 133]
+  },
+  "plum_web": {
+    "name": "Plum (Web)",
+    "hex": "#dda0dd",
+    "rgb": [221, 160, 221]
+  },
+  "portland_orange": {
+    "name": "Portland Orange",
+    "hex": "#ff5a36",
+    "rgb": [255, 90, 54]
+  },
+  "powder_blue_web": {
+    "name": "Powder Blue (Web)",
+    "hex": "#b0e0e6",
+    "rgb": [176, 224, 230]
+  },
+  "princeton_orange": {
+    "name": "Princeton Orange",
+    "hex": "#ff8f00",
+    "rgb": [255, 143, 0]
+  },
+  "prune": {
+    "name": "Prune",
+    "hex": "#701c1c",
+    "rgb": [112, 28, 28]
+  },
+  "prussian_blue": {
+    "name": "Prussian Blue",
+    "hex": "#003153",
+    "rgb": [0, 49, 83]
+  },
+  "psychedelic_purple": {
+    "name": "Psychedelic Purple",
+    "hex": "#df00ff",
+    "rgb": [223, 0, 255]
+  },
+  "puce": {
+    "name": "Puce",
+    "hex": "#c89",
+    "rgb": [204, 136, 153]
+  },
+  "pumpkin": {
+    "name": "Pumpkin",
+    "hex": "#ff7518",
+    "rgb": [255, 117, 24]
+  },
+  "purple_heart": {
+    "name": "Purple Heart",
+    "hex": "#69359c",
+    "rgb": [105, 53, 156]
+  },
+  "purple_html_css": {
+    "name": "Purple (Html/Css)",
+    "hex": "#800080",
+    "rgb": [128, 0, 128]
+  },
+  "purple_mountain_majesty": {
+    "name": "Purple Mountain Majesty",
+    "hex": "#9678b6",
+    "rgb": [150, 120, 182]
+  },
+  "purple_munsell": {
+    "name": "Purple (Munsell)",
+    "hex": "#9f00c5",
+    "rgb": [159, 0, 197]
+  },
+  "purple_pizzazz": {
+    "name": "Purple Pizzazz",
+    "hex": "#fe4eda",
+    "rgb": [254, 78, 218]
+  },
+  "purple_taupe": {
+    "name": "Purple Taupe",
+    "hex": "#50404d",
+    "rgb": [80, 64, 77]
+  },
+  "purple_x11": {
+    "name": "Purple (X11)",
+    "hex": "#a020f0",
+    "rgb": [160, 32, 240]
+  },
+  "quartz": {
+    "name": "Quartz",
+    "hex": "#51484f",
+    "rgb": [81, 72, 79]
+  },
+  "rackley": {
+    "name": "Rackley",
+    "hex": "#5d8aa8",
+    "rgb": [93, 138, 168]
+  },
+  "radical_red": {
+    "name": "Radical Red",
+    "hex": "#ff355e",
+    "rgb": [255, 53, 94]
+  },
+  "rajah": {
+    "name": "Rajah",
+    "hex": "#fbab60",
+    "rgb": [251, 171, 96]
+  },
+  "raspberry": {
+    "name": "Raspberry",
+    "hex": "#e30b5d",
+    "rgb": [227, 11, 93]
+  },
+  "raspberry_glace": {
+    "name": "Raspberry Glace",
+    "hex": "#915f6d",
+    "rgb": [145, 95, 109]
+  },
+  "raspberry_pink": {
+    "name": "Raspberry Pink",
+    "hex": "#e25098",
+    "rgb": [226, 80, 152]
+  },
+  "raspberry_rose": {
+    "name": "Raspberry Rose",
+    "hex": "#b3446c",
+    "rgb": [179, 68, 108]
+  },
+  "raw_umber": {
+    "name": "Raw Umber",
+    "hex": "#826644",
+    "rgb": [130, 102, 68]
+  },
+  "razzle_dazzle_rose": {
+    "name": "Razzle Dazzle Rose",
+    "hex": "#f3c",
+    "rgb": [255, 51, 204]
+  },
+  "razzmatazz": {
+    "name": "Razzmatazz",
+    "hex": "#e3256b",
+    "rgb": [227, 37, 107]
+  },
+  "red": {
+    "name": "Red",
+    "hex": "#f00",
+    "rgb": [255, 0, 0]
+  },
+  "red_brown": {
+    "name": "Red-Brown",
+    "hex": "#a52a2a",
+    "rgb": [165, 42, 42]
+  },
+  "red_devil": {
+    "name": "Red Devil",
+    "hex": "#860111",
+    "rgb": [134, 1, 17]
+  },
+  "red_munsell": {
+    "name": "Red (Munsell)",
+    "hex": "#f2003c",
+    "rgb": [242, 0, 60]
+  },
+  "red_ncs": {
+    "name": "Red (Ncs)",
+    "hex": "#c40233",
+    "rgb": [196, 2, 51]
+  },
+  "red_orange": {
+    "name": "Red-Orange",
+    "hex": "#ff5349",
+    "rgb": [255, 83, 73]
+  },
+  "red_pigment": {
+    "name": "Red (Pigment)",
+    "hex": "#ed1c24",
+    "rgb": [237, 28, 36]
+  },
+  "red_ryb": {
+    "name": "Red (Ryb)",
+    "hex": "#fe2712",
+    "rgb": [254, 39, 18]
+  },
+  "red_violet": {
+    "name": "Red-Violet",
+    "hex": "#c71585",
+    "rgb": [199, 21, 133]
+  },
+  "redwood": {
+    "name": "Redwood",
+    "hex": "#ab4e52",
+    "rgb": [171, 78, 82]
+  },
+  "regalia": {
+    "name": "Regalia",
+    "hex": "#522d80",
+    "rgb": [82, 45, 128]
+  },
+  "resolution_blue": {
+    "name": "Resolution Blue",
+    "hex": "#002387",
+    "rgb": [0, 35, 135]
+  },
+  "rich_black": {
+    "name": "Rich Black",
+    "hex": "#004040",
+    "rgb": [0, 64, 64]
+  },
+  "rich_brilliant_lavender": {
+    "name": "Rich Brilliant Lavender",
+    "hex": "#f1a7fe",
+    "rgb": [241, 167, 254]
+  },
+  "rich_carmine": {
+    "name": "Rich Carmine",
+    "hex": "#d70040",
+    "rgb": [215, 0, 64]
+  },
+  "rich_electric_blue": {
+    "name": "Rich Electric Blue",
+    "hex": "#0892d0",
+    "rgb": [8, 146, 208]
+  },
+  "rich_lavender": {
+    "name": "Rich Lavender",
+    "hex": "#a76bcf",
+    "rgb": [167, 107, 207]
+  },
+  "rich_lilac": {
+    "name": "Rich Lilac",
+    "hex": "#b666d2",
+    "rgb": [182, 102, 210]
+  },
+  "rich_maroon": {
+    "name": "Rich Maroon",
+    "hex": "#b03060",
+    "rgb": [176, 48, 96]
+  },
+  "rifle_green": {
+    "name": "Rifle Green",
+    "hex": "#414833",
+    "rgb": [65, 72, 51]
+  },
+  "robin_egg_blue": {
+    "name": "Robin Egg Blue",
+    "hex": "#0cc",
+    "rgb": [0, 204, 204]
+  },
+  "rose": {
+    "name": "Rose",
+    "hex": "#ff007f",
+    "rgb": [255, 0, 127]
+  },
+  "rose_bonbon": {
+    "name": "Rose Bonbon",
+    "hex": "#f9429e",
+    "rgb": [249, 66, 158]
+  },
+  "rose_ebony": {
+    "name": "Rose Ebony",
+    "hex": "#674846",
+    "rgb": [103, 72, 70]
+  },
+  "rose_gold": {
+    "name": "Rose Gold",
+    "hex": "#b76e79",
+    "rgb": [183, 110, 121]
+  },
+  "rose_madder": {
+    "name": "Rose Madder",
+    "hex": "#e32636",
+    "rgb": [227, 38, 54]
+  },
+  "rose_pink": {
+    "name": "Rose Pink",
+    "hex": "#f6c",
+    "rgb": [255, 102, 204]
+  },
+  "rose_quartz": {
+    "name": "Rose Quartz",
+    "hex": "#aa98a9",
+    "rgb": [170, 152, 169]
+  },
+  "rose_taupe": {
+    "name": "Rose Taupe",
+    "hex": "#905d5d",
+    "rgb": [144, 93, 93]
+  },
+  "rose_vale": {
+    "name": "Rose Vale",
+    "hex": "#ab4e52",
+    "rgb": [171, 78, 82]
+  },
+  "rosewood": {
+    "name": "Rosewood",
+    "hex": "#65000b",
+    "rgb": [101, 0, 11]
+  },
+  "rosso_corsa": {
+    "name": "Rosso Corsa",
+    "hex": "#d40000",
+    "rgb": [212, 0, 0]
+  },
+  "rosy_brown": {
+    "name": "Rosy Brown",
+    "hex": "#bc8f8f",
+    "rgb": [188, 143, 143]
+  },
+  "royal_azure": {
+    "name": "Royal Azure",
+    "hex": "#0038a8",
+    "rgb": [0, 56, 168]
+  },
+  "royal_blue_traditional": {
+    "name": "Royal Blue (Traditional)",
+    "hex": "#002366",
+    "rgb": [0, 35, 102]
+  },
+  "royal_blue_web": {
+    "name": "Royal Blue (Web)",
+    "hex": "#4169e1",
+    "rgb": [65, 105, 225]
+  },
+  "royal_fuchsia": {
+    "name": "Royal Fuchsia",
+    "hex": "#ca2c92",
+    "rgb": [202, 44, 146]
+  },
+  "royal_purple": {
+    "name": "Royal Purple",
+    "hex": "#7851a9",
+    "rgb": [120, 81, 169]
+  },
+  "royal_yellow": {
+    "name": "Royal Yellow",
+    "hex": "#fada5e",
+    "rgb": [250, 218, 94]
+  },
+  "rubine_red": {
+    "name": "Rubine Red",
+    "hex": "#d10056",
+    "rgb": [209, 0, 86]
+  },
+  "ruby": {
+    "name": "Ruby",
+    "hex": "#e0115f",
+    "rgb": [224, 17, 95]
+  },
+  "ruby_red": {
+    "name": "Ruby Red",
+    "hex": "#9b111e",
+    "rgb": [155, 17, 30]
+  },
+  "ruddy": {
+    "name": "Ruddy",
+    "hex": "#ff0028",
+    "rgb": [255, 0, 40]
+  },
+  "ruddy_brown": {
+    "name": "Ruddy Brown",
+    "hex": "#bb6528",
+    "rgb": [187, 101, 40]
+  },
+  "ruddy_pink": {
+    "name": "Ruddy Pink",
+    "hex": "#e18e96",
+    "rgb": [225, 142, 150]
+  },
+  "rufous": {
+    "name": "Rufous",
+    "hex": "#a81c07",
+    "rgb": [168, 28, 7]
+  },
+  "russet": {
+    "name": "Russet",
+    "hex": "#80461b",
+    "rgb": [128, 70, 27]
+  },
+  "rust": {
+    "name": "Rust",
+    "hex": "#b7410e",
+    "rgb": [183, 65, 14]
+  },
+  "rusty_red": {
+    "name": "Rusty Red",
+    "hex": "#da2c43",
+    "rgb": [218, 44, 67]
+  },
+  "sacramento_state_green": {
+    "name": "Sacramento State Green",
+    "hex": "#00563f",
+    "rgb": [0, 86, 63]
+  },
+  "saddle_brown": {
+    "name": "Saddle Brown",
+    "hex": "#8b4513",
+    "rgb": [139, 69, 19]
+  },
+  "safety_orange_blaze_orange": {
+    "name": "Safety Orange (Blaze Orange)",
+    "hex": "#ff6700",
+    "rgb": [255, 103, 0]
+  },
+  "saffron": {
+    "name": "Saffron",
+    "hex": "#f4c430",
+    "rgb": [244, 196, 48]
+  },
+  "salmon": {
+    "name": "Salmon",
+    "hex": "#ff8c69",
+    "rgb": [255, 140, 105]
+  },
+  "salmon_pink": {
+    "name": "Salmon Pink",
+    "hex": "#ff91a4",
+    "rgb": [255, 145, 164]
+  },
+  "sand": {
+    "name": "Sand",
+    "hex": "#c2b280",
+    "rgb": [194, 178, 128]
+  },
+  "sand_dune": {
+    "name": "Sand Dune",
+    "hex": "#967117",
+    "rgb": [150, 113, 23]
+  },
+  "sandstorm": {
+    "name": "Sandstorm",
+    "hex": "#ecd540",
+    "rgb": [236, 213, 64]
+  },
+  "sandy_brown": {
+    "name": "Sandy Brown",
+    "hex": "#f4a460",
+    "rgb": [244, 164, 96]
+  },
+  "sandy_taupe": {
+    "name": "Sandy Taupe",
+    "hex": "#967117",
+    "rgb": [150, 113, 23]
+  },
+  "sangria": {
+    "name": "Sangria",
+    "hex": "#92000a",
+    "rgb": [146, 0, 10]
+  },
+  "sap_green": {
+    "name": "Sap Green",
+    "hex": "#507d2a",
+    "rgb": [80, 125, 42]
+  },
+  "sapphire": {
+    "name": "Sapphire",
+    "hex": "#0f52ba",
+    "rgb": [15, 82, 186]
+  },
+  "sapphire_blue": {
+    "name": "Sapphire Blue",
+    "hex": "#0067a5",
+    "rgb": [0, 103, 165]
+  },
+  "satin_sheen_gold": {
+    "name": "Satin Sheen Gold",
+    "hex": "#cba135",
+    "rgb": [203, 161, 53]
+  },
+  "scarlet": {
+    "name": "Scarlet",
+    "hex": "#ff2400",
+    "rgb": [255, 36, 0]
+  },
+  "scarlet_crayola": {
+    "name": "Scarlet (Crayola)",
+    "hex": "#fd0e35",
+    "rgb": [253, 14, 53]
+  },
+  "school_bus_yellow": {
+    "name": "School Bus Yellow",
+    "hex": "#ffd800",
+    "rgb": [255, 216, 0]
+  },
+  "screamin_green": {
+    "name": "Screamin' Green",
+    "hex": "#76ff7a",
+    "rgb": [118, 255, 122]
+  },
+  "sea_blue": {
+    "name": "Sea Blue",
+    "hex": "#006994",
+    "rgb": [0, 105, 148]
+  },
+  "sea_green": {
+    "name": "Sea Green",
+    "hex": "#2e8b57",
+    "rgb": [46, 139, 87]
+  },
+  "seal_brown": {
+    "name": "Seal Brown",
+    "hex": "#321414",
+    "rgb": [50, 20, 20]
+  },
+  "seashell": {
+    "name": "Seashell",
+    "hex": "#fff5ee",
+    "rgb": [255, 245, 238]
+  },
+  "selective_yellow": {
+    "name": "Selective Yellow",
+    "hex": "#ffba00",
+    "rgb": [255, 186, 0]
+  },
+  "sepia": {
+    "name": "Sepia",
+    "hex": "#704214",
+    "rgb": [112, 66, 20]
+  },
+  "shadow": {
+    "name": "Shadow",
+    "hex": "#8a795d",
+    "rgb": [138, 121, 93]
+  },
+  "shamrock_green": {
+    "name": "Shamrock Green",
+    "hex": "#009e60",
+    "rgb": [0, 158, 96]
+  },
+  "shocking_pink": {
+    "name": "Shocking Pink",
+    "hex": "#fc0fc0",
+    "rgb": [252, 15, 192]
+  },
+  "shocking_pink_crayola": {
+    "name": "Shocking Pink (Crayola)",
+    "hex": "#ff6fff",
+    "rgb": [255, 111, 255]
+  },
+  "sienna": {
+    "name": "Sienna",
+    "hex": "#882d17",
+    "rgb": [136, 45, 23]
+  },
+  "silver": {
+    "name": "Silver",
+    "hex": "#c0c0c0",
+    "rgb": [192, 192, 192]
+  },
+  "sinopia": {
+    "name": "Sinopia",
+    "hex": "#cb410b",
+    "rgb": [203, 65, 11]
+  },
+  "skobeloff": {
+    "name": "Skobeloff",
+    "hex": "#007474",
+    "rgb": [0, 116, 116]
+  },
+  "sky_blue": {
+    "name": "Sky Blue",
+    "hex": "#87ceeb",
+    "rgb": [135, 206, 235]
+  },
+  "sky_magenta": {
+    "name": "Sky Magenta",
+    "hex": "#cf71af",
+    "rgb": [207, 113, 175]
+  },
+  "slate_blue": {
+    "name": "Slate Blue",
+    "hex": "#6a5acd",
+    "rgb": [106, 90, 205]
+  },
+  "slate_gray": {
+    "name": "Slate Gray",
+    "hex": "#708090",
+    "rgb": [112, 128, 144]
+  },
+  "smalt_dark_powder_blue": {
+    "name": "Smalt (Dark Powder Blue)",
+    "hex": "#039",
+    "rgb": [0, 51, 153]
+  },
+  "smokey_topaz": {
+    "name": "Smokey Topaz",
+    "hex": "#933d41",
+    "rgb": [147, 61, 65]
+  },
+  "smoky_black": {
+    "name": "Smoky Black",
+    "hex": "#100c08",
+    "rgb": [16, 12, 8]
+  },
+  "snow": {
+    "name": "Snow",
+    "hex": "#fffafa",
+    "rgb": [255, 250, 250]
+  },
+  "spiro_disco_ball": {
+    "name": "Spiro Disco Ball",
+    "hex": "#0fc0fc",
+    "rgb": [15, 192, 252]
+  },
+  "spring_bud": {
+    "name": "Spring Bud",
+    "hex": "#a7fc00",
+    "rgb": [167, 252, 0]
+  },
+  "spring_green": {
+    "name": "Spring Green",
+    "hex": "#00ff7f",
+    "rgb": [0, 255, 127]
+  },
+  "st_patrick_s_blue": {
+    "name": "St. Patrick'S Blue",
+    "hex": "#23297a",
+    "rgb": [35, 41, 122]
+  },
+  "steel_blue": {
+    "name": "Steel Blue",
+    "hex": "#4682b4",
+    "rgb": [70, 130, 180]
+  },
+  "stil_de_grain_yellow": {
+    "name": "Stil De Grain Yellow",
+    "hex": "#fada5e",
+    "rgb": [250, 218, 94]
+  },
+  "stizza": {
+    "name": "Stizza",
+    "hex": "#900",
+    "rgb": [153, 0, 0]
+  },
+  "stormcloud": {
+    "name": "Stormcloud",
+    "hex": "#4f666a",
+    "rgb": [79, 102, 106]
+  },
+  "straw": {
+    "name": "Straw",
+    "hex": "#e4d96f",
+    "rgb": [228, 217, 111]
+  },
+  "sunglow": {
+    "name": "Sunglow",
+    "hex": "#fc3",
+    "rgb": [255, 204, 51]
+  },
+  "sunset": {
+    "name": "Sunset",
+    "hex": "#fad6a5",
+    "rgb": [250, 214, 165]
+  },
+  "tan": {
+    "name": "Tan",
+    "hex": "#d2b48c",
+    "rgb": [210, 180, 140]
+  },
+  "tangelo": {
+    "name": "Tangelo",
+    "hex": "#f94d00",
+    "rgb": [249, 77, 0]
+  },
+  "tangerine": {
+    "name": "Tangerine",
+    "hex": "#f28500",
+    "rgb": [242, 133, 0]
+  },
+  "tangerine_yellow": {
+    "name": "Tangerine Yellow",
+    "hex": "#fc0",
+    "rgb": [255, 204, 0]
+  },
+  "tango_pink": {
+    "name": "Tango Pink",
+    "hex": "#e4717a",
+    "rgb": [228, 113, 122]
+  },
+  "taupe": {
+    "name": "Taupe",
+    "hex": "#483c32",
+    "rgb": [72, 60, 50]
+  },
+  "taupe_gray": {
+    "name": "Taupe Gray",
+    "hex": "#8b8589",
+    "rgb": [139, 133, 137]
+  },
+  "tea_green": {
+    "name": "Tea Green",
+    "hex": "#d0f0c0",
+    "rgb": [208, 240, 192]
+  },
+  "tea_rose_orange": {
+    "name": "Tea Rose (Orange)",
+    "hex": "#f88379",
+    "rgb": [248, 131, 121]
+  },
+  "tea_rose_rose": {
+    "name": "Tea Rose (Rose)",
+    "hex": "#f4c2c2",
+    "rgb": [244, 194, 194]
+  },
+  "teal": {
+    "name": "Teal",
+    "hex": "#008080",
+    "rgb": [0, 128, 128]
+  },
+  "teal_blue": {
+    "name": "Teal Blue",
+    "hex": "#367588",
+    "rgb": [54, 117, 136]
+  },
+  "teal_green": {
+    "name": "Teal Green",
+    "hex": "#00827f",
+    "rgb": [0, 130, 127]
+  },
+  "telemagenta": {
+    "name": "Telemagenta",
+    "hex": "#cf3476",
+    "rgb": [207, 52, 118]
+  },
+  "tenn_tawny": {
+    "name": "Tenné (Tawny)",
+    "hex": "#cd5700",
+    "rgb": [205, 87, 0]
+  },
+  "terra_cotta": {
+    "name": "Terra Cotta",
+    "hex": "#e2725b",
+    "rgb": [226, 114, 91]
+  },
+  "thistle": {
+    "name": "Thistle",
+    "hex": "#d8bfd8",
+    "rgb": [216, 191, 216]
+  },
+  "thulian_pink": {
+    "name": "Thulian Pink",
+    "hex": "#de6fa1",
+    "rgb": [222, 111, 161]
+  },
+  "tickle_me_pink": {
+    "name": "Tickle Me Pink",
+    "hex": "#fc89ac",
+    "rgb": [252, 137, 172]
+  },
+  "tiffany_blue": {
+    "name": "Tiffany Blue",
+    "hex": "#0abab5",
+    "rgb": [10, 186, 181]
+  },
+  "tiger_s_eye": {
+    "name": "Tiger'S Eye",
+    "hex": "#e08d3c",
+    "rgb": [224, 141, 60]
+  },
+  "timberwolf": {
+    "name": "Timberwolf",
+    "hex": "#dbd7d2",
+    "rgb": [219, 215, 210]
+  },
+  "titanium_yellow": {
+    "name": "Titanium Yellow",
+    "hex": "#eee600",
+    "rgb": [238, 230, 0]
+  },
+  "tomato": {
+    "name": "Tomato",
+    "hex": "#ff6347",
+    "rgb": [255, 99, 71]
+  },
+  "toolbox": {
+    "name": "Toolbox",
+    "hex": "#746cc0",
+    "rgb": [116, 108, 192]
+  },
+  "topaz": {
+    "name": "Topaz",
+    "hex": "#ffc87c",
+    "rgb": [255, 200, 124]
+  },
+  "tractor_red": {
+    "name": "Tractor Red",
+    "hex": "#fd0e35",
+    "rgb": [253, 14, 53]
+  },
+  "trolley_grey": {
+    "name": "Trolley Grey",
+    "hex": "#808080",
+    "rgb": [128, 128, 128]
+  },
+  "tropical_rain_forest": {
+    "name": "Tropical Rain Forest",
+    "hex": "#00755e",
+    "rgb": [0, 117, 94]
+  },
+  "true_blue": {
+    "name": "True Blue",
+    "hex": "#0073cf",
+    "rgb": [0, 115, 207]
+  },
+  "tufts_blue": {
+    "name": "Tufts Blue",
+    "hex": "#417dc1",
+    "rgb": [65, 125, 193]
+  },
+  "tumbleweed": {
+    "name": "Tumbleweed",
+    "hex": "#deaa88",
+    "rgb": [222, 170, 136]
+  },
+  "turkish_rose": {
+    "name": "Turkish Rose",
+    "hex": "#b57281",
+    "rgb": [181, 114, 129]
+  },
+  "turquoise": {
+    "name": "Turquoise",
+    "hex": "#30d5c8",
+    "rgb": [48, 213, 200]
+  },
+  "turquoise_blue": {
+    "name": "Turquoise Blue",
+    "hex": "#00ffef",
+    "rgb": [0, 255, 239]
+  },
+  "turquoise_green": {
+    "name": "Turquoise Green",
+    "hex": "#a0d6b4",
+    "rgb": [160, 214, 180]
+  },
+  "tuscan_red": {
+    "name": "Tuscan Red",
+    "hex": "#7c4848",
+    "rgb": [124, 72, 72]
+  },
+  "twilight_lavender": {
+    "name": "Twilight Lavender",
+    "hex": "#8a496b",
+    "rgb": [138, 73, 107]
+  },
+  "tyrian_purple": {
+    "name": "Tyrian Purple",
+    "hex": "#66023c",
+    "rgb": [102, 2, 60]
+  },
+  "ua_blue": {
+    "name": "Ua Blue",
+    "hex": "#03a",
+    "rgb": [0, 51, 170]
+  },
+  "ua_red": {
+    "name": "Ua Red",
+    "hex": "#d9004c",
+    "rgb": [217, 0, 76]
+  },
+  "ube": {
+    "name": "Ube",
+    "hex": "#8878c3",
+    "rgb": [136, 120, 195]
+  },
+  "ucla_blue": {
+    "name": "Ucla Blue",
+    "hex": "#536895",
+    "rgb": [83, 104, 149]
+  },
+  "ucla_gold": {
+    "name": "Ucla Gold",
+    "hex": "#ffb300",
+    "rgb": [255, 179, 0]
+  },
+  "ufo_green": {
+    "name": "Ufo Green",
+    "hex": "#3cd070",
+    "rgb": [60, 208, 112]
+  },
+  "ultra_pink": {
+    "name": "Ultra Pink",
+    "hex": "#ff6fff",
+    "rgb": [255, 111, 255]
+  },
+  "ultramarine": {
+    "name": "Ultramarine",
+    "hex": "#120a8f",
+    "rgb": [18, 10, 143]
+  },
+  "ultramarine_blue": {
+    "name": "Ultramarine Blue",
+    "hex": "#4166f5",
+    "rgb": [65, 102, 245]
+  },
+  "umber": {
+    "name": "Umber",
+    "hex": "#635147",
+    "rgb": [99, 81, 71]
+  },
+  "unbleached_silk": {
+    "name": "Unbleached Silk",
+    "hex": "#ffddca",
+    "rgb": [255, 221, 202]
+  },
+  "united_nations_blue": {
+    "name": "United Nations Blue",
+    "hex": "#5b92e5",
+    "rgb": [91, 146, 229]
+  },
+  "university_of_california_gold": {
+    "name": "University Of California Gold",
+    "hex": "#b78727",
+    "rgb": [183, 135, 39]
+  },
+  "unmellow_yellow": {
+    "name": "Unmellow Yellow",
+    "hex": "#ff6",
+    "rgb": [255, 255, 102]
+  },
+  "up_forest_green": {
+    "name": "Up Forest Green",
+    "hex": "#014421",
+    "rgb": [1, 68, 33]
+  },
+  "up_maroon": {
+    "name": "Up Maroon",
+    "hex": "#7b1113",
+    "rgb": [123, 17, 19]
+  },
+  "upsdell_red": {
+    "name": "Upsdell Red",
+    "hex": "#ae2029",
+    "rgb": [174, 32, 41]
+  },
+  "urobilin": {
+    "name": "Urobilin",
+    "hex": "#e1ad21",
+    "rgb": [225, 173, 33]
+  },
+  "usafa_blue": {
+    "name": "Usafa Blue",
+    "hex": "#004f98",
+    "rgb": [0, 79, 152]
+  },
+  "usc_cardinal": {
+    "name": "Usc Cardinal",
+    "hex": "#900",
+    "rgb": [153, 0, 0]
+  },
+  "usc_gold": {
+    "name": "Usc Gold",
+    "hex": "#fc0",
+    "rgb": [255, 204, 0]
+  },
+  "utah_crimson": {
+    "name": "Utah Crimson",
+    "hex": "#d3003f",
+    "rgb": [211, 0, 63]
+  },
+  "vanilla": {
+    "name": "Vanilla",
+    "hex": "#f3e5ab",
+    "rgb": [243, 229, 171]
+  },
+  "vegas_gold": {
+    "name": "Vegas Gold",
+    "hex": "#c5b358",
+    "rgb": [197, 179, 88]
+  },
+  "venetian_red": {
+    "name": "Venetian Red",
+    "hex": "#c80815",
+    "rgb": [200, 8, 21]
+  },
+  "verdigris": {
+    "name": "Verdigris",
+    "hex": "#43b3ae",
+    "rgb": [67, 179, 174]
+  },
+  "vermilion_cinnabar": {
+    "name": "Vermilion (Cinnabar)",
+    "hex": "#e34234",
+    "rgb": [227, 66, 52]
+  },
+  "vermilion_plochere": {
+    "name": "Vermilion (Plochere)",
+    "hex": "#d9603b",
+    "rgb": [217, 96, 59]
+  },
+  "veronica": {
+    "name": "Veronica",
+    "hex": "#a020f0",
+    "rgb": [160, 32, 240]
+  },
+  "violet": {
+    "name": "Violet",
+    "hex": "#8f00ff",
+    "rgb": [143, 0, 255]
+  },
+  "violet_blue": {
+    "name": "Violet-Blue",
+    "hex": "#324ab2",
+    "rgb": [50, 74, 178]
+  },
+  "violet_color_wheel": {
+    "name": "Violet (Color Wheel)",
+    "hex": "#7f00ff",
+    "rgb": [127, 0, 255]
+  },
+  "violet_ryb": {
+    "name": "Violet (Ryb)",
+    "hex": "#8601af",
+    "rgb": [134, 1, 175]
+  },
+  "violet_web": {
+    "name": "Violet (Web)",
+    "hex": "#ee82ee",
+    "rgb": [238, 130, 238]
+  },
+  "viridian": {
+    "name": "Viridian",
+    "hex": "#40826d",
+    "rgb": [64, 130, 109]
+  },
+  "vivid_auburn": {
+    "name": "Vivid Auburn",
+    "hex": "#922724",
+    "rgb": [146, 39, 36]
+  },
+  "vivid_burgundy": {
+    "name": "Vivid Burgundy",
+    "hex": "#9f1d35",
+    "rgb": [159, 29, 53]
+  },
+  "vivid_cerise": {
+    "name": "Vivid Cerise",
+    "hex": "#da1d81",
+    "rgb": [218, 29, 129]
+  },
+  "vivid_tangerine": {
+    "name": "Vivid Tangerine",
+    "hex": "#ffa089",
+    "rgb": [255, 160, 137]
+  },
+  "vivid_violet": {
+    "name": "Vivid Violet",
+    "hex": "#9f00ff",
+    "rgb": [159, 0, 255]
+  },
+  "warm_black": {
+    "name": "Warm Black",
+    "hex": "#004242",
+    "rgb": [0, 66, 66]
+  },
+  "waterspout": {
+    "name": "Waterspout",
+    "hex": "#a4f4f9",
+    "rgb": [164, 244, 249]
+  },
+  "wenge": {
+    "name": "Wenge",
+    "hex": "#645452",
+    "rgb": [100, 84, 82]
+  },
+  "wheat": {
+    "name": "Wheat",
+    "hex": "#f5deb3",
+    "rgb": [245, 222, 179]
+  },
+  "white": {
+    "name": "White",
+    "hex": "#fff",
+    "rgb": [255, 255, 255]
+  },
+  "white_smoke": {
+    "name": "White Smoke",
+    "hex": "#f5f5f5",
+    "rgb": [245, 245, 245]
+  },
+  "wild_blue_yonder": {
+    "name": "Wild Blue Yonder",
+    "hex": "#a2add0",
+    "rgb": [162, 173, 208]
+  },
+  "wild_strawberry": {
+    "name": "Wild Strawberry",
+    "hex": "#ff43a4",
+    "rgb": [255, 67, 164]
+  },
+  "wild_watermelon": {
+    "name": "Wild Watermelon",
+    "hex": "#fc6c85",
+    "rgb": [252, 108, 133]
+  },
+  "wine": {
+    "name": "Wine",
+    "hex": "#722f37",
+    "rgb": [114, 47, 55]
+  },
+  "wine_dregs": {
+    "name": "Wine Dregs",
+    "hex": "#673147",
+    "rgb": [103, 49, 71]
+  },
+  "wisteria": {
+    "name": "Wisteria",
+    "hex": "#c9a0dc",
+    "rgb": [201, 160, 220]
+  },
+  "wood_brown": {
+    "name": "Wood Brown",
+    "hex": "#c19a6b",
+    "rgb": [193, 154, 107]
+  },
+  "xanadu": {
+    "name": "Xanadu",
+    "hex": "#738678",
+    "rgb": [115, 134, 120]
+  },
+  "yale_blue": {
+    "name": "Yale Blue",
+    "hex": "#0f4d92",
+    "rgb": [15, 77, 146]
+  },
+  "yellow": {
+    "name": "Yellow",
+    "hex": "#ff0",
+    "rgb": [255, 255, 0]
+  },
+  "yellow_green": {
+    "name": "Yellow-Green",
+    "hex": "#9acd32",
+    "rgb": [154, 205, 50]
+  },
+  "yellow_munsell": {
+    "name": "Yellow (Munsell)",
+    "hex": "#efcc00",
+    "rgb": [239, 204, 0]
+  },
+  "yellow_ncs": {
+    "name": "Yellow (Ncs)",
+    "hex": "#ffd300",
+    "rgb": [255, 211, 0]
+  },
+  "yellow_orange": {
+    "name": "Yellow Orange",
+    "hex": "#ffae42",
+    "rgb": [255, 174, 66]
+  },
+  "yellow_process": {
+    "name": "Yellow (Process)",
+    "hex": "#ffef00",
+    "rgb": [255, 239, 0]
+  },
+  "yellow_ryb": {
+    "name": "Yellow (Ryb)",
+    "hex": "#fefe33",
+    "rgb": [254, 254, 51]
+  },
+  "zaffre": {
+    "name": "Zaffre",
+    "hex": "#0014a8",
+    "rgb": [0, 20, 168]
+  },
+  "zinnwaldite_brown": {
+    "name": "Zinnwaldite Brown",
+    "hex": "#2c1608",
+    "rgb": [44, 22, 8]
   }
 }
-
-export default Button; // Don’t forget to use export default!
-```
-
-### `DangerButton.js`
-
-
-```js
-import React, { Component } from 'react';
-import Button from './Button'; // Import a component from another file
-
-class DangerButton extends Component {
-  render() {
-    return <Button color="red" />;
-  }
-}
-
-export default DangerButton;
-```
-
-Be aware of the [difference between default and named exports](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281). It is a common source of mistakes.
-
-We suggest that you stick to using default imports and exports when a module only exports a single thing (for example, a component). That’s what you get when you use `export default Button` and `import Button from './Button'`.
-
-Named exports are useful for utility modules that export several functions. A module may have at most one default export and as many named exports as you like.
-
-Learn more about ES6 modules:
-
-* [When to use the curly braces?](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281)
-* [Exploring ES6: Modules](http://exploringjs.com/es6/ch_modules.html)
-* [Understanding ES6: Modules](https://leanpub.com/understandinges6/read#leanpub-auto-encapsulating-code-with-modules)
-
-## Code Splitting
-
-Instead of downloading the entire app before users can use it, code splitting allows you to split your code into small chunks which you can then load on demand.
-
-This project setup supports code splitting via [dynamic `import()`](http://2ality.com/2017/01/import-operator.html#loading-code-on-demand). Its [proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 3. The `import()` function-like form takes the module name as an argument and returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which always resolves to the namespace object of the module.
-
-Here is an example:
-
-### `moduleA.js`
-
-```js
-const moduleA = 'Hello';
-
-export { moduleA };
-```
-### `App.js`
-
-```js
-import React, { Component } from 'react';
-
-class App extends Component {
-  handleClick = () => {
-    import('./moduleA')
-      .then(({ moduleA }) => {
-        // Use moduleA
-      })
-      .catch(err => {
-        // Handle failure
-      });
-  };
-
-  render() {
-    return (
-      <div>
-        <button onClick={this.handleClick}>Load</button>
-      </div>
-    );
-  }
-}
-
-export default App;
-```
-
-This will make `moduleA.js` and all its unique dependencies as a separate chunk that only loads after the user clicks the 'Load' button.
-
-You can also use it with `async` / `await` syntax if you prefer it.
-
-### With React Router
-
-If you are using React Router check out [this tutorial](http://serverless-stack.com/chapters/code-splitting-in-create-react-app.html) on how to use code splitting with it. You can find the companion GitHub repository [here](https://github.com/AnomalyInnovations/serverless-stack-demo-client/tree/code-splitting-in-create-react-app).
-
-Also check out the [Code Splitting](https://reactjs.org/docs/code-splitting.html) section in React documentation.
-
-## Adding a Stylesheet
-
-This project setup uses [Webpack](https://webpack.js.org/) for handling all assets. Webpack offers a custom way of “extending” the concept of `import` beyond JavaScript. To express that a JavaScript file depends on a CSS file, you need to **import the CSS from the JavaScript file**:
-
-### `Button.css`
-
-```css
-.Button {
-  padding: 20px;
-}
-```
-
-### `Button.js`
-
-```js
-import React, { Component } from 'react';
-import './Button.css'; // Tell Webpack that Button.js uses these styles
-
-class Button extends Component {
-  render() {
-    // You can use them as regular CSS styles
-    return <div className="Button" />;
-  }
-}
-```
-
-**This is not required for React** but many people find this feature convenient. You can read about the benefits of this approach [here](https://medium.com/seek-ui-engineering/block-element-modifying-your-javascript-components-d7f99fcab52b). However you should be aware that this makes your code less portable to other build tools and environments than Webpack.
-
-In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all CSS files will be concatenated into a single minified `.css` file in the build output.
-
-If you are concerned about using Webpack-specific semantics, you can put all your CSS right into `src/index.css`. It would still be imported from `src/index.js`, but you could always remove that import if you later migrate to a different build tool.
-
-## Post-Processing CSS
-
-This project setup minifies your CSS and adds vendor prefixes to it automatically through [Autoprefixer](https://github.com/postcss/autoprefixer) so you don’t need to worry about it.
-
-For example, this:
-
-```css
-.App {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-```
-
-becomes this:
-
-```css
-.App {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-```
-
-If you need to disable autoprefixing for some reason, [follow this section](https://github.com/postcss/autoprefixer#disabling).
-
-## Adding a CSS Preprocessor (Sass, Less etc.)
-
-Generally, we recommend that you don’t reuse the same CSS classes across different components. For example, instead of using a `.Button` CSS class in `<AcceptButton>` and `<RejectButton>` components, we recommend creating a `<Button>` component with its own `.Button` styles, that both `<AcceptButton>` and `<RejectButton>` can render (but [not inherit](https://facebook.github.io/react/docs/composition-vs-inheritance.html)).
-
-Following this rule often makes CSS preprocessors less useful, as features like mixins and nesting are replaced by component composition. You can, however, integrate a CSS preprocessor if you find it valuable. In this walkthrough, we will be using Sass, but you can also use Less, or another alternative.
-
-First, let’s install the command-line interface for Sass:
-
-```sh
-npm install --save node-sass-chokidar
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add node-sass-chokidar
-```
-
-Then in `package.json`, add the following lines to `scripts`:
-
-```diff
-   "scripts": {
-+    "build-css": "node-sass-chokidar src/ -o src/",
-+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-     "start": "react-scripts start",
-     "build": "react-scripts build",
-     "test": "react-scripts test --env=jsdom",
-```
-
->Note: To use a different preprocessor, replace `build-css` and `watch-css` commands according to your preprocessor’s documentation.
-
-Now you can rename `src/App.css` to `src/App.scss` and run `npm run watch-css`. The watcher will find every Sass file in `src` subdirectories, and create a corresponding CSS file next to it, in our case overwriting `src/App.css`. Since `src/App.js` still imports `src/App.css`, the styles become a part of your application. You can now edit `src/App.scss`, and `src/App.css` will be regenerated.
-
-To share variables between Sass files, you can use Sass imports. For example, `src/App.scss` and other component style files could include `@import "./shared.scss";` with variable definitions.
-
-To enable importing files without using relative paths, you can add the  `--include-path` option to the command in `package.json`.
-
-```
-"build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-"watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-```
-
-This will allow you to do imports like
-
-```scss
-@import 'styles/_colors.scss'; // assuming a styles directory under src/
-@import 'nprogress/nprogress'; // importing a css file from the nprogress node module
-```
-
-At this point you might want to remove all CSS files from the source control, and add `src/**/*.css` to your `.gitignore` file. It is generally a good practice to keep the build products outside of the source control.
-
-As a final step, you may find it convenient to run `watch-css` automatically with `npm start`, and run `build-css` as a part of `npm run build`. You can use the `&&` operator to execute two scripts sequentially. However, there is no cross-platform way to run two scripts in parallel, so we will install a package for this:
-
-```sh
-npm install --save npm-run-all
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add npm-run-all
-```
-
-Then we can change `start` and `build` scripts to include the CSS preprocessor commands:
-
-```diff
-   "scripts": {
-     "build-css": "node-sass-chokidar src/ -o src/",
-     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
--    "start": "react-scripts start",
--    "build": "react-scripts build",
-+    "start-js": "react-scripts start",
-+    "start": "npm-run-all -p watch-css start-js",
-+    "build-js": "react-scripts build",
-+    "build": "npm-run-all build-css build-js",
-     "test": "react-scripts test --env=jsdom",
-     "eject": "react-scripts eject"
-   }
-```
-
-Now running `npm start` and `npm run build` also builds Sass files.
-
-**Why `node-sass-chokidar`?**
-
-`node-sass` has been reported as having the following issues:
-
-- `node-sass --watch` has been reported to have *performance issues* in certain conditions when used in a virtual machine or with docker.
-
-- Infinite styles compiling [#1939](https://github.com/facebookincubator/create-react-app/issues/1939)
-
-- `node-sass` has been reported as having issues with detecting new files in a directory [#1891](https://github.com/sass/node-sass/issues/1891)
-
- `node-sass-chokidar` is used here as it addresses these issues.
-
-## Adding Images, Fonts, and Files
-
-With Webpack, using static assets like images and fonts works similarly to CSS.
-
-You can **`import` a file right in a JavaScript module**. This tells Webpack to include that file in the bundle. Unlike CSS imports, importing a file gives you a string value. This value is the final path you can reference in your code, e.g. as the `src` attribute of an image or the `href` of a link to a PDF.
-
-To reduce the number of requests to the server, importing images that are less than 10,000 bytes returns a [data URI](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) instead of a path. This applies to the following file extensions: bmp, gif, jpg, jpeg, and png. SVG files are excluded due to [#1153](https://github.com/facebookincubator/create-react-app/issues/1153).
-
-Here is an example:
-
-```js
-import React from 'react';
-import logo from './logo.png'; // Tell Webpack this JS file uses this image
-
-console.log(logo); // /logo.84287d09.png
-
-function Header() {
-  // Import result is the URL of your image
-  return <img src={logo} alt="Logo" />;
-}
-
-export default Header;
-```
-
-This ensures that when the project is built, Webpack will correctly move the images into the build folder, and provide us with correct paths.
-
-This works in CSS too:
-
-```css
-.Logo {
-  background-image: url(./logo.png);
-}
-```
-
-Webpack finds all relative module references in CSS (they start with `./`) and replaces them with the final paths from the compiled bundle. If you make a typo or accidentally delete an important file, you will see a compilation error, just like when you import a non-existent JavaScript module. The final filenames in the compiled bundle are generated by Webpack from content hashes. If the file content changes in the future, Webpack will give it a different name in production so you don’t need to worry about long-term caching of assets.
-
-Please be advised that this is also a custom feature of Webpack.
-
-**It is not required for React** but many people enjoy it (and React Native uses a similar mechanism for images).<br>
-An alternative way of handling static assets is described in the next section.
-
-## Using the `public` Folder
-
->Note: this feature is available with `react-scripts@0.5.0` and higher.
-
-### Changing the HTML
-
-The `public` folder contains the HTML file so you can tweak it, for example, to [set the page title](#changing-the-page-title).
-The `<script>` tag with the compiled code will be added to it automatically during the build process.
-
-### Adding Assets Outside of the Module System
-
-You can also add other assets to the `public` folder.
-
-Note that we normally encourage you to `import` assets in JavaScript files instead.
-For example, see the sections on [adding a stylesheet](#adding-a-stylesheet) and [adding images and fonts](#adding-images-fonts-and-files).
-This mechanism provides a number of benefits:
-
-* Scripts and stylesheets get minified and bundled together to avoid extra network requests.
-* Missing files cause compilation errors instead of 404 errors for your users.
-* Result filenames include content hashes so you don’t need to worry about browsers caching their old versions.
-
-However there is an **escape hatch** that you can use to add an asset outside of the module system.
-
-If you put a file into the `public` folder, it will **not** be processed by Webpack. Instead it will be copied into the build folder untouched.   To reference assets in the `public` folder, you need to use a special variable called `PUBLIC_URL`.
-
-Inside `index.html`, you can use it like this:
-
-```html
-<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-```
-
-Only files inside the `public` folder will be accessible by `%PUBLIC_URL%` prefix. If you need to use a file from `src` or `node_modules`, you’ll have to copy it there to explicitly specify your intention to make this file a part of the build.
-
-When you run `npm run build`, Create React App will substitute `%PUBLIC_URL%` with a correct absolute path so your project works even if you use client-side routing or host it at a non-root URL.
-
-In JavaScript code, you can use `process.env.PUBLIC_URL` for similar purposes:
-
-```js
-render() {
-  // Note: this is an escape hatch and should be used sparingly!
-  // Normally we recommend using `import` for getting asset URLs
-  // as described in “Adding Images and Fonts” above this section.
-  return <img src={process.env.PUBLIC_URL + '/img/logo.png'} />;
-}
-```
-
-Keep in mind the downsides of this approach:
-
-* None of the files in `public` folder get post-processed or minified.
-* Missing files will not be called at compilation time, and will cause 404 errors for your users.
-* Result filenames won’t include content hashes so you’ll need to add query arguments or rename them every time they change.
-
-### When to Use the `public` Folder
-
-Normally we recommend importing [stylesheets](#adding-a-stylesheet), [images, and fonts](#adding-images-fonts-and-files) from JavaScript.
-The `public` folder is useful as a workaround for a number of less common cases:
-
-* You need a file with a specific name in the build output, such as [`manifest.webmanifest`](https://developer.mozilla.org/en-US/docs/Web/Manifest).
-* You have thousands of images and need to dynamically reference their paths.
-* You want to include a small script like [`pace.js`](http://github.hubspot.com/pace/docs/welcome/) outside of the bundled code.
-* Some library may be incompatible with Webpack and you have no other option but to include it as a `<script>` tag.
-
-Note that if you add a `<script>` that declares global variables, you also need to read the next section on using them.
-
-## Using Global Variables
-
-When you include a script in the HTML file that defines global variables and try to use one of these variables in the code, the linter will complain because it cannot see the definition of the variable.
-
-You can avoid this by reading the global variable explicitly from the `window` object, for example:
-
-```js
-const $ = window.$;
-```
-
-This makes it obvious you are using a global variable intentionally rather than because of a typo.
-
-Alternatively, you can force the linter to ignore any line by adding `// eslint-disable-line` after it.
-
-## Adding Bootstrap
-
-You don’t have to use [React Bootstrap](https://react-bootstrap.github.io) together with React but it is a popular library for integrating Bootstrap with React apps. If you need it, you can integrate it with Create React App by following these steps:
-
-Install React Bootstrap and Bootstrap from npm. React Bootstrap does not include Bootstrap CSS so this needs to be installed as well:
-
-```sh
-npm install --save react-bootstrap bootstrap@3
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add react-bootstrap bootstrap@3
-```
-
-Import Bootstrap CSS and optionally Bootstrap theme CSS in the beginning of your ```src/index.js``` file:
-
-```js
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
-// Put any other imports below so that CSS from your
-// components takes precedence over default styles.
-```
-
-Import required React Bootstrap components within ```src/App.js``` file or your custom component files:
-
-```js
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
-```
-
-Now you are ready to use the imported React Bootstrap components within your component hierarchy defined in the render method. Here is an example [`App.js`](https://gist.githubusercontent.com/gaearon/85d8c067f6af1e56277c82d19fd4da7b/raw/6158dd991b67284e9fc8d70b9d973efe87659d72/App.js) redone using React Bootstrap.
-
-### Using a Custom Theme
-
-Sometimes you might need to tweak the visual styles of Bootstrap (or equivalent package).<br>
-We suggest the following approach:
-
-* Create a new package that depends on the package you wish to customize, e.g. Bootstrap.
-* Add the necessary build steps to tweak the theme, and publish your package on npm.
-* Install your own theme npm package as a dependency of your app.
-
-Here is an example of adding a [customized Bootstrap](https://medium.com/@tacomanator/customizing-create-react-app-aa9ffb88165) that follows these steps.
-
-## Adding Flow
-
-Flow is a static type checker that helps you write code with fewer bugs. Check out this [introduction to using static types in JavaScript](https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-1-8382da1e0adb) if you are new to this concept.
-
-Recent versions of [Flow](http://flowtype.org/) work with Create React App projects out of the box.
-
-To add Flow to a Create React App project, follow these steps:
-
-1. Run `npm install --save flow-bin` (or `yarn add flow-bin`).
-2. Add `"flow": "flow"` to the `scripts` section of your `package.json`.
-3. Run `npm run flow init` (or `yarn flow init`) to create a [`.flowconfig` file](https://flowtype.org/docs/advanced-configuration.html) in the root directory.
-4. Add `// @flow` to any files you want to type check (for example, to `src/App.js`).
-
-Now you can run `npm run flow` (or `yarn flow`) to check the files for type errors.
-You can optionally use an IDE like [Nuclide](https://nuclide.io/docs/languages/flow/) for a better integrated experience.
-In the future we plan to integrate it into Create React App even more closely.
-
-To learn more about Flow, check out [its documentation](https://flowtype.org/).
-
-## Adding a Router
-
-Create React App doesn't prescribe a specific routing solution, but [React Router](https://reacttraining.com/react-router/) is the most popular one.
-
-To add it, run:
-
-```sh
-npm install --save react-router-dom
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add react-router-dom
-```
-
-To try it, delete all the code in `src/App.js` and replace it with any of the examples on its website. The [Basic Example](https://reacttraining.com/react-router/web/example/basic) is a good place to get started.
-
-Note that [you may need to configure your production server to support client-side routing](#serving-apps-with-client-side-routing) before deploying your app.
-
-## Adding Custom Environment Variables
-
->Note: this feature is available with `react-scripts@0.2.3` and higher.
-
-Your project can consume variables declared in your environment as if they were declared locally in your JS files. By
-default you will have `NODE_ENV` defined for you, and any other environment variables starting with
-`REACT_APP_`.
-
-**The environment variables are embedded during the build time**. Since Create React App produces a static HTML/CSS/JS bundle, it can’t possibly read them at runtime. To read them at runtime, you would need to load HTML into memory on the server and replace placeholders in runtime, just like [described here](#injecting-data-from-the-server-into-the-page). Alternatively you can rebuild the app on the server anytime you change them.
-
->Note: You must create custom environment variables beginning with `REACT_APP_`. Any other variables except `NODE_ENV` will be ignored to avoid accidentally [exposing a private key on the machine that could have the same name](https://github.com/facebookincubator/create-react-app/issues/865#issuecomment-252199527). Changing any environment variables will require you to restart the development server if it is running.
-
-These environment variables will be defined for you on `process.env`. For example, having an environment
-variable named `REACT_APP_SECRET_CODE` will be exposed in your JS as `process.env.REACT_APP_SECRET_CODE`.
-
-There is also a special built-in environment variable called `NODE_ENV`. You can read it from `process.env.NODE_ENV`. When you run `npm start`, it is always equal to `'development'`, when you run `npm test` it is always equal to `'test'`, and when you run `npm run build` to make a production bundle, it is always equal to `'production'`. **You cannot override `NODE_ENV` manually.** This prevents developers from accidentally deploying a slow development build to production.
-
-These environment variables can be useful for displaying information conditionally based on where the project is
-deployed or consuming sensitive data that lives outside of version control.
-
-First, you need to have environment variables defined. For example, let’s say you wanted to consume a secret defined
-in the environment inside a `<form>`:
-
-```jsx
-render() {
-  return (
-    <div>
-      <small>You are running this application in <b>{process.env.NODE_ENV}</b> mode.</small>
-      <form>
-        <input type="hidden" defaultValue={process.env.REACT_APP_SECRET_CODE} />
-      </form>
-    </div>
-  );
-}
-```
-
-During the build, `process.env.REACT_APP_SECRET_CODE` will be replaced with the current value of the `REACT_APP_SECRET_CODE` environment variable. Remember that the `NODE_ENV` variable will be set for you automatically.
-
-When you load the app in the browser and inspect the `<input>`, you will see its value set to `abcdef`, and the bold text will show the environment provided when using `npm start`:
-
-```html
-<div>
-  <small>You are running this application in <b>development</b> mode.</small>
-  <form>
-    <input type="hidden" value="abcdef" />
-  </form>
-</div>
-```
-
-The above form is looking for a variable called `REACT_APP_SECRET_CODE` from the environment. In order to consume this
-value, we need to have it defined in the environment. This can be done using two ways: either in your shell or in
-a `.env` file. Both of these ways are described in the next few sections.
-
-Having access to the `NODE_ENV` is also useful for performing actions conditionally:
-
-```js
-if (process.env.NODE_ENV !== 'production') {
-  analytics.disable();
-}
-```
-
-When you compile the app with `npm run build`, the minification step will strip out this condition, and the resulting bundle will be smaller.
-
-### Referencing Environment Variables in the HTML
-
->Note: this feature is available with `react-scripts@0.9.0` and higher.
-
-You can also access the environment variables starting with `REACT_APP_` in the `public/index.html`. For example:
-
-```html
-<title>%REACT_APP_WEBSITE_NAME%</title>
-```
-
-Note that the caveats from the above section apply:
-
-* Apart from a few built-in variables (`NODE_ENV` and `PUBLIC_URL`), variable names must start with `REACT_APP_` to work.
-* The environment variables are injected at build time. If you need to inject them at runtime, [follow this approach instead](#generating-dynamic-meta-tags-on-the-server).
-
-### Adding Temporary Environment Variables In Your Shell
-
-Defining environment variables can vary between OSes. It’s also important to know that this manner is temporary for the
-life of the shell session.
-
-#### Windows (cmd.exe)
-
-```cmd
-set "REACT_APP_SECRET_CODE=abcdef" && npm start
-```
-
-(Note: Quotes around the variable assignment are required to avoid a trailing whitespace.)
-
-#### Windows (Powershell)
-
-```Powershell
-($env:REACT_APP_SECRET_CODE = "abcdef") -and (npm start)
-```
-
-#### Linux, macOS (Bash)
-
-```bash
-REACT_APP_SECRET_CODE=abcdef npm start
-```
-
-### Adding Development Environment Variables In `.env`
-
->Note: this feature is available with `react-scripts@0.5.0` and higher.
-
-To define permanent environment variables, create a file called `.env` in the root of your project:
-
-```
-REACT_APP_SECRET_CODE=abcdef
-```
->Note: You must create custom environment variables beginning with `REACT_APP_`. Any other variables except `NODE_ENV` will be ignored to avoid [accidentally exposing a private key on the machine that could have the same name](https://github.com/facebookincubator/create-react-app/issues/865#issuecomment-252199527). Changing any environment variables will require you to restart the development server if it is running.
-
-`.env` files **should be** checked into source control (with the exclusion of `.env*.local`).
-
-#### What other `.env` files can be used?
-
->Note: this feature is **available with `react-scripts@1.0.0` and higher**.
-
-* `.env`: Default.
-* `.env.local`: Local overrides. **This file is loaded for all environments except test.**
-* `.env.development`, `.env.test`, `.env.production`: Environment-specific settings.
-* `.env.development.local`, `.env.test.local`, `.env.production.local`: Local overrides of environment-specific settings.
-
-Files on the left have more priority than files on the right:
-
-* `npm start`: `.env.development.local`, `.env.development`, `.env.local`, `.env`
-* `npm run build`: `.env.production.local`, `.env.production`, `.env.local`, `.env`
-* `npm test`: `.env.test.local`, `.env.test`, `.env` (note `.env.local` is missing)
-
-These variables will act as the defaults if the machine does not explicitly set them.<br>
-Please refer to the [dotenv documentation](https://github.com/motdotla/dotenv) for more details.
-
->Note: If you are defining environment variables for development, your CI and/or hosting platform will most likely need
-these defined as well. Consult their documentation how to do this. For example, see the documentation for [Travis CI](https://docs.travis-ci.com/user/environment-variables/) or [Heroku](https://devcenter.heroku.com/articles/config-vars).
-
-#### Expanding Environment Variables In `.env`
-
->Note: this feature is available with `react-scripts@1.1.0` and higher.
-
-Expand variables already on your machine for use in your `.env` file (using [dotenv-expand](https://github.com/motdotla/dotenv-expand)).
-
-For example, to get the environment variable `npm_package_version`:
-
-```
-REACT_APP_VERSION=$npm_package_version
-# also works:
-# REACT_APP_VERSION=${npm_package_version}
-```
-
-Or expand variables local to the current `.env` file:
-
-```
-DOMAIN=www.example.com
-REACT_APP_FOO=$DOMAIN/foo
-REACT_APP_BAR=$DOMAIN/bar
-```
-
-## Can I Use Decorators?
-
-Many popular libraries use [decorators](https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841) in their documentation.<br>
-Create React App doesn’t support decorator syntax at the moment because:
-
-* It is an experimental proposal and is subject to change.
-* The current specification version is not officially supported by Babel.
-* If the specification changes, we won’t be able to write a codemod because we don’t use them internally at Facebook.
-
-However in many cases you can rewrite decorator-based code without decorators just as fine.<br>
-Please refer to these two threads for reference:
-
-* [#214](https://github.com/facebookincubator/create-react-app/issues/214)
-* [#411](https://github.com/facebookincubator/create-react-app/issues/411)
-
-Create React App will add decorator support when the specification advances to a stable stage.
-
-## Fetching Data with AJAX Requests
-
-React doesn't prescribe a specific approach to data fetching, but people commonly use either a library like [axios](https://github.com/axios/axios) or the [`fetch()` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) provided by the browser. Conveniently, Create React App includes a polyfill for `fetch()` so you can use it without worrying about the browser support.
-
-The global `fetch` function allows to easily makes AJAX requests. It takes in a URL as an input and returns a `Promise` that resolves to a `Response` object. You can find more information about `fetch` [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
-
-This project also includes a [Promise polyfill](https://github.com/then/promise) which provides a full implementation of Promises/A+. A Promise represents the eventual result of an asynchronous operation, you can find more information about Promises [here](https://www.promisejs.org/) and [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). Both axios and `fetch()` use Promises under the hood. You can also use the [`async / await`](https://davidwalsh.name/async-await) syntax to reduce the callback nesting.
-
-You can learn more about making AJAX requests from React components in [the FAQ entry on the React website](https://reactjs.org/docs/faq-ajax.html).
-
-## Integrating with an API Backend
-
-These tutorials will help you to integrate your app with an API backend running on another port,
-using `fetch()` to access it.
-
-### Node
-Check out [this tutorial](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/).
-You can find the companion GitHub repository [here](https://github.com/fullstackreact/food-lookup-demo).
-
-### Ruby on Rails
-
-Check out [this tutorial](https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with-your-rails-api/).
-You can find the companion GitHub repository [here](https://github.com/fullstackreact/food-lookup-demo-rails).
-
-## Proxying API Requests in Development
-
->Note: this feature is available with `react-scripts@0.2.3` and higher.
-
-People often serve the front-end React app from the same host and port as their backend implementation.<br>
-For example, a production setup might look like this after the app is deployed:
-
-```
-/             - static server returns index.html with React app
-/todos        - static server returns index.html with React app
-/api/todos    - server handles any /api/* requests using the backend implementation
-```
-
-Such setup is **not** required. However, if you **do** have a setup like this, it is convenient to write requests like `fetch('/api/todos')` without worrying about redirecting them to another host or port during development.
-
-To tell the development server to proxy any unknown requests to your API server in development, add a `proxy` field to your `package.json`, for example:
-
-```js
-  "proxy": "http://localhost:4000",
-```
-
-This way, when you `fetch('/api/todos')` in development, the development server will recognize that it’s not a static asset, and will proxy your request to `http://localhost:4000/api/todos` as a fallback. The development server will **only** attempt to send requests without `text/html` in its `Accept` header to the proxy.
-
-Conveniently, this avoids [CORS issues](http://stackoverflow.com/questions/21854516/understanding-ajax-cors-and-security-considerations) and error messages like this in development:
-
-```
-Fetch API cannot load http://localhost:4000/api/todos. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:3000' is therefore not allowed access. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-```
-
-Keep in mind that `proxy` only has effect in development (with `npm start`), and it is up to you to ensure that URLs like `/api/todos` point to the right thing in production. You don’t have to use the `/api` prefix. Any unrecognized request without a `text/html` accept header will be redirected to the specified `proxy`.
-
-The `proxy` option supports HTTP, HTTPS and WebSocket connections.<br>
-If the `proxy` option is **not** flexible enough for you, alternatively you can:
-
-* [Configure the proxy yourself](#configuring-the-proxy-manually)
-* Enable CORS on your server ([here’s how to do it for Express](http://enable-cors.org/server_expressjs.html)).
-* Use [environment variables](#adding-custom-environment-variables) to inject the right server host and port into your app.
-
-### "Invalid Host Header" Errors After Configuring Proxy
-
-When you enable the `proxy` option, you opt into a more strict set of host checks. This is necessary because leaving the backend open to remote hosts makes your computer vulnerable to DNS rebinding attacks. The issue is explained in [this article](https://medium.com/webpack/webpack-dev-server-middleware-security-issues-1489d950874a) and [this issue](https://github.com/webpack/webpack-dev-server/issues/887).
-
-This shouldn’t affect you when developing on `localhost`, but if you develop remotely like [described here](https://github.com/facebookincubator/create-react-app/issues/2271), you will see this error in the browser after enabling the `proxy` option:
-
->Invalid Host header
-
-To work around it, you can specify your public development host in a file called `.env.development` in the root of your project:
-
-```
-HOST=mypublicdevhost.com
-```
-
-If you restart the development server now and load the app from the specified host, it should work.
-
-If you are still having issues or if you’re using a more exotic environment like a cloud editor, you can bypass the host check completely by adding a line to `.env.development.local`. **Note that this is dangerous and exposes your machine to remote code execution from malicious websites:**
-
-```
-# NOTE: THIS IS DANGEROUS!
-# It exposes your machine to attacks from the websites you visit.
-DANGEROUSLY_DISABLE_HOST_CHECK=true
-```
-
-We don’t recommend this approach.
-
-### Configuring the Proxy Manually
-
->Note: this feature is available with `react-scripts@1.0.0` and higher.
-
-If the `proxy` option is **not** flexible enough for you, you can specify an object in the following form (in `package.json`).<br>
-You may also specify any configuration value [`http-proxy-middleware`](https://github.com/chimurai/http-proxy-middleware#options) or [`http-proxy`](https://github.com/nodejitsu/node-http-proxy#options) supports.
-```js
-{
-  // ...
-  "proxy": {
-    "/api": {
-      "target": "<url>",
-      "ws": true
-      // ...
-    }
-  }
-  // ...
-}
-```
-
-All requests matching this path will be proxies, no exceptions. This includes requests for `text/html`, which the standard `proxy` option does not proxy.
-
-If you need to specify multiple proxies, you may do so by specifying additional entries.
-Matches are regular expressions, so that you can use a regexp to match multiple paths.
-```js
-{
-  // ...
-  "proxy": {
-    // Matches any request starting with /api
-    "/api": {
-      "target": "<url_1>",
-      "ws": true
-      // ...
-    },
-    // Matches any request starting with /foo
-    "/foo": {
-      "target": "<url_2>",
-      "ssl": true,
-      "pathRewrite": {
-        "^/foo": "/foo/beta"
-      }
-      // ...
-    },
-    // Matches /bar/abc.html but not /bar/sub/def.html
-    "/bar/[^/]*[.]html": {
-      "target": "<url_3>",
-      // ...
-    },
-    // Matches /baz/abc.html and /baz/sub/def.html
-    "/baz/.*/.*[.]html": {
-      "target": "<url_4>"
-      // ...
-    }
-  }
-  // ...
-}
-```
-
-### Configuring a WebSocket Proxy
-
-When setting up a WebSocket proxy, there are a some extra considerations to be aware of.
-
-If you’re using a WebSocket engine like [Socket.io](https://socket.io/), you must have a Socket.io server running that you can use as the proxy target. Socket.io will not work with a standard WebSocket server. Specifically, don't expect Socket.io to work with [the websocket.org echo test](http://websocket.org/echo.html).
-
-There’s some good documentation available for [setting up a Socket.io server](https://socket.io/docs/).
-
-Standard WebSockets **will** work with a standard WebSocket server as well as the websocket.org echo test. You can use libraries like [ws](https://github.com/websockets/ws) for the server, with [native WebSockets in the browser](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket).
-
-Either way, you can proxy WebSocket requests manually in `package.json`:
-
-```js
-{
-  // ...
-  "proxy": {
-    "/socket": {
-      // Your compatible WebSocket server
-      "target": "ws://<socket_url>",
-      // Tell http-proxy-middleware that this is a WebSocket proxy.
-      // Also allows you to proxy WebSocket requests without an additional HTTP request
-      // https://github.com/chimurai/http-proxy-middleware#external-websocket-upgrade
-      "ws": true
-      // ...
-    }
-  }
-  // ...
-}
-```
-
-## Using HTTPS in Development
-
->Note: this feature is available with `react-scripts@0.4.0` and higher.
-
-You may require the dev server to serve pages over HTTPS. One particular case where this could be useful is when using [the "proxy" feature](#proxying-api-requests-in-development) to proxy requests to an API server when that API server is itself serving HTTPS.
-
-To do this, set the `HTTPS` environment variable to `true`, then start the dev server as usual with `npm start`:
-
-#### Windows (cmd.exe)
-
-```cmd
-set HTTPS=true&&npm start
-```
-
-#### Windows (Powershell)
-
-```Powershell
-($env:HTTPS = $true) -and (npm start)
-```
-
-(Note: the lack of whitespace is intentional.)
-
-#### Linux, macOS (Bash)
-
-```bash
-HTTPS=true npm start
-```
-
-Note that the server will use a self-signed certificate, so your web browser will almost definitely display a warning upon accessing the page.
-
-## Generating Dynamic `<meta>` Tags on the Server
-
-Since Create React App doesn’t support server rendering, you might be wondering how to make `<meta>` tags dynamic and reflect the current URL. To solve this, we recommend to add placeholders into the HTML, like this:
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta property="og:title" content="__OG_TITLE__">
-    <meta property="og:description" content="__OG_DESCRIPTION__">
-```
-
-Then, on the server, regardless of the backend you use, you can read `index.html` into memory and replace `__OG_TITLE__`, `__OG_DESCRIPTION__`, and any other placeholders with values depending on the current URL. Just make sure to sanitize and escape the interpolated values so that they are safe to embed into HTML!
-
-If you use a Node server, you can even share the route matching logic between the client and the server. However duplicating it also works fine in simple cases.
-
-## Pre-Rendering into Static HTML Files
-
-If you’re hosting your `build` with a static hosting provider you can use [react-snapshot](https://www.npmjs.com/package/react-snapshot) or [react-snap](https://github.com/stereobooster/react-snap) to generate HTML pages for each route, or relative link, in your application. These pages will then seamlessly become active, or “hydrated”, when the JavaScript bundle has loaded.
-
-There are also opportunities to use this outside of static hosting, to take the pressure off the server when generating and caching routes.
-
-The primary benefit of pre-rendering is that you get the core content of each page _with_ the HTML payload—regardless of whether or not your JavaScript bundle successfully downloads. It also increases the likelihood that each route of your application will be picked up by search engines.
-
-You can read more about [zero-configuration pre-rendering (also called snapshotting) here](https://medium.com/superhighfives/an-almost-static-stack-6df0a2791319).
-
-## Injecting Data from the Server into the Page
-
-Similarly to the previous section, you can leave some placeholders in the HTML that inject global variables, for example:
-
-```js
-<!doctype html>
-<html lang="en">
-  <head>
-    <script>
-      window.SERVER_DATA = __SERVER_DATA__;
-    </script>
-```
-
-Then, on the server, you can replace `__SERVER_DATA__` with a JSON of real data right before sending the response. The client code can then read `window.SERVER_DATA` to use it. **Make sure to [sanitize the JSON before sending it to the client](https://medium.com/node-security/the-most-common-xss-vulnerability-in-react-js-applications-2bdffbcc1fa0) as it makes your app vulnerable to XSS attacks.**
-
-## Running Tests
-
->Note: this feature is available with `react-scripts@0.3.0` and higher.<br>
->[Read the migration guide to learn how to enable it in older projects!](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md#migrating-from-023-to-030)
-
-Create React App uses [Jest](https://facebook.github.io/jest/) as its test runner. To prepare for this integration, we did a [major revamp](https://facebook.github.io/jest/blog/2016/09/01/jest-15.html) of Jest so if you heard bad things about it years ago, give it another try.
-
-Jest is a Node-based runner. This means that the tests always run in a Node environment and not in a real browser. This lets us enable fast iteration speed and prevent flakiness.
-
-While Jest provides browser globals such as `window` thanks to [jsdom](https://github.com/tmpvar/jsdom), they are only approximations of the real browser behavior. Jest is intended to be used for unit tests of your logic and your components rather than the DOM quirks.
-
-We recommend that you use a separate tool for browser end-to-end tests if you need them. They are beyond the scope of Create React App.
-
-### Filename Conventions
-
-Jest will look for test files with any of the following popular naming conventions:
-
-* Files with `.js` suffix in `__tests__` folders.
-* Files with `.test.js` suffix.
-* Files with `.spec.js` suffix.
-
-The `.test.js` / `.spec.js` files (or the `__tests__` folders) can be located at any depth under the `src` top level folder.
-
-We recommend to put the test files (or `__tests__` folders) next to the code they are testing so that relative imports appear shorter. For example, if `App.test.js` and `App.js` are in the same folder, the test just needs to `import App from './App'` instead of a long relative path. Colocation also helps find tests more quickly in larger projects.
-
-### Command Line Interface
-
-When you run `npm test`, Jest will launch in the watch mode. Every time you save a file, it will re-run the tests, just like `npm start` recompiles the code.
-
-The watcher includes an interactive command-line interface with the ability to run all tests, or focus on a search pattern. It is designed this way so that you can keep it open and enjoy fast re-runs. You can learn the commands from the “Watch Usage” note that the watcher prints after every run:
-
-![Jest watch mode](http://facebook.github.io/jest/img/blog/15-watch.gif)
-
-### Version Control Integration
-
-By default, when you run `npm test`, Jest will only run the tests related to files changed since the last commit. This is an optimization designed to make your tests run fast regardless of how many tests you have. However it assumes that you don’t often commit the code that doesn’t pass the tests.
-
-Jest will always explicitly mention that it only ran tests related to the files changed since the last commit. You can also press `a` in the watch mode to force Jest to run all tests.
-
-Jest will always run all tests on a [continuous integration](#continuous-integration) server or if the project is not inside a Git or Mercurial repository.
-
-### Writing Tests
-
-To create tests, add `it()` (or `test()`) blocks with the name of the test and its code. You may optionally wrap them in `describe()` blocks for logical grouping but this is neither required nor recommended.
-
-Jest provides a built-in `expect()` global function for making assertions. A basic test could look like this:
-
-```js
-import sum from './sum';
-
-it('sums numbers', () => {
-  expect(sum(1, 2)).toEqual(3);
-  expect(sum(2, 2)).toEqual(4);
-});
-```
-
-All `expect()` matchers supported by Jest are [extensively documented here](https://facebook.github.io/jest/docs/en/expect.html#content).<br>
-You can also use [`jest.fn()` and `expect(fn).toBeCalled()`](https://facebook.github.io/jest/docs/en/expect.html#tohavebeencalled) to create “spies” or mock functions.
-
-### Testing Components
-
-There is a broad spectrum of component testing techniques. They range from a “smoke test” verifying that a component renders without throwing, to shallow rendering and testing some of the output, to full rendering and testing component lifecycle and state changes.
-
-Different projects choose different testing tradeoffs based on how often components change, and how much logic they contain. If you haven’t decided on a testing strategy yet, we recommend that you start with creating simple smoke tests for your components:
-
-```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-});
-```
-
-This test mounts a component and makes sure that it didn’t throw during rendering. Tests like this provide a lot of value with very little effort so they are great as a starting point, and this is the test you will find in `src/App.test.js`.
-
-When you encounter bugs caused by changing components, you will gain a deeper insight into which parts of them are worth testing in your application. This might be a good time to introduce more specific tests asserting specific expected output or behavior.
-
-If you’d like to test components in isolation from the child components they render, we recommend using [`shallow()` rendering API](http://airbnb.io/enzyme/docs/api/shallow.html) from [Enzyme](http://airbnb.io/enzyme/). To install it, run:
-
-```sh
-npm install --save enzyme enzyme-adapter-react-16 react-test-renderer
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add enzyme enzyme-adapter-react-16 react-test-renderer
-```
-
-As of Enzyme 3, you will need to install Enzyme along with an Adapter corresponding to the version of React you are using. (The examples above use the adapter for React 16.)
-
-The adapter will also need to be configured in your [global setup file](#initializing-test-environment):
-
-#### `src/setupTests.js`
-```js
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
-```
-
->Note: Keep in mind that if you decide to "eject" before creating `src/setupTests.js`, the resulting `package.json` file won't contain any reference to it. [Read here](#initializing-test-environment) to learn how to add this after ejecting.
-
-Now you can write a smoke test with it:
-
-```js
-import React from 'react';
-import { shallow } from 'enzyme';
-import App from './App';
-
-it('renders without crashing', () => {
-  shallow(<App />);
-});
-```
-
-Unlike the previous smoke test using `ReactDOM.render()`, this test only renders `<App>` and doesn’t go deeper. For example, even if `<App>` itself renders a `<Button>` that throws, this test will pass. Shallow rendering is great for isolated unit tests, but you may still want to create some full rendering tests to ensure the components integrate correctly. Enzyme supports [full rendering with `mount()`](http://airbnb.io/enzyme/docs/api/mount.html), and you can also use it for testing state changes and component lifecycle.
-
-You can read the [Enzyme documentation](http://airbnb.io/enzyme/) for more testing techniques. Enzyme documentation uses Chai and Sinon for assertions but you don’t have to use them because Jest provides built-in `expect()` and `jest.fn()` for spies.
-
-Here is an example from Enzyme documentation that asserts specific output, rewritten to use Jest matchers:
-
-```js
-import React from 'react';
-import { shallow } from 'enzyme';
-import App from './App';
-
-it('renders welcome message', () => {
-  const wrapper = shallow(<App />);
-  const welcome = <h2>Welcome to React</h2>;
-  // expect(wrapper.contains(welcome)).to.equal(true);
-  expect(wrapper.contains(welcome)).toEqual(true);
-});
-```
-
-All Jest matchers are [extensively documented here](http://facebook.github.io/jest/docs/en/expect.html).<br>
-Nevertheless you can use a third-party assertion library like [Chai](http://chaijs.com/) if you want to, as described below.
-
-Additionally, you might find [jest-enzyme](https://github.com/blainekasten/enzyme-matchers) helpful to simplify your tests with readable matchers. The above `contains` code can be written more simply with jest-enzyme.
-
-```js
-expect(wrapper).toContainReact(welcome)
-```
-
-To enable this, install `jest-enzyme`:
-
-```sh
-npm install --save jest-enzyme
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add jest-enzyme
-```
-
-Import it in [`src/setupTests.js`](#initializing-test-environment) to make its matchers available in every test:
-
-```js
-import 'jest-enzyme';
-```
-
-### Using Third Party Assertion Libraries
-
-We recommend that you use `expect()` for assertions and `jest.fn()` for spies. If you are having issues with them please [file those against Jest](https://github.com/facebook/jest/issues/new), and we’ll fix them. We intend to keep making them better for React, supporting, for example, [pretty-printing React elements as JSX](https://github.com/facebook/jest/pull/1566).
-
-However, if you are used to other libraries, such as [Chai](http://chaijs.com/) and [Sinon](http://sinonjs.org/), or if you have existing code using them that you’d like to port over, you can import them normally like this:
-
-```js
-import sinon from 'sinon';
-import { expect } from 'chai';
-```
-
-and then use them in your tests like you normally do.
-
-### Initializing Test Environment
-
->Note: this feature is available with `react-scripts@0.4.0` and higher.
-
-If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/setupTests.js` to your project. It will be automatically executed before running your tests.
-
-For example:
-
-#### `src/setupTests.js`
-```js
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  clear: jest.fn()
-};
-global.localStorage = localStorageMock
-```
-
->Note: Keep in mind that if you decide to "eject" before creating `src/setupTests.js`, the resulting `package.json` file won't contain any reference to it, so you should manually create the property `setupTestFrameworkScriptFile` in the configuration for Jest, something like the following:
-
->```js
->"jest": {
->   // ...
->   "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
->  }
->  ```
-
-### Focusing and Excluding Tests
-
-You can replace `it()` with `xit()` to temporarily exclude a test from being executed.<br>
-Similarly, `fit()` lets you focus on a specific test without running any other tests.
-
-### Coverage Reporting
-
-Jest has an integrated coverage reporter that works well with ES6 and requires no configuration.<br>
-Run `npm test -- --coverage` (note extra `--` in the middle) to include a coverage report like this:
-
-![coverage report](http://i.imgur.com/5bFhnTS.png)
-
-Note that tests run much slower with coverage so it is recommended to run it separately from your normal workflow.
-
-#### Configuration
-
-The default Jest coverage configuration can be overriden by adding any of the following supported keys to a Jest config in your package.json.
-
-Supported overrides:
- - [`collectCoverageFrom`](https://facebook.github.io/jest/docs/en/configuration.html#collectcoveragefrom-array)
- - [`coverageReporters`](https://facebook.github.io/jest/docs/en/configuration.html#coveragereporters-array-string)
- - [`coverageThreshold`](https://facebook.github.io/jest/docs/en/configuration.html#coveragethreshold-object)
- - [`snapshotSerializers`](https://facebook.github.io/jest/docs/en/configuration.html#snapshotserializers-array-string)
-
-Example package.json:
-
-```json
-{
-  "name": "your-package",
-  "jest": {
-    "collectCoverageFrom" : [
-      "src/**/*.{js,jsx}",
-      "!<rootDir>/node_modules/",
-      "!<rootDir>/path/to/dir/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    },
-    "coverageReporters": ["text"],
-    "snapshotSerializers": ["my-serializer-module"]
-  }
-}
-```
-
-### Continuous Integration
-
-By default `npm test` runs the watcher with interactive CLI. However, you can force it to run tests once and finish the process by setting an environment variable called `CI`.
-
-When creating a build of your application with `npm run build` linter warnings are not checked by default. Like `npm test`, you can force the build to perform a linter warning check by setting the environment variable `CI`. If any warnings are encountered then the build fails.
-
-Popular CI servers already set the environment variable `CI` by default but you can do this yourself too:
-
-### On CI servers
-#### Travis CI
-
-1. Following the [Travis Getting started](https://docs.travis-ci.com/user/getting-started/) guide for syncing your GitHub repository with Travis.  You may need to initialize some settings manually in your [profile](https://travis-ci.org/profile) page.
-1. Add a `.travis.yml` file to your git repository.
-```
-language: node_js
-node_js:
-  - 6
-cache:
-  directories:
-    - node_modules
-script:
-  - npm run build
-  - npm test
-```
-1. Trigger your first build with a git push.
-1. [Customize your Travis CI Build](https://docs.travis-ci.com/user/customizing-the-build/) if needed.
-
-#### CircleCI
-
-Follow [this article](https://medium.com/@knowbody/circleci-and-zeits-now-sh-c9b7eebcd3c1) to set up CircleCI with a Create React App project.
-
-### On your own environment
-##### Windows (cmd.exe)
-
-```cmd
-set CI=true&&npm test
-```
-
-```cmd
-set CI=true&&npm run build
-```
-
-(Note: the lack of whitespace is intentional.)
-
-##### Windows (Powershell)
-
-```Powershell
-($env:CI = $true) -and (npm test)
-```
-
-```Powershell
-($env:CI = $true) -and (npm run build)
-```
-
-##### Linux, macOS (Bash)
-
-```bash
-CI=true npm test
-```
-
-```bash
-CI=true npm run build
-```
-
-The test command will force Jest to run tests once instead of launching the watcher.
-
->  If you find yourself doing this often in development, please [file an issue](https://github.com/facebookincubator/create-react-app/issues/new) to tell us about your use case because we want to make watcher the best experience and are open to changing how it works to accommodate more workflows.
-
-The build command will check for linter warnings and fail if any are found.
-
-### Disabling jsdom
-
-By default, the `package.json` of the generated project looks like this:
-
-```js
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom"
-```
-
-If you know that none of your tests depend on [jsdom](https://github.com/tmpvar/jsdom), you can safely remove `--env=jsdom`, and your tests will run faster:
-
-```diff
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
--   "test": "react-scripts test --env=jsdom"
-+   "test": "react-scripts test"
-```
-
-To help you make up your mind, here is a list of APIs that **need jsdom**:
-
-* Any browser globals like `window` and `document`
-* [`ReactDOM.render()`](https://facebook.github.io/react/docs/top-level-api.html#reactdom.render)
-* [`TestUtils.renderIntoDocument()`](https://facebook.github.io/react/docs/test-utils.html#renderintodocument) ([a shortcut](https://github.com/facebook/react/blob/34761cf9a252964abfaab6faf74d473ad95d1f21/src/test/ReactTestUtils.js#L83-L91) for the above)
-* [`mount()`](http://airbnb.io/enzyme/docs/api/mount.html) in [Enzyme](http://airbnb.io/enzyme/index.html)
-
-In contrast, **jsdom is not needed** for the following APIs:
-
-* [`TestUtils.createRenderer()`](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) (shallow rendering)
-* [`shallow()`](http://airbnb.io/enzyme/docs/api/shallow.html) in [Enzyme](http://airbnb.io/enzyme/index.html)
-
-Finally, jsdom is also not needed for [snapshot testing](http://facebook.github.io/jest/blog/2016/07/27/jest-14.html).
-
-### Snapshot Testing
-
-Snapshot testing is a feature of Jest that automatically generates text snapshots of your components and saves them on the disk so if the UI output changes, you get notified without manually writing any assertions on the component output. [Read more about snapshot testing.](http://facebook.github.io/jest/blog/2016/07/27/jest-14.html)
-
-### Editor Integration
-
-If you use [Visual Studio Code](https://code.visualstudio.com), there is a [Jest extension](https://github.com/orta/vscode-jest) which works with Create React App out of the box. This provides a lot of IDE-like features while using a text editor: showing the status of a test run with potential fail messages inline, starting and stopping the watcher automatically, and offering one-click snapshot updates.
-
-![VS Code Jest Preview](https://cloud.githubusercontent.com/assets/49038/20795349/a032308a-b7c8-11e6-9b34-7eeac781003f.png)
-
-## Debugging Tests
-
-There are various ways to setup a debugger for your Jest tests. We cover debugging in Chrome and [Visual Studio Code](https://code.visualstudio.com/).
-
->Note: debugging tests requires Node 8 or higher.
-
-### Debugging Tests in Chrome
-
-Add the following to the `scripts` section in your project's `package.json`
-```json
-"scripts": {
-    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom"
-  }
-```
-Place `debugger;` statements in any test and run:
-```bash
-$ npm run test:debug
-```
-
-This will start running your Jest tests, but pause before executing to allow a debugger to attach to the process.
-
-Open the following in Chrome
-```
-about:inspect
-```
-
-After opening that link, the Chrome Developer Tools will be displayed. Select `inspect` on your process and a breakpoint will be set at the first line of the react script (this is done simply to give you time to open the developer tools and to prevent Jest from executing before you have time to do so). Click the button that looks like a "play" button in the upper right hand side of the screen to continue execution. When Jest executes the test that contains the debugger statement, execution will pause and you can examine the current scope and call stack.
-
->Note: the --runInBand cli option makes sure Jest runs test in the same process rather than spawning processes for individual tests. Normally Jest parallelizes test runs across processes but it is hard to debug many processes at the same time.
-
-### Debugging Tests in Visual Studio Code
-
-Debugging Jest tests is supported out of the box for [Visual Studio Code](https://code.visualstudio.com).
-
-Use the following [`launch.json`](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) configuration file:
-```
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Debug CRA Tests",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",      
-      "args": [
-        "test",
-        "--runInBand",
-        "--no-cache",
-        "--env=jsdom"
-      ],
-      "cwd": "${workspaceRoot}",
-      "protocol": "inspector",
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
-    }
-  ]
-}
-```
-
-## Developing Components in Isolation
-
-Usually, in an app, you have a lot of UI components, and each of them has many different states.
-For an example, a simple button component could have following states:
-
-* In a regular state, with a text label.
-* In the disabled mode.
-* In a loading state.
-
-Usually, it’s hard to see these states without running a sample app or some examples.
-
-Create React App doesn’t include any tools for this by default, but you can easily add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybooks/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
-
-![Storybook for React Demo](http://i.imgur.com/7CIAWpB.gif)
-
-You can also deploy your Storybook or style guide as a static app. This way, everyone in your team can view and review different states of UI components without starting a backend server or creating an account in your app.
-
-### Getting Started with Storybook
-
-Storybook is a development environment for React UI components. It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
-
-First, install the following npm package globally:
-
-```sh
-npm install -g @storybook/cli
-```
-
-Then, run the following command inside your app’s directory:
-
-```sh
-getstorybook
-```
-
-After that, follow the instructions on the screen.
-
-Learn more about React Storybook:
-
-* Screencast: [Getting Started with React Storybook](https://egghead.io/lessons/react-getting-started-with-react-storybook)
-* [GitHub Repo](https://github.com/storybooks/storybook)
-* [Documentation](https://storybook.js.org/basics/introduction/)
-* [Snapshot Testing UI](https://github.com/storybooks/storybook/tree/master/addons/storyshots) with Storybook + addon/storyshot
-
-### Getting Started with Styleguidist
-
-Styleguidist combines a style guide, where all your components are presented on a single page with their props documentation and usage examples, with an environment for developing components in isolation, similar to Storybook. In Styleguidist you write examples in Markdown, where each code snippet is rendered as a live editable playground.
-
-First, install Styleguidist:
-
-```sh
-npm install --save react-styleguidist
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add react-styleguidist
-```
-
-Then, add these scripts to your `package.json`:
-
-```diff
-   "scripts": {
-+    "styleguide": "styleguidist server",
-+    "styleguide:build": "styleguidist build",
-     "start": "react-scripts start",
-```
-
-Then, run the following command inside your app’s directory:
-
-```sh
-npm run styleguide
-```
-
-After that, follow the instructions on the screen.
-
-Learn more about React Styleguidist:
-
-* [GitHub Repo](https://github.com/styleguidist/react-styleguidist)
-* [Documentation](https://react-styleguidist.js.org/docs/getting-started.html)
-
-## Publishing Components to npm
-
-Create React App doesn't provide any built-in functionality to publish a component to npm. If you're ready to extract a component from your project so other people can use it, we recommend moving it to a separate directory outside of your project and then using a tool like [nwb](https://github.com/insin/nwb#react-components-and-libraries) to prepare it for publishing.
-
-## Making a Progressive Web App
-
-By default, the production build is a fully functional, offline-first
-[Progressive Web App](https://developers.google.com/web/progressive-web-apps/).
-
-Progressive Web Apps are faster and more reliable than traditional web pages, and provide an engaging mobile experience:
-
- * All static site assets are cached so that your page loads fast on subsequent visits, regardless of network connectivity (such as 2G or 3G). Updates are downloaded in the background.
- * Your app will work regardless of network state, even if offline. This means your users will be able to use your app at 10,000 feet and on the subway.
- * On mobile devices, your app can be added directly to the user's home screen, app icon and all. You can also re-engage users using web **push notifications**. This eliminates the need for the app store.
-
-The [`sw-precache-webpack-plugin`](https://github.com/goldhand/sw-precache-webpack-plugin)
-is integrated into production configuration,
-and it will take care of generating a service worker file that will automatically
-precache all of your local assets and keep them up to date as you deploy updates.
-The service worker will use a [cache-first strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network)
-for handling all requests for local assets, including the initial HTML, ensuring
-that your web app is reliably fast, even on a slow or unreliable network.
-
-### Opting Out of Caching
-
-If you would prefer not to enable service workers prior to your initial
-production deployment, then remove the call to `registerServiceWorker()`
-from [`src/index.js`](src/index.js).
-
-If you had previously enabled service workers in your production deployment and
-have decided that you would like to disable them for all your existing users,
-you can swap out the call to `registerServiceWorker()` in
-[`src/index.js`](src/index.js) first by modifying the service worker import:
-```javascript
-import { unregister } from './registerServiceWorker';
-```
-and then call `unregister()` instead.
-After the user visits a page that has `unregister()`,
-the service worker will be uninstalled. Note that depending on how `/service-worker.js` is served,
-it may take up to 24 hours for the cache to be invalidated.
-
-### Offline-First Considerations
-
-1. Service workers [require HTTPS](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers#you_need_https),
-although to facilitate local testing, that policy
-[does not apply to `localhost`](http://stackoverflow.com/questions/34160509/options-for-testing-service-workers-via-http/34161385#34161385).
-If your production web server does not support HTTPS, then the service worker
-registration will fail, but the rest of your web app will remain functional.
-
-1. Service workers are [not currently supported](https://jakearchibald.github.io/isserviceworkerready/)
-in all web browsers. Service worker registration [won't be attempted](src/registerServiceWorker.js)
-on browsers that lack support.
-
-1. The service worker is only enabled in the [production environment](#deployment),
-e.g. the output of `npm run build`. It's recommended that you do not enable an
-offline-first service worker in a development environment, as it can lead to
-frustration when previously cached assets are used and do not include the latest
-changes you've made locally.
-
-1. If you *need* to test your offline-first service worker locally, build
-the application (using `npm run build`) and run a simple http server from your
-build directory. After running the build script, `create-react-app` will give
-instructions for one way to test your production build locally and the [deployment instructions](#deployment) have
-instructions for using other methods. *Be sure to always use an
-incognito window to avoid complications with your browser cache.*
-
-1. If possible, configure your production environment to serve the generated
-`service-worker.js` [with HTTP caching disabled](http://stackoverflow.com/questions/38843970/service-worker-javascript-update-frequency-every-24-hours).
-If that's not possible—[GitHub Pages](#github-pages), for instance, does not
-allow you to change the default 10 minute HTTP cache lifetime—then be aware
-that if you visit your production site, and then revisit again before
-`service-worker.js` has expired from your HTTP cache, you'll continue to get
-the previously cached assets from the service worker. If you have an immediate
-need to view your updated production deployment, performing a shift-refresh
-will temporarily disable the service worker and retrieve all assets from the
-network.
-
-1. Users aren't always familiar with offline-first web apps. It can be useful to
-[let the user know](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux#inform_the_user_when_the_app_is_ready_for_offline_consumption)
-when the service worker has finished populating your caches (showing a "This web
-app works offline!" message) and also let them know when the service worker has
-fetched the latest updates that will be available the next time they load the
-page (showing a "New content is available; please refresh." message). Showing
-this messages is currently left as an exercise to the developer, but as a
-starting point, you can make use of the logic included in [`src/registerServiceWorker.js`](src/registerServiceWorker.js), which
-demonstrates which service worker lifecycle events to listen for to detect each
-scenario, and which as a default, just logs appropriate messages to the
-JavaScript console.
-
-1. By default, the generated service worker file will not intercept or cache any
-cross-origin traffic, like HTTP [API requests](#integrating-with-an-api-backend),
-images, or embeds loaded from a different domain. If you would like to use a
-runtime caching strategy for those requests, you can [`eject`](#npm-run-eject)
-and then configure the
-[`runtimeCaching`](https://github.com/GoogleChrome/sw-precache#runtimecaching-arrayobject)
-option in the `SWPrecacheWebpackPlugin` section of
-[`webpack.config.prod.js`](../config/webpack.config.prod.js).
-
-### Progressive Web App Metadata
-
-The default configuration includes a web app manifest located at
-[`public/manifest.json`](public/manifest.json), that you can customize with
-details specific to your web application.
-
-When a user adds a web app to their homescreen using Chrome or Firefox on
-Android, the metadata in [`manifest.json`](public/manifest.json) determines what
-icons, names, and branding colors to use when the web app is displayed.
-[The Web App Manifest guide](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/)
-provides more context about what each field means, and how your customizations
-will affect your users' experience.
-
-## Analyzing the Bundle Size
-
-[Source map explorer](https://www.npmjs.com/package/source-map-explorer) analyzes
-JavaScript bundles using the source maps. This helps you understand where code
-bloat is coming from.
-
-To add Source map explorer to a Create React App project, follow these steps:
-
-```sh
-npm install --save source-map-explorer
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add source-map-explorer
-```
-
-Then in `package.json`, add the following line to `scripts`:
-
-```diff
-   "scripts": {
-+    "analyze": "source-map-explorer build/static/js/main.*",
-     "start": "react-scripts start",
-     "build": "react-scripts build",
-     "test": "react-scripts test --env=jsdom",
-```
-
-Then to analyze the bundle run the production build then run the analyze
-script.
-
-```
-npm run build
-npm run analyze
-```
-
-## Deployment
-
-`npm run build` creates a `build` directory with a production build of your app. Set up your favorite HTTP server so that a visitor to your site is served `index.html`, and requests to static paths like `/static/js/main.<hash>.js` are served with the contents of the `/static/js/main.<hash>.js` file.
-
-### Static Server
-
-For environments using [Node](https://nodejs.org/), the easiest way to handle this would be to install [serve](https://github.com/zeit/serve) and let it handle the rest:
-
-```sh
-npm install -g serve
-serve -s build
-```
-
-The last command shown above will serve your static site on the port **5000**. Like many of [serve](https://github.com/zeit/serve)’s internal settings, the port can be adjusted using the `-p` or `--port` flags.
-
-Run this command to get a full list of the options available:
-
-```sh
-serve -h
-```
-
-### Other Solutions
-
-You don’t necessarily need a static server in order to run a Create React App project in production. It works just as fine integrated into an existing dynamic one.
-
-Here’s a programmatic example using [Node](https://nodejs.org/) and [Express](http://expressjs.com/):
-
-```javascript
-const express = require('express');
-const path = require('path');
-const app = express();
-
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.listen(9000);
-```
-
-The choice of your server software isn’t important either. Since Create React App is completely platform-agnostic, there’s no need to explicitly use Node.
-
-The `build` folder with static assets is the only output produced by Create React App.
-
-However this is not quite enough if you use client-side routing. Read the next section if you want to support URLs like `/todos/42` in your single-page app.
-
-### Serving Apps with Client-Side Routing
-
-If you use routers that use the HTML5 [`pushState` history API](https://developer.mozilla.org/en-US/docs/Web/API/History_API#Adding_and_modifying_history_entries) under the hood (for example, [React Router](https://github.com/ReactTraining/react-router) with `browserHistory`), many static file servers will fail. For example, if you used React Router with a route for `/todos/42`, the development server will respond to `localhost:3000/todos/42` properly, but an Express serving a production build as above will not.
-
-This is because when there is a fresh page load for a `/todos/42`, the server looks for the file `build/todos/42` and does not find it. The server needs to be configured to respond to a request to `/todos/42` by serving `index.html`. For example, we can amend our Express example above to serve `index.html` for any unknown paths:
-
-```diff
- app.use(express.static(path.join(__dirname, 'build')));
-
--app.get('/', function (req, res) {
-+app.get('/*', function (req, res) {
-   res.sendFile(path.join(__dirname, 'build', 'index.html'));
- });
-```
-
-If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to create a `.htaccess` file in the `public` folder that looks like this:
-
-```
-    Options -MultiViews
-    RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.html [QSA,L]
-```
-
-It will get copied to the `build` folder when you run `npm run build`. 
-
-If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
-
-Now requests to `/todos/42` will be handled correctly both in development and in production.
-
-On a production build, and in a browser that supports [service workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers),
-the service worker will automatically handle all navigation requests, like for
-`/todos/42`, by serving the cached copy of your `index.html`. This
-service worker navigation routing can be configured or disabled by
-[`eject`ing](#npm-run-eject) and then modifying the
-[`navigateFallback`](https://github.com/GoogleChrome/sw-precache#navigatefallback-string)
-and [`navigateFallbackWhitelist`](https://github.com/GoogleChrome/sw-precache#navigatefallbackwhitelist-arrayregexp)
-options of the `SWPreachePlugin` [configuration](../config/webpack.config.prod.js).
-
-When users install your app to the homescreen of their device the default configuration will make a shortcut to `/index.html`. This may not work for client-side routers which expect the app to be served from `/`. Edit the web app manifest at [`public/manifest.json`](public/manifest.json) and change `start_url` to match the required URL scheme, for example:
-
-```js
-  "start_url": ".",
-```
-
-### Building for Relative Paths
-
-By default, Create React App produces a build assuming your app is hosted at the server root.<br>
-To override this, specify the `homepage` in your `package.json`, for example:
-
-```js
-  "homepage": "http://mywebsite.com/relativepath",
-```
-
-This will let Create React App correctly infer the root path to use in the generated HTML file.
-
-**Note**: If you are using `react-router@^4`, you can root `<Link>`s using the `basename` prop on any `<Router>`.<br>
-More information [here](https://reacttraining.com/react-router/web/api/BrowserRouter/basename-string).<br>
-<br>
-For example:
-```js
-<BrowserRouter basename="/calendar"/>
-<Link to="/today"/> // renders <a href="/calendar/today">
-```
-
-#### Serving the Same Build from Different Paths
-
->Note: this feature is available with `react-scripts@0.9.0` and higher.
-
-If you are not using the HTML5 `pushState` history API or not using client-side routing at all, it is unnecessary to specify the URL from which your app will be served. Instead, you can put this in your `package.json`:
-
-```js
-  "homepage": ".",
-```
-
-This will make sure that all the asset paths are relative to `index.html`. You will then be able to move your app from `http://mywebsite.com` to `http://mywebsite.com/relativepath` or even `http://mywebsite.com/relative/path` without having to rebuild it.
-
-### [Azure](https://azure.microsoft.com/)
-
-See [this](https://medium.com/@to_pe/deploying-create-react-app-on-microsoft-azure-c0f6686a4321) blog post on how to deploy your React app to Microsoft Azure.
-
-See [this](https://medium.com/@strid/host-create-react-app-on-azure-986bc40d5bf2#.pycfnafbg) blog post or [this](https://github.com/ulrikaugustsson/azure-appservice-static) repo for a way to use automatic deployment to Azure App Service.
-
-### [Firebase](https://firebase.google.com/)
-
-Install the Firebase CLI if you haven’t already by running `npm install -g firebase-tools`. Sign up for a [Firebase account](https://console.firebase.google.com/) and create a new project. Run `firebase login` and login with your previous created Firebase account.
-
-Then run the `firebase init` command from your project’s root. You need to choose the **Hosting: Configure and deploy Firebase Hosting sites** and choose the Firebase project you created in the previous step. You will need to agree with `database.rules.json` being created, choose `build` as the public directory, and also agree to **Configure as a single-page app** by replying with `y`.
-
-```sh
-    === Project Setup
-
-    First, let's associate this project directory with a Firebase project.
-    You can create multiple project aliases by running firebase use --add,
-    but for now we'll just set up a default project.
-
-    ? What Firebase project do you want to associate as default? Example app (example-app-fd690)
-
-    === Database Setup
-
-    Firebase Realtime Database Rules allow you to define how your data should be
-    structured and when your data can be read from and written to.
-
-    ? What file should be used for Database Rules? database.rules.json
-    ✔  Database Rules for example-app-fd690 have been downloaded to database.rules.json.
-    Future modifications to database.rules.json will update Database Rules when you run
-    firebase deploy.
-
-    === Hosting Setup
-
-    Your public directory is the folder (relative to your project directory) that
-    will contain Hosting assets to uploaded with firebase deploy. If you
-    have a build process for your assets, use your build's output directory.
-
-    ? What do you want to use as your public directory? build
-    ? Configure as a single-page app (rewrite all urls to /index.html)? Yes
-    ✔  Wrote build/index.html
-
-    i  Writing configuration info to firebase.json...
-    i  Writing project information to .firebaserc...
-
-    ✔  Firebase initialization complete!
-```
-
-IMPORTANT: you need to set proper HTTP caching headers for `service-worker.js` file in `firebase.json` file or you will not be able to see changes after first deployment ([issue #2440](https://github.com/facebookincubator/create-react-app/issues/2440)). It should be added inside `"hosting"` key like next:
-
-```
-{
-  "hosting": {
-    ...
-    "headers": [
-      {"source": "/service-worker.js", "headers": [{"key": "Cache-Control", "value": "no-cache"}]}
-    ]
-    ...
-```
-
-Now, after you create a production build with `npm run build`, you can deploy it by running `firebase deploy`.
-
-```sh
-    === Deploying to 'example-app-fd690'...
-
-    i  deploying database, hosting
-    ✔  database: rules ready to deploy.
-    i  hosting: preparing build directory for upload...
-    Uploading: [==============================          ] 75%✔  hosting: build folder uploaded successfully
-    ✔  hosting: 8 files uploaded successfully
-    i  starting release process (may take several minutes)...
-
-    ✔  Deploy complete!
-
-    Project Console: https://console.firebase.google.com/project/example-app-fd690/overview
-    Hosting URL: https://example-app-fd690.firebaseapp.com
-```
-
-For more information see [Add Firebase to your JavaScript Project](https://firebase.google.com/docs/web/setup).
-
-### [GitHub Pages](https://pages.github.com/)
-
->Note: this feature is available with `react-scripts@0.2.0` and higher.
-
-#### Step 1: Add `homepage` to `package.json`
-
-**The step below is important!**<br>
-**If you skip it, your app will not deploy correctly.**
-
-Open your `package.json` and add a `homepage` field for your project:
-
-```json
-  "homepage": "https://myusername.github.io/my-app",
-```
-
-or for a GitHub user page:
-
-```json
-  "homepage": "https://myusername.github.io",
-```
-
-Create React App uses the `homepage` field to determine the root URL in the built HTML file.
-
-#### Step 2: Install `gh-pages` and add `deploy` to `scripts` in `package.json`
-
-Now, whenever you run `npm run build`, you will see a cheat sheet with instructions on how to deploy to GitHub Pages.
-
-To publish it at [https://myusername.github.io/my-app](https://myusername.github.io/my-app), run:
-
-```sh
-npm install --save gh-pages
-```
-
-Alternatively you may use `yarn`:
-
-```sh
-yarn add gh-pages
-```
-
-Add the following scripts in your `package.json`:
-
-```diff
-  "scripts": {
-+   "predeploy": "npm run build",
-+   "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-```
-
-The `predeploy` script will run automatically before `deploy` is run.
-
-If you are deploying to a GitHub user page instead of a project page you'll need to make two
-additional modifications:
-
-1. First, change your repository's source branch to be any branch other than **master**.
-1. Additionally, tweak your `package.json` scripts to push deployments to **master**:
-```diff
-  "scripts": {
-    "predeploy": "npm run build",
--   "deploy": "gh-pages -d build",
-+   "deploy": "gh-pages -b master -d build",
-```
-
-#### Step 3: Deploy the site by running `npm run deploy`
-
-Then run:
-
-```sh
-npm run deploy
-```
-
-#### Step 4: Ensure your project’s settings use `gh-pages`
-
-Finally, make sure **GitHub Pages** option in your GitHub project settings is set to use the `gh-pages` branch:
-
-<img src="http://i.imgur.com/HUjEr9l.png" width="500" alt="gh-pages branch setting">
-
-#### Step 5: Optionally, configure the domain
-
-You can configure a custom domain with GitHub Pages by adding a `CNAME` file to the `public/` folder.
-
-#### Notes on client-side routing
-
-GitHub Pages doesn’t support routers that use the HTML5 `pushState` history API under the hood (for example, React Router using `browserHistory`). This is because when there is a fresh page load for a url like `http://user.github.io/todomvc/todos/42`, where `/todos/42` is a frontend route, the GitHub Pages server returns 404 because it knows nothing of `/todos/42`. If you want to add a router to a project hosted on GitHub Pages, here are a couple of solutions:
-
-* You could switch from using HTML5 history API to routing with hashes. If you use React Router, you can switch to `hashHistory` for this effect, but the URL will be longer and more verbose (for example, `http://user.github.io/todomvc/#/todos/42?_k=yknaj`). [Read more](https://reacttraining.com/react-router/web/api/Router) about different history implementations in React Router.
-* Alternatively, you can use a trick to teach GitHub Pages to handle 404 by redirecting to your `index.html` page with a special redirect parameter. You would need to add a `404.html` file with the redirection code to the `build` folder before deploying your project, and you’ll need to add code handling the redirect parameter to `index.html`. You can find a detailed explanation of this technique [in this guide](https://github.com/rafrex/spa-github-pages).
-
-### [Heroku](https://www.heroku.com/)
-
-Use the [Heroku Buildpack for Create React App](https://github.com/mars/create-react-app-buildpack).<br>
-You can find instructions in [Deploying React with Zero Configuration](https://blog.heroku.com/deploying-react-with-zero-configuration).
-
-#### Resolving Heroku Deployment Errors
-
-Sometimes `npm run build` works locally but fails during deploy via Heroku. Following are the most common cases.
-
-##### "Module not found: Error: Cannot resolve 'file' or 'directory'"
-
-If you get something like this:
-
-```
-remote: Failed to create a production build. Reason:
-remote: Module not found: Error: Cannot resolve 'file' or 'directory'
-MyDirectory in /tmp/build_1234/src
-```
-
-It means you need to ensure that the lettercase of the file or directory you `import` matches the one you see on your filesystem or on GitHub.
-
-This is important because Linux (the operating system used by Heroku) is case sensitive. So `MyDirectory` and `mydirectory` are two distinct directories and thus, even though the project builds locally, the difference in case breaks the `import` statements on Heroku remotes.
-
-##### "Could not find a required file."
-
-If you exclude or ignore necessary files from the package you will see a error similar this one:
-
-```
-remote: Could not find a required file.
-remote:   Name: `index.html`
-remote:   Searched in: /tmp/build_a2875fc163b209225122d68916f1d4df/public
-remote:
-remote: npm ERR! Linux 3.13.0-105-generic
-remote: npm ERR! argv "/tmp/build_a2875fc163b209225122d68916f1d4df/.heroku/node/bin/node" "/tmp/build_a2875fc163b209225122d68916f1d4df/.heroku/node/bin/npm" "run" "build"
-```
-
-In this case, ensure that the file is there with the proper lettercase and that’s not ignored on your local `.gitignore` or `~/.gitignore_global`.
-
-### [Netlify](https://www.netlify.com/)
-
-**To do a manual deploy to Netlify’s CDN:**
-
-```sh
-npm install netlify-cli -g
-netlify deploy
-```
-
-Choose `build` as the path to deploy.
-
-**To setup continuous delivery:**
-
-With this setup Netlify will build and deploy when you push to git or open a pull request:
-
-1. [Start a new netlify project](https://app.netlify.com/signup)
-2. Pick your Git hosting service and select your repository
-3. Set `yarn build` as the build command and `build` as the publish directory
-4. Click `Deploy site`
-
-**Support for client-side routing:**
-
-To support `pushState`, make sure to create a `public/_redirects` file with the following rewrite rules:
-
-```
-/*  /index.html  200
-```
-
-When you build the project, Create React App will place the `public` folder contents into the build output.
-
-### [Now](https://zeit.co/now)
-
-Now offers a zero-configuration single-command deployment. You can use `now` to deploy your app for free.
-
-1. Install the `now` command-line tool either via the recommended [desktop tool](https://zeit.co/download) or via node with `npm install -g now`.
-
-2. Build your app by running `npm run build`.
-
-3. Move into the build directory by running `cd build`.
-
-4. Run `now --name your-project-name` from within the build directory. You will see a **now.sh** URL in your output like this:
-
-    ```
-    > Ready! https://your-project-name-tpspyhtdtk.now.sh (copied to clipboard)
-    ```
-
-    Paste that URL into your browser when the build is complete, and you will see your deployed app.
-
-Details are available in [this article.](https://zeit.co/blog/unlimited-static)
-
-### [S3](https://aws.amazon.com/s3) and [CloudFront](https://aws.amazon.com/cloudfront/)
-
-See this [blog post](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af) on how to deploy your React app to Amazon Web Services S3 and CloudFront.
-
-### [Surge](https://surge.sh/)
-
-Install the Surge CLI if you haven’t already by running `npm install -g surge`. Run the `surge` command and log in you or create a new account.
-
-When asked about the project path, make sure to specify the `build` folder, for example:
-
-```sh
-       project path: /path/to/project/build
-```
-
-Note that in order to support routers that use HTML5 `pushState` API, you may want to rename the `index.html` in your build folder to `200.html` before deploying to Surge. This [ensures that every URL falls back to that file](https://surge.sh/help/adding-a-200-page-for-client-side-routing).
-
-## Advanced Configuration
-
-You can adjust various development and production settings by setting environment variables in your shell or with [.env](#adding-development-environment-variables-in-env).
-
-Variable | Development | Production | Usage
-:--- | :---: | :---: | :---
-BROWSER | :white_check_mark: | :x: | By default, Create React App will open the default system browser, favoring Chrome on macOS. Specify a [browser](https://github.com/sindresorhus/opn#app) to override this behavior, or set it to `none` to disable it completely. If you need to customize the way the browser is launched, you can specify a node script instead. Any arguments passed to `npm start` will also be passed to this script, and the url where your app is served will be the last argument. Your script's file name must have the `.js` extension.
-HOST | :white_check_mark: | :x: | By default, the development web server binds to `localhost`. You may use this variable to specify a different host.
-PORT | :white_check_mark: | :x: | By default, the development web server will attempt to listen on port 3000 or prompt you to attempt the next available port. You may use this variable to specify a different port.
-HTTPS | :white_check_mark: | :x: | When set to `true`, Create React App will run the development server in `https` mode.
-PUBLIC_URL | :x: | :white_check_mark: | Create React App assumes your application is hosted at the serving web server's root or a subpath as specified in [`package.json` (`homepage`)](#building-for-relative-paths). Normally, Create React App ignores the hostname. You may use this variable to force assets to be referenced verbatim to the url you provide (hostname included). This may be particularly useful when using a CDN to host your application.
-CI | :large_orange_diamond: | :white_check_mark: | When set to `true`, Create React App treats warnings as failures in the build. It also makes the test runner non-watching. Most CIs set this flag by default.
-REACT_EDITOR | :white_check_mark: | :x: | When an app crashes in development, you will see an error overlay with clickable stack trace. When you click on it, Create React App will try to determine the editor you are using based on currently running processes, and open the relevant source file. You can [send a pull request to detect your editor of choice](https://github.com/facebookincubator/create-react-app/issues/2636). Setting this environment variable overrides the automatic detection. If you do it, make sure your systems [PATH](https://en.wikipedia.org/wiki/PATH_(variable)) environment variable points to your editor’s bin folder. You can also set it to `none` to disable it completely.
-CHOKIDAR_USEPOLLING | :white_check_mark: | :x: | When set to `true`, the watcher runs in polling mode, as necessary inside a VM. Use this option if `npm start` isn't detecting changes.
-GENERATE_SOURCEMAP | :x: | :white_check_mark: | When set to `false`, source maps are not generated for a production build. This solves OOM issues on some smaller machines.
-NODE_PATH | :white_check_mark: |  :white_check_mark: | Same as [`NODE_PATH` in Node.js](https://nodejs.org/api/modules.html#modules_loading_from_the_global_folders), but only relative folders are allowed. Can be handy for emulating a monorepo setup by setting `NODE_PATH=src`.
-
-## Troubleshooting
-
-### `npm start` doesn’t detect changes
-
-When you save a file while `npm start` is running, the browser should refresh with the updated code.<br>
-If this doesn’t happen, try one of the following workarounds:
-
-* If your project is in a Dropbox folder, try moving it out.
-* If the watcher doesn’t see a file called `index.js` and you’re referencing it by the folder name, you [need to restart the watcher](https://github.com/facebookincubator/create-react-app/issues/1164) due to a Webpack bug.
-* Some editors like Vim and IntelliJ have a “safe write” feature that currently breaks the watcher. You will need to disable it. Follow the instructions in [“Adjusting Your Text Editor”](https://webpack.js.org/guides/development/#adjusting-your-text-editor).
-* If your project path contains parentheses, try moving the project to a path without them. This is caused by a [Webpack watcher bug](https://github.com/webpack/watchpack/issues/42).
-* On Linux and macOS, you might need to [tweak system settings](https://github.com/webpack/docs/wiki/troubleshooting#not-enough-watchers) to allow more watchers.
-* If the project runs inside a virtual machine such as (a Vagrant provisioned) VirtualBox, create an `.env` file in your project directory if it doesn’t exist, and add `CHOKIDAR_USEPOLLING=true` to it. This ensures that the next time you run `npm start`, the watcher uses the polling mode, as necessary inside a VM.
-
-If none of these solutions help please leave a comment [in this thread](https://github.com/facebookincubator/create-react-app/issues/659).
-
-### `npm test` hangs on macOS Sierra
-
-If you run `npm test` and the console gets stuck after printing `react-scripts test --env=jsdom` to the console there might be a problem with your [Watchman](https://facebook.github.io/watchman/) installation as described in [facebookincubator/create-react-app#713](https://github.com/facebookincubator/create-react-app/issues/713).
-
-We recommend deleting `node_modules` in your project and running `npm install` (or `yarn` if you use it) first. If it doesn't help, you can try one of the numerous workarounds mentioned in these issues:
-
-* [facebook/jest#1767](https://github.com/facebook/jest/issues/1767)
-* [facebook/watchman#358](https://github.com/facebook/watchman/issues/358)
-* [ember-cli/ember-cli#6259](https://github.com/ember-cli/ember-cli/issues/6259)
-
-It is reported that installing Watchman 4.7.0 or newer fixes the issue. If you use [Homebrew](http://brew.sh/), you can run these commands to update it:
-
-```
-watchman shutdown-server
-brew update
-brew reinstall watchman
-```
-
-You can find [other installation methods](https://facebook.github.io/watchman/docs/install.html#build-install) on the Watchman documentation page.
-
-If this still doesn’t help, try running `launchctl unload -F ~/Library/LaunchAgents/com.github.facebook.watchman.plist`.
-
-There are also reports that *uninstalling* Watchman fixes the issue. So if nothing else helps, remove it from your system and try again.
-
-### `npm run build` exits too early
-
-It is reported that `npm run build` can fail on machines with limited memory and no swap space, which is common in cloud environments. Even with small projects this command can increase RAM usage in your system by hundreds of megabytes, so if you have less than 1 GB of available memory your build is likely to fail with the following message:
-
->  The build failed because the process exited too early. This probably means the system ran out of memory or someone called `kill -9` on the process.
-
-If you are completely sure that you didn't terminate the process, consider [adding some swap space](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04) to the machine you’re building on, or build the project locally.
-
-### `npm run build` fails on Heroku
-
-This may be a problem with case sensitive filenames.
-Please refer to [this section](#resolving-heroku-deployment-errors).
-
-### Moment.js locales are missing
-
-If you use a [Moment.js](https://momentjs.com/), you might notice that only the English locale is available by default. This is because the locale files are large, and you probably only need a subset of [all the locales provided by Moment.js](https://momentjs.com/#multiple-locale-support).
-
-To add a specific Moment.js locale to your bundle, you need to import it explicitly.<br>
-For example:
-
-```js
-import moment from 'moment';
-import 'moment/locale/fr';
-```
-
-If import multiple locales this way, you can later switch between them by calling `moment.locale()` with the locale name:
-
-```js
-import moment from 'moment';
-import 'moment/locale/fr';
-import 'moment/locale/es';
-
-// ...
-
-moment.locale('fr');
-```
-
-This will only work for locales that have been explicitly imported before.
-
-### `npm run build` fails to minify
-
-Some third-party packages don't compile their code to ES5 before publishing to npm. This often causes problems in the ecosystem because neither browsers (except for most modern versions) nor some tools currently support all ES6 features. We recommend to publish code on npm as ES5 at least for a few more years.
-
-<br>
-To resolve this:
-
-1. Open an issue on the dependency's issue tracker and ask that the package be published pre-compiled.
-  * Note: Create React App can consume both CommonJS and ES modules. For Node.js compatibility, it is recommended that the main entry point is CommonJS. However, they can optionally provide an ES module entry point with the `module` field in `package.json`. Note that **even if a library provides an ES Modules version, it should still precompile other ES6 features to ES5 if it intends to support older browsers**.
-
-2. Fork the package and publish a corrected version yourself. 
-
-3. If the dependency is small enough, copy it to your `src/` folder and treat it as application code.
-
-In the future, we might start automatically compiling incompatible third-party modules, but it is not currently supported. This approach would also slow down the production builds.
-
-## Alternatives to Ejecting
-
-[Ejecting](#npm-run-eject) lets you customize anything, but from that point on you have to maintain the configuration and scripts yourself. This can be daunting if you have many similar projects. In such cases instead of ejecting we recommend to *fork* `react-scripts` and any other packages you need. [This article](https://auth0.com/blog/how-to-configure-create-react-app/) dives into how to do it in depth. You can find more discussion in [this issue](https://github.com/facebookincubator/create-react-app/issues/682).
-
-## Something Missing?
-
-If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)

@@ -30,22 +30,35 @@ class CSSuggestionList extends Component {
 				// springConfig={{ stiffness: 170, damping: 26 }}
 				// enterExitStyle={'simple'}
 			>
-				{Object.keys(this.props.data).map((item, index) => {
-					return (
-						<li
-							key={index}
-							className="item_grid"
-							style={{
-								backgroundColor: this.props.data[item].hex,
-								width: 200,
-								height: 150,
-							}}
-						>
-							<span>{this.props.data[item].name}</span>
-							<span>{this.props.data[item].hex}</span>
-						</li>
-					)
-				})}
+				{Object.keys(this.props.data).length ? (
+					Object.keys(this.props.data).map((item, index) => {
+						return (
+							<li
+								key={index}
+								className="item_grid"
+								style={{
+									backgroundColor: this.props.data[item].hex,
+									width: 200,
+									height: 150,
+								}}
+							>
+								<span>{this.props.data[item].name}</span>
+								<span>{this.props.data[item].hex}</span>
+							</li>
+						)
+					})
+				) : this.props.inputValue !== '' ? (
+					<div className="noDataSection">
+						<img className="noDataImg" src="./404.png" />
+					</div>
+				) : (
+					<div className="noDataSection">
+						<img className="noDataImg" src="./noData.png" />
+						<p className="logoText f30 text-center ">
+							... perfect color has never been easier
+						</p>
+					</div>
+				)}
 			</Grid>
 		)
 	}

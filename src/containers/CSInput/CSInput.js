@@ -8,6 +8,7 @@ export default class CSInput extends Component {
 		this.state = {
 			items: jsonData,
 			updatedList: {},
+			inputValue: '',
 		}
 	}
 	handleChange = (event) => {
@@ -26,10 +27,12 @@ export default class CSInput extends Component {
 		if (event.target.value !== '') {
 			this.setState({
 				updatedList: updatedList,
+				inputValue: event.target.value,
 			})
 		} else {
 			this.setState({
 				updatedList: {},
+				inputValue: event.target.value,
 			})
 		}
 	}
@@ -70,7 +73,10 @@ export default class CSInput extends Component {
 						onChange={(e) => this.handleChange(e)}
 					/>
 				</div>
-				<CSSuggestionList data={this.state.updatedList} />
+				<CSSuggestionList
+					inputValue={this.state.inputValue}
+					data={this.state.updatedList}
+				/>
 			</React.Fragment>
 		)
 	}
